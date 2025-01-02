@@ -61,9 +61,7 @@
     <link rel="apple-touch-icon" href="{{ $site_icon }}">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
@@ -126,8 +124,7 @@
             --soft-primary: {{ hex2rgba(get_setting('base_color', '#d43533'), 0.15) }};
         }
         body{
-            font-family: 'Public Sans', sans-serif;
-            font-weight: 400;
+            font-family: "Ysabeau SC", serif;
         }
 
         .pagination .page-link,
@@ -873,6 +870,61 @@
             document.querySelector('.floating-buttons-section').classList.toggle('show');;
         }
     </script>
+
+
+<script>
+   $(document).ready(function(){
+    $('#customers-testimonials').slick({
+        infinite: true,
+        slidesToShow: 3,
+        centerPadding: '150px',
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        centerMode: true,
+        centerPadding: '0',
+        //dots: true,
+        focusOnSelect: true,  // Ensures that the selected testimonial is active
+        responsive: [
+            {
+                breakpoint: 1170,
+                settings: {
+                    slidesToShow: 3,
+                    centerPadding: '150px',
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    // Apply opacity to inactive items
+    $('#customers-testimonials').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var $slides = $(slick.$slides);
+        $slides.each(function(index, slide) {
+            $(slide).css('opacity', 0.5);  // Set all to opacity 0.5 initially
+        });
+    });
+
+    $('#customers-testimonials').on('afterChange', function(event, slick, currentSlide){
+        var $slides = $(slick.$slides);
+        $slides.each(function(index, slide) {
+            $(slide).css('opacity', 0.5);  // Reset opacity of all
+        });
+        $($slides[currentSlide]).css('opacity', 1);  // Set opacity of active slide to 1
+    });
+});
+</script>
 
     @if (env("DEMO_MODE") == "On")
         <script>

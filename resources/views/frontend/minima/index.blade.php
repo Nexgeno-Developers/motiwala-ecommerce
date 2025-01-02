@@ -446,6 +446,88 @@
         </div>
     @endif
 
+
+
+    <video class="embed-responsive embed-responsive-16by9" autoplay="" muted="" loop="" id="myVideo2">
+                        <source src="/assets/img/video/video_1.mp4" type="video/mp4">
+                    </video>
+
+
+    <!-- testiminial slider open-->
+     <!-- TESTIMONIALS -->
+<section class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="customers-testimonials" class="slick-slider">
+                    <!-- TESTIMONIAL 1 -->
+                    <div class="item">
+                       <div class="shadow-effect">
+                             <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
+                                <div class="rating1 text-left">
+                            <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                        <i class="las la-star"></i>
+                        </div>
+                        <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                        <p class="mb-0 pb-0">Petr, Belgium</p>
+                        </div>
+                    </div>
+                    <!-- TESTIMONIAL 2 -->
+                    <div class="item">
+                        <div class="shadow-effect">
+                 <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
+                <div class="rating1 text-left">
+         <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+    </div>
+  <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                        <p class="mb-0 pb-0">Petr, Belgium</p>
+    </div>
+                    </div>
+                    <!-- TESTIMONIAL 3 -->
+                    <div class="item">
+                        <div class="shadow-effect">
+                 <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
+                <div class="rating1 text-left">
+         <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+    </div>
+      <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                        <p class="mb-0 pb-0">Petr, Belgium</p>
+    </div>
+                    </div>
+
+                      <div class="item">
+                     <div class="shadow-effect">
+                 <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
+                <div class="rating1 text-left">
+         <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+       <i class="las la-star"></i>
+    </div>
+  <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                        <p class="mb-0 pb-0">Petr, Belgium</p>
+    </div>
+                    </div>
+                    <!-- Additional Testimonials as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- testiminial slider close-->
+
     <div class="container mt-2 mt-md-3 mb-2 mb-md-3 pb-4">
         <div class="row">
             <div class="col-xl-6 py-3 py-xl-0">
