@@ -131,10 +131,27 @@
         </div>
     </div>
 
+
+
+    <div class="banner_video position-relative">
+    <video class="embed-responsive embed-responsive-16by9" autoplay="" muted="" loop="" id="myVideo2">
+                        <source src="/assets/img/video/video_1.mp4" type="video/mp4">
+                    </video>
+
+    <div class="banner_content">
+        <h4>Discover the Beauty of <span class="d-lg-block">Australian Craftsmanship</span></h4>
+        <p class="text-white">Handcrafted Jewelry, Inspired by Nature</p>
+        <div class="shop_now_button"><a href="" class="text-white">Shop Now</a></div>
+    </div>
+
+</div>
+
+
     <!-- Featured Categories -->
     @if (count($featured_categories) > 0)
-        <section class="mb-2 mb-md-3 mt-2 mt-md-3">
+        <section class="pt-5 pb-5">
             <div class="container">
+                <h3 class="main_heading text_clr_green text-center">Our collections</h3>
                 <!-- Categories -->
                 <div class="bg-white px-sm-3">
                     <div class="aiz-carousel sm-gutters-17" data-items="4" data-xxl-items="4" data-xl-items="3.5"
@@ -144,19 +161,19 @@
                             @php
                                 $category_name = $category->getTranslation('name');
                             @endphp
-                            <div class="carousel-box position-relative p-0 has-transition border-right border-top border-bottom @if ($key == 0) border-left @endif">
-                                <div class="h-200px h-sm-250px h-md-340px">
+                            <div class="carousel-box position-relative p-0 has-transition @if ($key == 0)  @endif">
+                                <div class="">
                                     <div class="h-100 w-100 w-xl-auto position-relative hov-scale-img overflow-hidden">
-                                        <div class="position-absolute h-100 w-100 overflow-hidden">
+                                        <div class=" h-100 w-100 overflow-hidden">
                                             <img src="{{ isset($category->coverImage->file_name) ? my_asset($category->coverImage->file_name) : static_asset('assets/img/placeholder.jpg') }}"
                                                 alt="{{ $category_name }}"
                                                 class="img-fit h-100 has-transition"
                                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                                         </div>
-                                        <div class="absolute-bottom-left has-transition h-80px w-100 d-flex flex-column align-items-center justify-content-center"
-                                            style="background-color: {{ hex2rgba(get_setting('base_color', '#d43533'), 0.95) }}">
+                                        <div class="has-transition h-80px w-100 d-flex flex-column align-items-center justify-content-center"
+                                          >
                                             <div class="w-100 text-center">
-                                                <a class="home-category-name animate-underline-white fs-16 fw-700 text-{{ get_setting('featured_categories_text') }}"
+                                                <a class="home-category-name animate-underline-white category_name_text text-{{ get_setting('featured_categories_text') }}"
                                                     href="{{ route('products.category', $category->slug) }}"
                                                     style="width: max-content;">
                                                     {{ $category_name }}
@@ -173,10 +190,12 @@
         </section>
     @endif
 
+   
+
     <!-- Banner section 1 -->
     @php $homeBanner1Images = get_setting('home_banner1_images', null, $lang);   @endphp
     @if ($homeBanner1Images != null)
-        <div class="pb-2 pb-md-3 pt-2 pt-md-3">
+        <div class="">
             <div class="container mb-2 mb-md-3">
                 @php
                     $banner_1_imags = json_decode($homeBanner1Images);
@@ -205,6 +224,85 @@
             </div>
         </div>
     @endif
+
+ <div class="discovery_section position-relative">
+   <img class="w-100" src="/assets/img/video/video_2.gif" />
+   <div class="discovery_content w-100">
+    <h4>Discover expertly crafted jewelry, inspired <span class="d-lg-block"></span>by Australia's natural beauty</h4>
+   </div>
+</div>
+
+    
+<section class="unique_section green_bg">
+    <div class="row align-items-center">
+        <div class="col-md-4 p-0">
+            <div class="shop_imges position-relative">
+                <img class="w-100" src="/assets/img/unique_img1.png"/>
+                 <div class="discover_absolute">
+                        <a class="title_bg_clr text-white " href="#">Shop Now</a>
+                    </div>
+            </div>
+        </div>
+
+         <div class="col-md-4 p-0">
+            <div class="uinique_box">
+                <img src="/assets/img/uinique_logo.png"/>
+                <p class="shop_content text-white">Unique, <span class="d-md-block">Timeless, and</span> Beautiful.</p>
+            </div>
+        </div>
+
+         <div class="col-md-4 p-0">
+            <div class="uinique_slider">
+           <div id="shop_slider" class="slick-slider">
+             
+             <div class="item">
+                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
+             </div>
+             <div class="item">
+                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
+             </div>
+           </div>
+    
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pt-5 pb-5 product_category_tabs">
+    <div class="container">
+        <div class="text-center">
+         <h3 class="main_heading text_clr_green pb-5">Browse By Categories</h3>
+       </div>
+     <ul class="nav nav-pills mb-3 justify-content-center listing_tabs" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Best Seller</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Bracelets</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Earrings</button>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Best Seller</div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Bracelets</div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Earrings</div>
+</div>
+    </div>
+</section>
+
 
     <!-- Featured Products -->
     <div id="section_featured" class="">
@@ -448,87 +546,207 @@
 
 
 
+    <section class="unique_section">
+    <div class="row align-items-center">
+        <div class="col-md-6 pl-0 pr-1 pb-1">
+            <div class="shop_imges position-relative">
+                <img class="w-100" src="/assets/img/category_images1.webp"/>
+                    <div class="discover_absolute">
+                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
+                        <a class="discover_text text-white " href="#">Discover More</a>
+                    </div>
+            </div>
+        </div>
+         <div class="col-md-6 pr-0 pl-1 pb-1">
+            <div class="uinique_slider">
+           <div id="category_slider" class="slick-slider">
+             
+             <div class="item">
+                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
+             </div>
+             <div class="item">
+                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
+             </div>
+           </div>
+    
+
+
+            </div>
+        </div>
+        <div class="col-md-6 pl-0 pr-1">
+            <div class="shop_imges position-relative">
+                <img class="w-100" src="/assets/img/category_images2.webp"/>
+                <div class="discover_absolute">
+                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
+                        <a class="discover_text text-white " href="#">Discover More</a>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="col-md-6 pr-0 pl-1">
+            <div class="shop_imges position-relative">
+                <img class="w-100" src="/assets/img/category_images3.webp"/>
+                 <div class="discover_absolute">
+                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
+                        <a class="discover_text text-white " href="#">Discover More</a>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="about_section gray_bg">
+        <div class="row align-items-center">
+            <div class="col-md-6 ">
+                <div class="about_content_sec pl-md-5 pr-md-5">
+                    <h3 class="main_heading text_clr_green ">About BilkBox</h3>
+                    <p class="about_content_para1">Experience luxury at About BilkBox, <span class="d-lg-block">where every piece is expertly crafted, </span> inspired by nature,</p>
+                    <p class="about_content_para2">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
+                    <div class="shop_now_button"><a href="">Read More</a></div>
+                </div>
+            </div>
+             <div class="col-md-6 pl-md-1">
+                <div class="">
+                    <img class="w-100" src="/assets/img/about_section_img.png" />
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+
+<div class="video_section">
     <video class="embed-responsive embed-responsive-16by9" autoplay="" muted="" loop="" id="myVideo2">
-                        <source src="/assets/img/video/video_1.mp4" type="video/mp4">
+                        <source src="/assets/img/video/video_3.mp4" type="video/mp4">
                     </video>
+</div>
 
 
-    <!-- testiminial slider open-->
-     <!-- TESTIMONIALS -->
-<section class="testimonials">
+<section class="gray_bg pb-4">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="customers-testimonials" class="slick-slider">
-                    <!-- TESTIMONIAL 1 -->
-                    <div class="item">
-                       <div class="shadow-effect">
-                             <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
-                                <div class="rating1 text-left">
-                            <i class="las la-star"></i>
-                        <i class="las la-star"></i>
-                        <i class="las la-star"></i>
-                        <i class="las la-star"></i>
-                        <i class="las la-star"></i>
-                        </div>
-                        <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
-                        <p class="mb-0 pb-0">Petr, Belgium</p>
-                        </div>
-                    </div>
-                    <!-- TESTIMONIAL 2 -->
-                    <div class="item">
-                        <div class="shadow-effect">
-                 <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
-                <div class="rating1 text-left">
-         <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-    </div>
-  <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
-                        <p class="mb-0 pb-0">Petr, Belgium</p>
-    </div>
-                    </div>
-                    <!-- TESTIMONIAL 3 -->
-                    <div class="item">
-                        <div class="shadow-effect">
-                 <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
-                <div class="rating1 text-left">
-         <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-    </div>
-      <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
-                        <p class="mb-0 pb-0">Petr, Belgium</p>
-    </div>
-                    </div>
-
-                      <div class="item">
-                     <div class="shadow-effect">
-                 <div class="quote_icon"> <img src="https://www.atfleurs.com/public/assets/img/quote.svg"></div>
-                <div class="rating1 text-left">
-         <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-       <i class="las la-star"></i>
-    </div>
-  <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
-                        <p class="mb-0 pb-0">Petr, Belgium</p>
-    </div>
-                    </div>
-                    <!-- Additional Testimonials as needed -->
+        <div class="row align-items-center">
+            <div class="col-md-6 pr-md-5">
+                <div class="">
+                    <img class="w-100" src="/assets/img/about_img.png" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="">
+                    <p class="shop_content">is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+                    <div class="shop_now_button"><a href="">Shop Now</a></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-    <!-- testiminial slider close-->
 
-    <div class="container mt-2 mt-md-3 mb-2 mb-md-3 pb-4">
+
+<div class="video_section">
+    <video class="embed-responsive embed-responsive-16by9" autoplay="" muted="" loop="" id="myVideo2">
+                        <source src="/assets/img/video/video_4.mp4" type="video/mp4">
+                    </video>
+</div>
+
+
+
+    <!-- testiminial slider open-->
+   <!-- TESTIMONIALS -->
+   <section class="testimonials gray_bg pt-5 pb-5">
+     <div class="">
+       <div class="text-center">
+         <h3 class="main_heading text_clr_green pb-5">Customer Experiences</h3>
+       </div>
+       <div class="row">
+         <div class="col-sm-12">
+           <div id="customers-testimonials" class="slick-slider">
+             <!-- TESTIMONIAL 1 -->
+             <div class="item">
+               <div class="shadow-effect">
+                 <div class="quote_icon">
+                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                 </div>
+                 <div class="rating1 text-left">
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                 </div>
+                 <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                 <p class="mb-0 pb-0">Petr, Belgium</p>
+               </div>
+             </div>
+             <!-- TESTIMONIAL 2 -->
+             <div class="item">
+               <div class="shadow-effect">
+                 <div class="quote_icon">
+                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                 </div>
+                 <div class="rating1 text-left">
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                 </div>
+                 <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                 <p class="mb-0 pb-0">Petr, Belgium</p>
+               </div>
+             </div>
+             <!-- TESTIMONIAL 3 -->
+             <div class="item">
+               <div class="shadow-effect">
+                 <div class="quote_icon">
+                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                 </div>
+                 <div class="rating1 text-left">
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                 </div>
+                 <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                 <p class="mb-0 pb-0">Petr, Belgium</p>
+               </div>
+             </div>
+             <div class="item">
+               <div class="shadow-effect">
+                 <div class="quote_icon">
+                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                 </div>
+                 <div class="rating1 text-left">
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                 </div>
+                 <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                 <p class="mb-0 pb-0">Petr, Belgium</p>
+               </div>
+             </div>
+             <!-- Additional Testimonials as needed -->
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   <!-- testiminial slider close-->
+
+    <div class="container">
         <div class="row">
             <div class="col-xl-6 py-3 py-xl-0">
                 <!-- Top Sellers -->

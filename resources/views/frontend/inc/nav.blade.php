@@ -26,7 +26,7 @@
     @endif
 
     <!-- Top Bar -->
-    <div class="top-navbar bg-white z-1035 h-35px h-sm-auto">
+    <div class="top-navbar bg-white z-1035 h-35px h-sm-auto d-none">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col">
@@ -112,9 +112,9 @@
         </div>
     </div>
 
-    <header class="@if (get_setting('header_stikcy') == 'on') sticky-top @endif z-1020 bg-white">
+    <header class="@if (get_setting('header_stikcy') == 'on') sticky-top @endif z-1020 header_position">
         <!-- Search Bar -->
-        <div class="position-relative logo-bar-area border-bottom border-md-nonea z-1025">
+        <div class="position-relative logo-bar-area z-1025">
             <div class="container">
                 <div class="d-flex align-items-center">
                     <!-- top menu sidebar button -->
@@ -139,10 +139,10 @@
                             @endphp
                             @if ($header_logo != null)
                                 <img src="{{ uploaded_asset($header_logo) }}" alt="{{ env('APP_NAME') }}"
-                                    class="mw-100 h-30px h-md-40px" height="40">
+                                    class="">
                             @else
                                 <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
-                                    class="mw-100 h-30px h-md-40px" height="40">
+                                    class="">
                             @endif
                         </a>
                     </div>
@@ -559,7 +559,7 @@
         </div>
 
         <!-- Menu Bar -->
-        <div class="d-none d-lg-block position-relative bg-primary h-50px">
+        <div class="d-none d-lg-block position-relative">
             <div class="container h-100">
                 <div class="d-flex h-100">
                     <!-- Categoty Menu Button -->

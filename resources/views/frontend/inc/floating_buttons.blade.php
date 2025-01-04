@@ -1,4 +1,4 @@
-<div class="floating-buttons-section">
+<div class="floating-buttons-section d-none">
     <div class="position-relative">
         <a class="floating-buttons-section-control d-lg-none" onclick="showFloatingButtons()">
             <i class="las la-2x la-angle-double-right"></i>

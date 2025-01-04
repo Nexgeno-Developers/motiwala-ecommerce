@@ -926,6 +926,82 @@
 });
 </script>
 
+<script>
+$(document).ready(function(){
+    $('#shop_slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        centerPadding: '0px',
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        centerMode: true,
+        centerPadding: '0',
+        dots: true,
+        focusOnSelect: true,  // Ensures that the selected testimonial is active
+        responsive: [
+            {
+                breakpoint: 1170,
+                settings: {
+                    slidesToShow: 3,
+                    centerPadding: '150px',
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+    $('#category_slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        centerPadding: '0px',
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        centerMode: true,
+        centerPadding: '0',
+        dots: true,
+        focusOnSelect: true,  // Ensures that the selected testimonial is active
+        responsive: [
+            {
+                breakpoint: 1170,
+                settings: {
+                    slidesToShow: 3,
+                    centerPadding: '150px',
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+});
+</script>
+
     @if (env("DEMO_MODE") == "On")
         <script>
             var demoNav = document.querySelector('.aiz-demo-nav');
