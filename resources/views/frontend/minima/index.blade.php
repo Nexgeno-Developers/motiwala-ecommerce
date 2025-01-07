@@ -45,7 +45,7 @@
     </style>
 
     <!-- Sliders -->
-    <div class="home-banner-area mb-3">
+    <div class="home-banner-area mb-0">
         <div class="p-0 position-relative">
             <!-- Sliders -->
             <div class="home-slider slider-full">
@@ -140,7 +140,7 @@
 
     <div class="banner_content">
         <h4>Discover the Beauty of <span class="d-lg-block">Australian Craftsmanship</span></h4>
-        <p class="text-white">Handcrafted Jewelry, Inspired by Nature</p>
+        <p class="text-white pt-3">Handcrafted Jewelry, Inspired by Nature</p>
         <div class="shop_now_button"><a href="" class="text-white">Shop Now</a></div>
     </div>
 
@@ -149,12 +149,12 @@
 
     <!-- Featured Categories -->
     @if (count($featured_categories) > 0)
-        <section class="pt-5 pb-5">
+        <section class="pt-5 pb-5 category_section">
             <div class="container">
-                <h3 class="main_heading text_clr_green text-center">Our collections</h3>
+                <h3 class="main_heading text_clr_green text-center mb-md-5">Our Collections</h3>
                 <!-- Categories -->
                 <div class="bg-white px-sm-3">
-                    <div class="aiz-carousel sm-gutters-17" data-items="4" data-xxl-items="4" data-xl-items="3.5"
+                    <div class="aiz-carousel sm-gutters-17" data-items="4" data-xxl-items="4" data-xl-items="4"
                         data-lg-items="3" data-md-items="2" data-sm-items="2" data-xs-items="1" data-arrows="true"
                         data-dots="false" data-autoplay="false" data-infinite="true">
                         @foreach ($featured_categories as $key => $category)
@@ -163,7 +163,7 @@
                             @endphp
                             <div class="carousel-box position-relative p-0 has-transition @if ($key == 0)  @endif">
                                 <div class="">
-                                    <div class="h-100 w-100 w-xl-auto position-relative hov-scale-img overflow-hidden">
+                                    <div class="category_images h-100 w-100 w-xl-auto position-relative hov-scale-img overflow-hidden">
                                         <div class=" h-100 w-100 overflow-hidden">
                                             <img src="{{ isset($category->coverImage->file_name) ? my_asset($category->coverImage->file_name) : static_asset('assets/img/placeholder.jpg') }}"
                                                 alt="{{ $category_name }}"
@@ -237,7 +237,7 @@
     <div class="row align-items-center">
         <div class="col-md-4 p-0">
             <div class="shop_imges position-relative">
-                <img class="w-100" src="/assets/img/unique_img1.png"/>
+                <img class="w-100 margintp8" src="/assets/img/unique_img1_new.webp"/>
                  <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Shop Now</a>
                     </div>
@@ -253,21 +253,21 @@
 
          <div class="col-md-4 p-0">
             <div class="uinique_slider">
-           <div id="shop_slider" class="slick-slider">
+           <div id="shop_slider" class="slick-slider bottom40">
              
              <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
+                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
              </div>
              <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
-             </div>
-
-             <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
+                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
              </div>
 
              <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1.webp"/>
+                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
              </div>
            </div>
     
@@ -279,7 +279,7 @@
 </section>
 
 
-<section class="pt-5 pb-5 product_category_tabs">
+<section class="pt-5 pb-3 product_category_tabs">
     <div class="container">
         <div class="text-center">
          <h3 class="main_heading text_clr_green pb-5">Browse By Categories</h3>
@@ -296,9 +296,9 @@
   </li>
 </ul>
 <div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Best Seller</div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Bracelets</div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Earrings</div>
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"></div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
 </div>
     </div>
 </section>
@@ -340,22 +340,20 @@
         </div>
     @endif
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-xl-6">
-                <!-- Best Selling  -->
                 <div id="section_best_selling">
 
                 </div>
             </div>
             <div class="col-xl-6">
-                <!-- New Products -->
                 <div id="section_newest">
 
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Banner Section 3 -->
     @php $homeBanner3Images = get_setting('home_banner3_images', null, $lang);   @endphp
@@ -611,9 +609,12 @@
             <div class="col-md-6 ">
                 <div class="about_content_sec pl-md-5 pr-md-5">
                     <h3 class="main_heading text_clr_green ">About BilkBox</h3>
-                    <p class="about_content_para1">Experience luxury at About BilkBox, <span class="d-lg-block">where every piece is expertly crafted, </span> inspired by nature,</p>
+                    <div class="aboutbg_logo">
+                        <img src="/assets/img/about_logo_bg.svg" />
+                    </div>
+                    <p class="about_content_para1">Experience luxury at About BilkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
                     <p class="about_content_para2">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
-                    <div class="shop_now_button"><a href="">Read More</a></div>
+                    <div class="shop_now_button2"><a href="">Read More</a></div>
                 </div>
             </div>
              <div class="col-md-6 pl-md-1">
@@ -645,7 +646,7 @@
             <div class="col-md-6">
                 <div class="">
                     <p class="shop_content">is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
-                    <div class="shop_now_button"><a href="">Shop Now</a></div>
+                    <div class="shop_now_button2"><a href="">Shop Now</a></div>
                 </div>
             </div>
         </div>
@@ -668,9 +669,8 @@
        <div class="text-center">
          <h3 class="main_heading text_clr_green pb-5">Customer Experiences</h3>
        </div>
-       <div class="row">
-         <div class="col-sm-12">
-           <div id="customers-testimonials" class="slick-slider">
+      
+           <div id="customers-testimonials" class="slick-slider" >
              <!-- TESTIMONIAL 1 -->
              <div class="item">
                <div class="shadow-effect">
@@ -738,10 +738,25 @@
                  <p class="mb-0 pb-0">Petr, Belgium</p>
                </div>
              </div>
+
+               <div class="item">
+               <div class="shadow-effect">
+                 <div class="quote_icon">
+                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                 </div>
+                 <div class="rating1 text-left">
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                   <i class="las la-star"></i>
+                 </div>
+                 <p>I couldn’t be happier with my purchase! The craftsmanship is impeccable, and the attention to detail truly sets this piece apart. Every time I wear my necklace,</p>
+                 <p class="mb-0 pb-0">Petr, Belgium</p>
+               </div>
+             </div>
              <!-- Additional Testimonials as needed -->
            </div>
-         </div>
-       </div>
      </div>
    </section>
    <!-- testiminial slider close-->

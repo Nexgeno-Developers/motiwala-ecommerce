@@ -9,9 +9,9 @@
     }
 @endphp
 <!-- Cart button with cart count -->
-<a href="javascript:void(0)" class="d-flex align-items-center text-dark px-3 h-100" data-toggle="dropdown" data-display="static" title="{{translate('Cart')}}">
-    <span class="mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20.562" viewBox="0 0 24 20.562">
+<a href="javascript:void(0)" class="d-flex align-items-center text-dark mt-13" data-toggle="dropdown" data-display="static" title="{{translate('Cart')}}">
+    <span class="mr-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 20.562">
             <g id="_5e67fc94b53aaec8ca181b806dd815ee" data-name="5e67fc94b53aaec8ca181b806dd815ee" transform="translate(-33.276 -101)">
               <path id="Path_32659" data-name="Path 32659" d="M34.034,102.519H38.2l-.732-.557c.122.37.243.739.365,1.112q.441,1.333.879,2.666.528,1.6,1.058,3.211.46,1.394.917,2.788c.149.451.291.9.446,1.352l.008.02a.76.76,0,0,0,1.466-.4c-.122-.37-.243-.739-.365-1.112q-.441-1.333-.879-2.666-.528-1.607-1.058-3.213-.46-1.394-.917-2.788c-.149-.451-.289-.9-.446-1.352l-.008-.02a.783.783,0,0,0-.732-.557H34.037a.76.76,0,0,0,0,1.519Z" fill="#fff"/>
               <path id="Path_32660" data-name="Path 32660" d="M288.931,541.934q-.615,1.1-1.233,2.193c-.058.106-.119.21-.177.317a.767.767,0,0,0,.656,1.142h11.6c.534,0,1.071.01,1.608,0h.023a.76.76,0,0,0,0-1.519h-11.6c-.534,0-1.074-.015-1.608,0h-.023l.656,1.142q.615-1.1,1.233-2.193c.058-.106.119-.21.177-.316a.759.759,0,0,0-1.312-.765Z" transform="translate(-247.711 -429.41)" fill="#fff"/>
@@ -23,10 +23,10 @@
             </g>
         </svg>
     </span>
-    <span class="d-none d-xl-block ml-2 fs-14 fw-700 text-white">{{ single_price($total) }}</span>
-    <span class="nav-box-text d-none d-xl-block ml-2 text-white fs-12">
+    <!-- <span class="d-none d-xl-block ml-2 fs-14 fw-700 text-white">{{ single_price($total) }}</span> -->
+    <span class="nav-box-text d-none d-xl-block text-white fs-12">
 
-        (<span class="cart-count">{{count($carts) > 0 ? count($carts) : 0 }}</span> {{translate('Items')}})
+        (<span class="cart-count">{{count($carts) > 0 ? count($carts) : 0 }}</span>)
 
     </span>
 </a>

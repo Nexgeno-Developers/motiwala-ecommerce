@@ -287,6 +287,8 @@
     </div>
 
     <!-- website popup -->
+
+    <div class="d-none">
     @php
         $dynamic_popups = App\Models\DynamicPopup::where('status', 1)->orderBy('id', 'asc')->get();
     @endphp
@@ -347,6 +349,8 @@
             </div>
         @endif
     @endforeach
+
+        </div>
 
     @include('frontend.partials.modal')
 
@@ -881,28 +885,29 @@
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 5000,
-        centerMode: true,
-        centerPadding: '0',
-        //dots: true,
+        centerMode: true, // Keeps the centered slide
+        centerPadding: '0', // Correct value for the center slide
         focusOnSelect: true,  // Ensures that the selected testimonial is active
         responsive: [
             {
                 breakpoint: 1170,
                 settings: {
-                    slidesToShow: 3,
-                    centerPadding: '150px',
+                    slidesToShow: 34,
+                     // Add padding for larger screens
                 }
             },
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 2,
+                    centerPadding: '50px', // Add padding for medium screens
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    centerPadding: '20px', // Add padding for smaller screens
                 }
             }
         ]
