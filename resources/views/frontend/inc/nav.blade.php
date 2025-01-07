@@ -147,7 +147,7 @@
                                     @foreach (json_decode(get_setting('header_menu_labels'), true) as $key => $value)
                                         <li class="list-inline-item mr-0 animate-underline-white">
                                             <a href="{{ json_decode(get_setting('header_menu_links'), true)[$key] }}"
-                                                class="fs-20 px-3 py-1 d-inline-block fw-400 {{ $nav_txt_color }} header_menu_links
+                                                class="fs-18 px-3 py-1 d-inline-block fw-400 {{ $nav_txt_color }} header_menu_links
                                             @if (url()->current() == json_decode(get_setting('header_menu_links'), true)[$key]) active @endif">
                                                 {{ translate($value) }}
                                             </a>
@@ -221,19 +221,19 @@
                             <ul class="list-inline mb-0 pl-0">
                                 
                                           <li class="list-inline-item mr-0 animate-underline-white">
-                                            <a href="/" class="fs-20 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
+                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
                                                Shop
                                             </a>
                                         </li>
 
                                           <li class="list-inline-item mr-0 animate-underline-white">
-                                            <a href="/" class="fs-20 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
+                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
                                                About
                                             </a>
                                         </li>
                                
                                           <li class="list-inline-item mr-0 animate-underline-white">
-                                            <a href="/" class="fs-20 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
+                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
                                                Location
                                             </a>
                                         </li>
@@ -243,7 +243,7 @@
 
 
                          <!-- Search Icon for small device -->
-                    <div class="mr-2 ml-5 mt-19 ">
+                    <div class="mr-2 ml-2 mt-19 ">
                         <a class="d-block text-reset" href="javascript:void(0);" data-toggle="class-toggle"
                             data-target=".front-header-search">
                             <i class="las la-search la-flip-horizontal fs-24 text-white"></i>
@@ -262,11 +262,11 @@
                     <div class="d-none d-xl-block  mt-23 ">
                         @auth
                             <span
-                                class="d-flex align-items-center nav-user-info @if (isAdmin()) ml-5 @endif"
+                                class="d-flex align-items-center nav-user-info @if (isAdmin()) ml-2 @endif"
                                 id="nav-user-info">
                                 <!-- Image -->
                                 <span
-                                    class="size-40px rounded-circle overflow-hidden border border-transparent nav-user-img">
+                                    class="size-30px rounded-circle overflow-hidden border border-transparent nav-user-img">
                                     @if ($user->avatar_original != null)
                                         <img src="{{ $user_avatar }}"
                                             class="img-fit h-100" alt="{{ translate('avatar') }}"
@@ -755,7 +755,7 @@
             @auth
                 <span class="d-flex align-items-center nav-user-info pl-4">
                     <!-- Image -->
-                    <span class="size-40px rounded-circle overflow-hidden border border-transparent nav-user-img">
+                    <span class="size-30px rounded-circle overflow-hidden border border-transparent nav-user-img">
                         @if ($user->avatar_original != null)
                             <img src="{{ $user_avatar }}" class="img-fit h-100" alt="{{ translate('avatar') }}"
                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/avatar-place.png') }}';">

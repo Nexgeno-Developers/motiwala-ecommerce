@@ -208,7 +208,7 @@
 							@endphp
                             <li class="mb-1">
                                 <a href="{{ $widget_one_links }}" class="fs-16 text-soft-light animate-underline-white">
-                                    <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> {{ $value }}
+                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> {{ $value }}
                                 </a>
                             </li>
                             @endforeach
@@ -226,31 +226,31 @@
                     <ul class="list-unstyled">
                         <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Rings
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Rings
                                 </a>
                         </li>
 
                          <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Earrings
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Earrings
                                 </a>
                         </li>
 
                          <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Pendants
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Pendants
                                 </a>
                         </li>
 
                          <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Gold
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Gold
                                 </a>
                         </li>
 
                         <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Bracelets & Bangels
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Bracelets & Bangels
                                 </a>
                         </li>
                     </ul>
@@ -264,19 +264,19 @@
                     <ul class="list-unstyled">
                         <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                    <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Contact
+                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Contact
                                 </a>
                         </li>
 
                          <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                    <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Terms & Condition
+                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Terms & Condition
                                 </a>
                         </li>
 
                          <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="/assets/img/left_arrow_1.svg"/> Privacy Policy
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Privacy Policy
                                 </a>
                         </li>
                     </ul>

@@ -135,7 +135,7 @@
 
     <div class="banner_video position-relative">
     <video class="embed-responsive embed-responsive-16by9" autoplay="" muted="" loop="" id="myVideo2">
-                        <source src="/assets/img/video/video_1.mp4" type="video/mp4">
+                        <source src="{{ static_asset('assets/img/video/video_1.mp4') }}" type="video/mp4">
                     </video>
 
     <div class="banner_content">
@@ -226,7 +226,7 @@
     @endif
 
  <div class="discovery_section position-relative">
-   <img class="w-100" src="/assets/img/video/video_2.gif" />
+   <img class="w-100" src="{{ static_asset('assets/img/video/video_2.gif') }}" />
    <div class="discovery_content w-100">
     <h4>Discover expertly crafted jewelry, inspired <span class="d-lg-block"></span>by Australia's natural beauty</h4>
    </div>
@@ -237,7 +237,7 @@
     <div class="row align-items-center">
         <div class="col-md-4 p-0">
             <div class="shop_imges position-relative">
-                <img class="w-100 margintp8" src="/assets/img/unique_img1_new.webp"/>
+                <img class="w-100 margintp8" src="{{ static_asset('assets/img/unique_img1_new.webp') }}"/>
                  <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Shop Now</a>
                     </div>
@@ -246,7 +246,7 @@
 
          <div class="col-md-4 p-0">
             <div class="uinique_box">
-                <img src="/assets/img/uinique_logo.png"/>
+                <img src="{{ static_asset('assets/img/uinique_logo.png') }}"/>
                 <p class="shop_content text-white">Unique, <span class="d-md-block">Timeless, and</span> Beautiful.</p>
             </div>
         </div>
@@ -256,18 +256,18 @@
            <div id="shop_slider" class="slick-slider bottom40">
              
              <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
+                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
              <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
-             </div>
-
-             <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
+                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
 
              <div class="item">
-                 <img class="w-100" src="/assets/img/unique_slider1_new.webp"/>
+                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
            </div>
     
@@ -548,7 +548,7 @@
     <div class="row align-items-center">
         <div class="col-md-6 pl-0 pr-1 pb-1">
             <div class="shop_imges position-relative">
-                <img class="w-100" src="/assets/img/category_images1.webp"/>
+                <img class="w-100" src="{{ static_asset('assets/img/category_images1.webp') }}"/>
                     <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
@@ -560,18 +560,18 @@
            <div id="category_slider" class="slick-slider">
              
              <div class="item">
-                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
+                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
              <div class="item">
-                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
-             </div>
-
-             <div class="item">
-                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
+                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
 
              <div class="item">
-                 <img class="w-100" src="/assets/img/category_slider1.webp"/>
+                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
            </div>
     
@@ -581,7 +581,7 @@
         </div>
         <div class="col-md-6 pl-0 pr-1">
             <div class="shop_imges position-relative">
-                <img class="w-100" src="/assets/img/category_images2.webp"/>
+                <img class="w-100" src="{{ static_asset('assets/img/category_images2.webp') }}"/>
                 <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
@@ -592,7 +592,7 @@
 
         <div class="col-md-6 pr-0 pl-1">
             <div class="shop_imges position-relative">
-                <img class="w-100" src="/assets/img/category_images3.webp"/>
+                <img class="w-100" src="{{ static_asset('assets/img/category_images3.webp') }}"/>
                  <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
@@ -610,7 +610,7 @@
                 <div class="about_content_sec pl-md-5 pr-md-5">
                     <h3 class="main_heading text_clr_green ">About BilkBox</h3>
                     <div class="aboutbg_logo">
-                        <img src="/assets/img/about_logo_bg.svg" />
+                        <img src="{{ static_asset('assets/img/about_logo_bg.svg') }}" />
                     </div>
                     <p class="about_content_para1">Experience luxury at About BilkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
                     <p class="about_content_para2">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
@@ -619,7 +619,7 @@
             </div>
              <div class="col-md-6 pl-md-1">
                 <div class="">
-                    <img class="w-100" src="/assets/img/about_section_img.png" />
+                    <img class="w-100" src="{{ static_asset('assets/img/about_section_img.png') }}" />
                 </div>
             </div>
         </div>
@@ -630,7 +630,7 @@
 
 <div class="video_section">
     <video class="embed-responsive embed-responsive-16by9" autoplay="" muted="" loop="" id="myVideo2">
-                        <source src="/assets/img/video/video_3.mp4" type="video/mp4">
+                        <source src="{{ static_asset('assets/img/video/video_3.mp4') }}" type="video/mp4">
                     </video>
 </div>
 
@@ -640,7 +640,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 pr-md-5">
                 <div class="">
-                    <img class="w-100" src="/assets/img/about_img.png" />
+                    <img class="w-100" src="{{ static_asset('assets/img/about_img.png') }}" />
                 </div>
             </div>
             <div class="col-md-6">
@@ -656,7 +656,7 @@
 
 <div class="video_section">
     <video class="embed-responsive embed-responsive-16by9" autoplay="" muted="" loop="" id="myVideo2">
-                        <source src="/assets/img/video/video_4.mp4" type="video/mp4">
+                        <source src="{{ static_asset('assets/img/video/video_4.mp4') }}" type="video/mp4">
                     </video>
 </div>
 
@@ -675,7 +675,7 @@
              <div class="item">
                <div class="shadow-effect">
                  <div class="quote_icon">
-                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                   <img src="{{ static_asset('assets/img/quote.svg') }}">
                  </div>
                  <div class="rating1 text-left">
                    <i class="las la-star"></i>
@@ -692,7 +692,7 @@
              <div class="item">
                <div class="shadow-effect">
                  <div class="quote_icon">
-                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                   <img src="{{ static_asset('assets/img/quote.svg') }}">
                  </div>
                  <div class="rating1 text-left">
                    <i class="las la-star"></i>
@@ -709,7 +709,7 @@
              <div class="item">
                <div class="shadow-effect">
                  <div class="quote_icon">
-                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                   <img src="{{ static_asset('assets/img/quote.svg') }}">
                  </div>
                  <div class="rating1 text-left">
                    <i class="las la-star"></i>
@@ -725,7 +725,7 @@
              <div class="item">
                <div class="shadow-effect">
                  <div class="quote_icon">
-                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                   <img src="{{ static_asset('assets/img/quote.svg') }}">
                  </div>
                  <div class="rating1 text-left">
                    <i class="las la-star"></i>
@@ -742,7 +742,7 @@
                <div class="item">
                <div class="shadow-effect">
                  <div class="quote_icon">
-                   <img src="https://www.atfleurs.com/public/assets/img/quote.svg">
+                   <img src="{{ static_asset('assets/img/quote.svg') }}">
                  </div>
                  <div class="rating1 text-left">
                    <i class="las la-star"></i>
