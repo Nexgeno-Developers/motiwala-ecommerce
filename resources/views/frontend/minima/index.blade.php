@@ -306,7 +306,7 @@ header svg path {
 <section class="pt-md-5 pt-4 pb-3 product_category_tabs">
     <div class="container">
         <div class="text-center">
-         <h3 class="main_heading text_clr_green pb-md-5 pb-0">Browse By Categories</h3>
+         <h3 class="main_heading text_clr_green pb-md-3 pb-0">Browse By Categories</h3>
        </div>
      <ul class="nav nav-pills mb-md-3 justify-content-center listing_tabs" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">

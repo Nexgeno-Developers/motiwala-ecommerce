@@ -498,6 +498,10 @@
     @else
         <!-- Add to cart & Buy now Buttons -->
         <div class="mt-md-5 mt-4">
+              <button type="button"
+                        class="btn size_buttons mr-2 add-to-cart fs-20 fw-400 min-w-180px rounded-0 text-white">
+                        Size
+                    </button>
             @if ($detailedProduct->digital == 0)
                 @if (((get_setting('product_external_link_for_seller') == 1) && ($detailedProduct->added_by == "seller") && ($detailedProduct->external_link != null)) ||
                     (($detailedProduct->added_by != "seller") && ($detailedProduct->external_link != null)))
@@ -511,10 +515,10 @@
                         @if (Auth::check() || get_Setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif>
                         <i class="las la-shopping-bag"></i> {{ translate('Add to Bag') }}
                     </button>
-                    <button type="button" class="btn gray_color_buttons buy-now fs-20 fw-400 add-to-cart min-w-180px rounded-0"
+                    <!-- <button type="button" class="btn gray_color_buttons buy-now fs-20 fw-400 add-to-cart min-w-180px rounded-0"
                         @if (Auth::check() || get_Setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif>
                         <i class="la la-shopping-cart"></i> {{ translate('Buy Now') }}
-                    </button>
+                    </button> -->
                 @endif
                 <button type="button" class="btn btn-secondary out-of-stock fs-20 fw-400 d-none" disabled>
                     <i class="la la-cart-arrow-down"></i> {{ translate('Out of Stock') }}
@@ -530,6 +534,13 @@
                     <i class="la la-shopping-cart"></i> {{ translate('Buy Now') }}
                 </button>
             @endif
+        </div>
+
+
+        <div class="">
+            <h5 class="pt-5 fs-24">Description And Specfivation</h5>
+            <p>s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+</p>
         </div>
 
         <!-- Promote Link -->

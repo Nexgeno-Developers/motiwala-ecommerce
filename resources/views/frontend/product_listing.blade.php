@@ -73,7 +73,7 @@
 
 
 
-     <div class="product_listing_section position-relative mt-5">
+     <div class="product_listing_section position-relative mt-5 mb-3">
         <div class="row align-items-center">
             <div class="col-md-6 p-0"><img class="w-100" src="{{ static_asset('assets/img/earrning_image.webp') }}" /></div>
             <div class="col-md-6 p-0">
@@ -373,7 +373,7 @@
     
 
 
-     <div class="discovery_section position-relative">
+     <div class="discovery_section position-relative mb-md-5 mb-4">
    <img class="w-100" src="{{ static_asset('assets/img/product_listing.webp') }}" />
    <div class="discovery_content w-100">
     <h4>Discover expertly crafted jewelry, inspired <span class="d-lg-block"></span>by Australia's natural beauty</h4>

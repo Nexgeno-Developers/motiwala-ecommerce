@@ -207,8 +207,9 @@
 								}
 							@endphp
                             <li class="mb-1">
+                                <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> 
                                 <a href="{{ $widget_one_links }}" class="fs-16 text-soft-light animate-underline-white">
-                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> {{ $value }}
+                                    {{ $value }}
                                 </a>
                             </li>
                             @endforeach
@@ -225,33 +226,37 @@
                     <h4 class="fs-20 text-white fw-400 mb-3">{{ translate('Categories') }}</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
+                            <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/>
                                 <a href="/category/necklace" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Necklace
+                                   Necklace
                                 </a>
                         </li>
 
                          <li class="mb-1">
+                             <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/>
                                 <a href="/category/bracelet" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Bracelet
+                                     Bracelet
                                 </a>
                         </li>
 
                          <li class="mb-1">
-                                <a href="/category/earrings" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Earrings
+                            <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/>
+                                <a href="/category/earrings" class="fs-16 text-soft-light animate-underline-white"> Earrings
                                 </a>
                         </li>
 
                          <li class="mb-1">
+                            <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/>
                                 <a href="/category/bangle" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Bangle
+                                   Bangle
 
                                 </a>
                         </li>
 
                         <li class="mb-1">
+                             <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> 
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Bracelets & Bangels
+                                 Bracelets & Bangels
                                 </a>
                         </li>
                     </ul>
@@ -264,20 +269,23 @@
                     <h4 class="fs-20 text-white fw-400 mb-md-3 mb-2">{{ translate('Usefull Links') }}</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
+                            <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/>
                                 <a href="/contact-us" class="fs-16 text-soft-light animate-underline-white">
-                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Contact Us
+                                     Contact Us
                                 </a>
                         </li>
 
                          <li class="mb-1">
+                             <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/>
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Terms & Condition
+                                    Terms & Condition
                                 </a>
                         </li>
 
                          <li class="mb-1">
+                            <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/>
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Privacy Policy
+                                   Privacy Policy
                                 </a>
                         </li>
                     </ul>
@@ -636,13 +644,17 @@
     }
 @endphp
 
+
+
+    
+</div>
 <!-- FOOTER -->
-<footer class="pt-md-2 pt-0 pb-8 pb-xl-2 bg-white text-soft-light">
+<footer class="pt-md-2 pt-0 pb-8 pb-xl-2 bg-white text-soft-light position-relative copy_rights">
     <div class="container">
         <div class="row align-items-center">
             <!-- Copyright -->
             <div class="col-lg-12 order-1 order-lg-0">
-                <div class="text-center text-lg-center fs-18 text_clr_green" current-verison="{{get_setting("current_version")}}">
+                <div class="text-center text-lg-center fs-16 text_clr_green" current-verison="{{get_setting("current_version")}}">
                     {!! get_setting('frontend_copyright_text', null, App::getLocale()) !!}
                 </div>
             </div>
@@ -663,6 +675,10 @@
             </div>
         </div>
     </div>
+    <div class="offer_coupon">
+    <p>Get 20% Off</p>
+</div>
+
 </footer>
 
 <!-- Mobile bottom nav -->
@@ -794,6 +810,11 @@
 
     </div>
 </div>
+
+
+
+
+
 
 @if (Auth::check() && auth()->user()->user_type == 'customer')
     <!-- User Side nav -->
