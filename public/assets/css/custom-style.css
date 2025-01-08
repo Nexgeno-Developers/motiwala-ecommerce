@@ -744,4 +744,13 @@ p.about_content_para1 {
         padding-right: 0;
         margin-top: 10px;
     }
+
+    .breadcrums_sedction h4 {
+        font-size: 26px;
+        padding-top: 15px;
+    }
+
+    .breacrums_bg {
+        padding: 20px 0px 15px 0px;
+    }
 }
