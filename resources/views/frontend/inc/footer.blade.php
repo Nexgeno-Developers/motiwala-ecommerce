@@ -5,7 +5,7 @@
     $lastViewedProducts = getLastViewedProducts();
     @endphp
     @if (count($lastViewedProducts) > 0)
-        <section class="my-2 my-md-3">
+        <section class="my-2 my-md-3 d-none">
             <div class="container">
                 <!-- Top Section -->
                 <div class="d-flex mb-2 mb-md-3 align-items-baseline justify-content-between">
@@ -174,26 +174,26 @@
 @php
     $col_values = ((get_setting('vendor_system_activation') == 1) || addon_is_activated('delivery_boy')) ? "col-lg-3 col-md-6 col-sm-6" : "col-md-4 col-sm-6";
 @endphp
-<section class="pt-5 pb-5 text-light footer-widget green_bg">
+<section class="pt-md-5 pb-md-5 pt-4 pb-4 text-light footer-widget green_bg">
     <!-- footer widgets ========== [Accordion Fotter widgets are bellow from this]-->
-    <div class="container d-none d-lg-block">
+    <div class="container d-lg-block">
         <div class="row">
             <!-- Quick links -->
 
             <div class="col-md-5">
-                <a href="{{ route('home') }}" class="d-block">
+                <a href="{{ route('home') }}" class="d-block footer_logo">
                 @if(get_setting('footer_logo') != null)
                     <img class="lazyload h-100px" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset(get_setting('footer_logo')) }}" alt="{{ env('APP_NAME') }}" height="100">
                 @else
                     <img class="lazyload h-100px" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}" height="100">
                 @endif
             </a>
-            <div class="mb-4 text-soft-light fs-16 pt-4 pddright-100">
+            <div class="mb-4 text-soft-light fs-16 pt-md-4 pt-2 pddright-100">
                     {!! get_setting('about_us_description',null,App::getLocale()) !!}
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="text-center text-sm-left">
+            <div class="col-md-2 col-6">
+                <div class="text-left">
                     <h4 class="fs-20 text-white fw-400 mb-3">
                         {{ get_setting('widget_one',null,App::getLocale()) }}
                     </h4>
@@ -220,8 +220,8 @@
             </div>
 
             <!-- Contacts -->
-            <div class="col-md-3">
-                <div class="text-center text-sm-left">
+            <div class="col-md-3 col-6">
+                <div class="text-left">
                     <h4 class="fs-20 text-white fw-400 mb-3">{{ translate('Categories') }}</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
@@ -258,9 +258,9 @@
             </div>
 
 
-            <div class="col-md-2">
-                <div class="text-center text-sm-left">
-                    <h4 class="fs-20 text-white fw-400 mb-3">{{ translate('Usefull Links') }}</h4>
+            <div class="col-md-2 col-12">
+                <div class="text-left">
+                    <h4 class="fs-20 text-white fw-400 mb-md-3 mb-2">{{ translate('Usefull Links') }}</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
                                 <a href="/" class="fs-16 text-soft-light animate-underline-white">
@@ -328,7 +328,7 @@
             <!-- My Account -->
             <div class="{{ $col_values }} d-none">
                 <div class="text-center text-sm-left mt-4">
-                    <h4 class="fs-14 text-secondary text-uppercase fw-700 mb-3">{{ translate('My Account') }}</h4>
+                    <h4 class="fs-14 text-secondary text-uppercase fw-700 mb-md-3 mb-2">{{ translate('My Account') }}</h4>
                     <ul class="list-unstyled">
                         @if (Auth::check())
                             <li class="mb-2">
@@ -375,7 +375,7 @@
                 <div class="text-center text-sm-left mt-4">
                     <!-- Seller -->
                     @if (get_setting('vendor_system_activation') == 1)
-                        <h4 class="fs-14 text-secondary text-uppercase fw-700 mb-3">{{ translate('Seller Zone') }}</h4>
+                        <h4 class="fs-14 text-secondary text-uppercase fw-700 mb-md-3 mb-2">{{ translate('Seller Zone') }}</h4>
                         <ul class="list-unstyled">
                             <li class="mb-2">
                                 <p class="fs-13 text-soft-light mb-0">
@@ -428,7 +428,7 @@
 
             <div class="col-md-5"></div>
             <div class="col-md-3">
-                  <ul class="list-unstyled mb-0">
+                  <ul class="list-unstyled mb-0 pt-3 pt-md-0">
                         <!-- <li class="mb-2">
                             <p  class="fs-13 text-secondary mb-1">{{ translate('Address') }}</p>
                             <p  class="fs-13 text-soft-light">{{ get_setting('contact_address',null,App::getLocale()) }}</p>
@@ -448,7 +448,7 @@
     </div>
 
     <!-- Accordion Fotter widgets -->
-    <div class="d-lg-none bg-transparent">
+    <div class="d-none bg-transparent">
         <!-- Quick links -->
         <div class="aiz-accordion-wrap bg-black">
             <div class="aiz-accordion-heading container bg-black">
@@ -636,7 +636,7 @@
 @endphp
 
 <!-- FOOTER -->
-<footer class="pt-2 pb-7 pb-xl-2 bg-white text-soft-light">
+<footer class="pt-md-2 pt-0 pb-8 pb-xl-2 bg-white text-soft-light">
     <div class="container">
         <div class="row align-items-center">
             <!-- Copyright -->

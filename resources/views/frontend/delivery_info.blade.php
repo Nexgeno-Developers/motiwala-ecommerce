@@ -11,33 +11,33 @@
                         <div class="col done">
                             <div class="text-center border border-bottom-6px p-2 text-success">
                                 <i class="la-3x mb-2 las la-shopping-cart"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('1. My Cart') }}</h3>
+                                <h3 class="fs-16 fw-600 d-none d-lg-block">{{ translate('1. My Cart') }}</h3>
                             </div>
                         </div>
                         <div class="col done">
                             <div class="text-center border border-bottom-6px p-2 text-success">
                                 <i class="la-3x mb-2 las la-map"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('2. Shipping info') }}
+                                <h3 class="fs-16 fw-600 d-none d-lg-block">{{ translate('2. Shipping info') }}
                                 </h3>
                             </div>
                         </div>
                         <div class="col active">
                             <div class="text-center border border-bottom-6px p-2 text-primary">
                                 <i class="la-3x mb-2 las la-truck cart-animate" style="margin-left: -100px; transition: 2s;"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block">{{ translate('3. Delivery info') }}
+                                <h3 class="fs-16 fw-600 d-none d-lg-block">{{ translate('3. Delivery info') }}
                                 </h3>
                             </div>
                         </div>
                         <div class="col">
                             <div class="text-center border border-bottom-6px p-2">
                                 <i class="la-3x mb-2 opacity-50 las la-credit-card"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('4. Payment') }}</h3>
+                                <h3 class="fs-16 fw-600 d-none d-lg-block opacity-50">{{ translate('4. Payment') }}</h3>
                             </div>
                         </div>
                         <div class="col">
                             <div class="text-center border border-bottom-6px p-2">
                                 <i class="la-3x mb-2 opacity-50 las la-check-circle"></i>
-                                <h3 class="fs-14 fw-600 d-none d-lg-block opacity-50">{{ translate('5. Confirmation') }}
+                                <h3 class="fs-16 fw-600 d-none d-lg-block opacity-50">{{ translate('5. Confirmation') }}
                                 </h3>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                                                             alt="{{  $product->getTranslation('name')  }}"
                                                             onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                                                     </span>
-                                                    <span class="fs-14 fw-400 text-dark">
+                                                    <span class="fs-16 fw-400 text-dark">
                                                         {{ $product->getTranslation('name') }}
                                                         <br>
                                                         @if ($admin_product_variation[$key] != '')
@@ -126,7 +126,7 @@
                                     @if ($physical)
                                         <div class="row pt-3">
                                             <div class="col-md-6">
-                                                <h6 class="fs-14 fw-700 mt-3">{{ translate('Choose Delivery Type') }}</h6>
+                                                <h6 class="fs-16 fw-700 mt-3">{{ translate('Choose Delivery Type') }}</h6>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="row gutters-5">
@@ -272,7 +272,7 @@
                                                                     alt="{{  $product->getTranslation('name')  }}"
                                                                     onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                                                             </span>
-                                                            <span class="fs-14 fw-400 text-dark">
+                                                            <span class="fs-16 fw-400 text-dark">
                                                                 {{ $product->getTranslation('name') }}
                                                                 <br>
                                                                 @if ($seller_product_variation[$key2] != '')
@@ -287,7 +287,7 @@
                                             @if ($physical)
                                                 <div class="row pt-3">
                                                     <div class="col-md-6">
-                                                        <h6 class="fs-14 fw-700 mt-3">{{ translate('Choose Delivery Type') }}</h6>
+                                                        <h6 class="fs-16 fw-700 mt-3">{{ translate('Choose Delivery Type') }}</h6>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="row gutters-5">
@@ -409,12 +409,12 @@
 
                             <div class="pt-4 d-flex justify-content-between align-items-center">
                                 <!-- Return to shop -->
-                                <a href="{{ route('home') }}"  class="btn btn-link fs-14 fw-700 px-0">
+                                <a href="{{ route('home') }}"  class="btn btn-link fs-16 fw-700 px-0">
                                     <i class="la la-arrow-left fs-16"></i>
                                     {{ translate('Return to shop')}}
                                 </a>
                                 <!-- Continue to Payment -->
-                                <button type="submit" class="btn btn-primary fs-14 fw-700 rounded-0 px-4">{{ translate('Continue to Payment')}}</button>
+                                <button type="submit" class="btn btn-primary fs-16 fw-700 rounded-0 px-4">{{ translate('Continue to Payment')}}</button>
                             </div>
                         </form>
                     </div>

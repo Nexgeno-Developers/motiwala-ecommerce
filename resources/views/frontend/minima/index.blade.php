@@ -42,10 +42,18 @@
                 z-index: 1;
             }
         }
+
+        .header_position {
+    position: absolute !important;
+    background-image: none;
+    width: 100%;
+    background-size: cover;
+    padding: 0px !important;
+}
     </style>
 
     <!-- Sliders -->
-    <div class="home-banner-area mb-0">
+    <div class="home-banner-area mb-0 d-none">
         <div class="p-0 position-relative">
             <!-- Sliders -->
             <div class="home-slider slider-full">
@@ -140,7 +148,7 @@
 
     <div class="banner_content">
         <h4>Discover the Beauty of <span class="d-lg-block">Australian Craftsmanship</span></h4>
-        <p class="text-white pt-3">Handcrafted Jewelry, Inspired by Nature</p>
+        <p class="text-white pt-md-3 pt-2">Handcrafted Jewelry, Inspired by Nature</p>
         <div class="shop_now_button"><a href="" class="text-white">Shop Now</a></div>
     </div>
 
@@ -149,7 +157,7 @@
 
     <!-- Featured Categories -->
     @if (count($featured_categories) > 0)
-        <section class="pt-5 pb-5 category_section">
+        <section class="pt-md-5 pb-md-2 pt-4 pb-0 category_section">
             <div class="container">
                 <h3 class="main_heading text_clr_green text-center mb-md-5">Our Collections</h3>
                 <!-- Categories -->
@@ -245,9 +253,9 @@
         </div>
 
          <div class="col-md-4 p-0">
-            <div class="uinique_box">
+            <div class="uinique_box pt-md-0 pb-md-0 pt-5 pb-5">
                 <img src="{{ static_asset('assets/img/uinique_logo.png') }}"/>
-                <p class="shop_content text-white">Unique, <span class="d-md-block">Timeless, and</span> Beautiful.</p>
+                <p class="shop_content text-white pb-0 mb-0">Unique, <span class="d-block">Timeless, and</span> Beautiful.</p>
             </div>
         </div>
 
@@ -279,12 +287,12 @@
 </section>
 
 
-<section class="pt-5 pb-3 product_category_tabs">
+<section class="pt-md-5 pt-4 pb-3 product_category_tabs">
     <div class="container">
         <div class="text-center">
-         <h3 class="main_heading text_clr_green pb-5">Browse By Categories</h3>
+         <h3 class="main_heading text_clr_green pb-md-5 pb-0">Browse By Categories</h3>
        </div>
-     <ul class="nav nav-pills mb-3 justify-content-center listing_tabs" id="pills-tab" role="tablist">
+     <ul class="nav nav-pills mb-md-3 justify-content-center listing_tabs" id="pills-tab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Best Seller</button>
   </li>
@@ -547,8 +555,8 @@
     <section class="unique_section">
     <div class="row align-items-center">
         <div class="col-md-6 pl-0 pr-1 pb-1">
-            <div class="shop_imges position-relative">
-                <img class="w-100" src="{{ static_asset('assets/img/category_images1.webp') }}"/>
+            <div class="shop_imges position-relative overflow-hidden mt-3 mt-md-0">
+                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images1.webp') }}"/>
                     <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
@@ -556,7 +564,7 @@
             </div>
         </div>
          <div class="col-md-6 pr-0 pl-1 pb-1">
-            <div class="uinique_slider">
+            <div class="uinique_slider mt-3 mt-md-0">
            <div id="category_slider" class="slick-slider">
              
              <div class="item">
@@ -580,7 +588,7 @@
             </div>
         </div>
         <div class="col-md-6 pl-0 pr-1">
-            <div class="shop_imges position-relative">
+            <div class="shop_imges position-relative mt-2 mt-md-0">
                 <img class="w-100" src="{{ static_asset('assets/img/category_images2.webp') }}"/>
                 <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
@@ -591,7 +599,7 @@
         </div>
 
         <div class="col-md-6 pr-0 pl-1">
-            <div class="shop_imges position-relative">
+            <div class="shop_imges position-relative mt-3 mt-md-0">
                 <img class="w-100" src="{{ static_asset('assets/img/category_images3.webp') }}"/>
                  <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
@@ -606,10 +614,10 @@
 
     <section class="about_section gray_bg">
         <div class="row align-items-center">
-            <div class="col-md-6 ">
+            <div class="col-md-6 order-md-1 order-2">
                 <div class="about_content_sec pl-md-5 pr-md-5">
                     <h3 class="main_heading text_clr_green ">About BilkBox</h3>
-                    <div class="aboutbg_logo">
+                    <div class="aboutbg_logo ">
                         <img src="{{ static_asset('assets/img/about_logo_bg.svg') }}" />
                     </div>
                     <p class="about_content_para1">Experience luxury at About BilkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
@@ -617,8 +625,8 @@
                     <div class="shop_now_button2"><a href="">Read More</a></div>
                 </div>
             </div>
-             <div class="col-md-6 pl-md-1">
-                <div class="">
+             <div class="col-md-6 order-md-2 order-1 pl-md-1">
+                <div class="mb-md-0 mb-3">
                     <img class="w-100" src="{{ static_asset('assets/img/about_section_img.png') }}" />
                 </div>
             </div>
@@ -664,10 +672,10 @@
 
     <!-- testiminial slider open-->
    <!-- TESTIMONIALS -->
-   <section class="testimonials gray_bg pt-5 pb-5">
+   <section class="testimonials gray_bg pt-md-5 pb-md-5 pt-4 pb-4">
      <div class="">
        <div class="text-center">
-         <h3 class="main_heading text_clr_green pb-5">Customer Experiences</h3>
+         <h3 class="main_heading text_clr_green pb-md-5 pb-2">Customer Experiences</h3>
        </div>
       
            <div id="customers-testimonials" class="slick-slider" >
@@ -761,7 +769,7 @@
    </section>
    <!-- testiminial slider close-->
 
-    <div class="container">
+    <div class="container d-none">
         <div class="row">
             <div class="col-xl-6 py-3 py-xl-0">
                 <!-- Top Sellers -->

@@ -25,7 +25,7 @@
                                 alt="{{  $product->getTranslation('name')  }}"
                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
                         </span>
-                        <span class="fs-14 fw-400 text-dark">
+                        <span class="fs-16 fw-400 text-dark">
                             <span class="text-truncate-2">{{ $product->getTranslation('name') }}</span>
                             @if ($product_variation[$key] != '')
                                 <span class="fs-12 text-secondary">{{ translate('Variation') }}: {{ $product_variation[$key] }}</span>
@@ -40,7 +40,7 @@
     @if ($physical)
         <!-- Choose Delivery Type -->
         <div class="col-md-6 mb-2">
-            <h6 class="fs-14 fw-700 mt-3">{{ translate('Choose Delivery Type') }}</h6>
+            <h6 class="fs-16 fw-700 mt-3">{{ translate('Choose Delivery Type') }}</h6>
             <div class="row gutters-16">
                 <!-- Home Delivery -->
                 @if (get_setting('shipping_type') != 'carrier_wise_shipping')

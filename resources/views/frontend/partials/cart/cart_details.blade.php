@@ -285,7 +285,7 @@
             </div>
 
             <!-- Cart Summary -->
-            <div class="col-lg-4 mt-lg-0 mt-4" id="cart_summary">
+            <div class="col-lg-4 mt-lg-0 mt-0" id="cart_summary">
                 @include('frontend.partials.cart.cart_summary', ['proceed' => 1, 'carts' => $active_carts])
             </div>
         </div>

@@ -22,28 +22,28 @@
                             <!-- Address -->
                             <span class="flex-grow-1 pl-3 text-left">
                                 <div class="row">
-                                    <span class="fs-14 text-secondary col-md-3 col-5">{{ translate('Address') }}</span>
-                                    <span class="fs-14 text-dark fw-500 ml-2 col">{{ $address->address }}</span>
+                                    <span class="fs-16 text-secondary col-md-3 col-5">{{ translate('Address') }}</span>
+                                    <span class="fs-16 text-dark fw-500 ml-2 col">{{ $address->address }}</span>
                                 </div>
                                 <div class="row">
-                                    <span class="fs-14 text-secondary col-md-3 col-5">{{ translate('Postal Code') }}</span>
-                                    <span class="fs-14 text-dark fw-500 ml-2 col">{{ $address->postal_code }}</span>
+                                    <span class="fs-16 text-secondary col-md-3 col-5">{{ translate('Postal Code') }}</span>
+                                    <span class="fs-16 text-dark fw-500 ml-2 col">{{ $address->postal_code }}</span>
                                 </div>
                                 <div class="row">
-                                    <span class="fs-14 text-secondary col-md-3 col-5">{{ translate('City') }}</span>
-                                    <span class="fs-14 text-dark fw-500 ml-2 col">{{ optional($address->city)->name }}</span>
+                                    <span class="fs-16 text-secondary col-md-3 col-5">{{ translate('City') }}</span>
+                                    <span class="fs-16 text-dark fw-500 ml-2 col">{{ optional($address->city)->name }}</span>
                                 </div>
                                 <div class="row">
-                                    <span class="fs-14 text-secondary col-md-3 col-5">{{ translate('State') }}</span>
-                                    <span class="fs-14 text-dark fw-500 ml-2 col">{{ optional($address->state)->name }}</span>
+                                    <span class="fs-16 text-secondary col-md-3 col-5">{{ translate('State') }}</span>
+                                    <span class="fs-16 text-dark fw-500 ml-2 col">{{ optional($address->state)->name }}</span>
                                 </div>
                                 <div class="row">
-                                    <span class="fs-14 text-secondary col-md-3 col-5">{{ translate('Country') }}</span>
-                                    <span class="fs-14 text-dark fw-500 ml-2 col">{{ optional($address->country)->name }}</span>
+                                    <span class="fs-16 text-secondary col-md-3 col-5">{{ translate('Country') }}</span>
+                                    <span class="fs-16 text-dark fw-500 ml-2 col">{{ optional($address->country)->name }}</span>
                                 </div>
                                 <div class="row">
-                                    <span class="fs-14 text-secondary col-md-3 col-5">{{ translate('Phone') }}</span>
-                                    <span class="fs-14 text-dark fw-500 ml-2 col">{{ $address->phone }}</span>
+                                    <span class="fs-16 text-secondary col-md-3 col-5">{{ translate('Phone') }}</span>
+                                    <span class="fs-16 text-dark fw-500 ml-2 col">{{ $address->phone }}</span>
                                 </div>
                             </span>
                         </span>
@@ -61,7 +61,7 @@
     <!-- Add New Address -->
     <div class="border p-3 c-pointer text-center bg-light has-transition hov-bg-soft-light h-100 d-flex flex-column justify-content-center" onclick="add_new_address()">
         <i class="las la-plus mb-1 fs-20 text-gray"></i>
-        <div class="alpha-7 fw-700">{{ translate('Add New Address') }}</div>
+        <div class="alpha-7 fs-16 fw-400">{{ translate('Add New Address') }}</div>
     </div>
 @else
     <!-- Guest Shipping a address -->

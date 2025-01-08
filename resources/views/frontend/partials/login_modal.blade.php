@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="p-3">
+                <div class="p-md-3">
                     <form class="form-default" role="form" action="{{ route('cart.login.submit') }}" method="POST">
                         @csrf
 
@@ -76,7 +76,7 @@
                         </div>
 
                         <!-- Login Button -->
-                        <div class="mb-5">
+                        <div class="mb-md-5 mb-3">
                             <button type="submit"
                                 class="btn btn-primary btn-block fw-600 rounded-0">{{ translate('Login') }}</button>
                         </div>

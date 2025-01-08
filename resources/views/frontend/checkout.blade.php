@@ -28,7 +28,7 @@
                         <div class="accordion" id="accordioncCheckoutInfo">
 
                             <!-- Shipping Info -->
-                            <div class="card rounded-0 border shadow-none" style="margin-bottom: 2rem;">
+                            <div class="card rounded-0 border shadow-none mb-mb-4 mb-2" style="overflow: visible !important;">
                                 <div class="card-header border-bottom-0 py-3 py-xl-4" id="headingShippingInfo" type="button" data-toggle="collapse" data-target="#collapseShippingInfo" aria-expanded="true" aria-controls="collapseShippingInfo">
                                     <div class="d-flex align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
@@ -46,7 +46,7 @@
                             </div>
 
                             <!-- Delivery Info -->
-                            <div class="card rounded-0 border shadow-none" style="margin-bottom: 2rem; overflow: visible !important;">
+                            <div class="card rounded-0 border shadow-none mb-mb-4 mb-2" style="overflow: visible !important;">
                                 <div class="card-header border-bottom-0 py-3 py-xl-4" id="headingDeliveryInfo" type="button" data-toggle="collapse" data-target="#collapseDeliveryInfo" aria-expanded="true" aria-controls="collapseDeliveryInfo">
                                     <div class="d-flex align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
@@ -80,7 +80,7 @@
                                         @include('frontend.partials.cart.payment_info', ['carts' => $carts, 'total' => $total])
 
                                         <!-- Agree Box -->
-                                        <div class="pt-2rem fs-14">
+                                        <div class="pt-2rem fs-18">
                                             <label class="aiz-checkbox">
                                                 <input type="checkbox" required id="agree_checkbox" onchange="stepCompletionPaymentInfo()">
                                                 <span class="aiz-square-check"></span>
@@ -97,7 +97,7 @@
                                         <div class="row align-items-center pt-3 mb-4">
                                             <!-- Return to shop -->
                                             <div class="col-6">
-                                                <a href="{{ route('home') }}" class="btn btn-link fs-14 fw-700 px-0">
+                                                <a href="{{ route('home') }}" class="btn btn-link fs-18 fw-700 px-0">
                                                     <i class="las la-arrow-left fs-16"></i>
                                                     {{ translate('Return to shop') }}
                                                 </a>
@@ -105,7 +105,7 @@
                                             <!-- Complete Ordert -->
                                             <div class="col-6 text-right">
                                                 <button type="button" onclick="submitOrder(this)" id="submitOrderBtn"
-                                                    class="btn btn-primary fs-14 fw-700 rounded-0 px-4">{{ translate('Complete Order') }}</button>
+                                                    class="btn btn-primary fs-18 fw-700 rounded-0 px-4">{{ translate('Complete Order') }}</button>
                                             </div>
                                         </div>
 
@@ -117,7 +117,7 @@
                     </form>
                 </div>
                 <!-- Cart Summary -->
-                <div class="col-lg-4 mt-4 mt-lg-0" id="cart_summary">
+                <div class="col-lg-4 mt-2 mt-lg-0" id="cart_summary">
                     @include('frontend.partials.cart.cart_summary', ['proceed' => 0, 'carts' => $carts])
                 </div>
             </div>

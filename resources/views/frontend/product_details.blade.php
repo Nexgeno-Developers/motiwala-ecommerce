@@ -61,12 +61,12 @@
             <div class="bg-white py-3">
                 <div class="row">
                     <!-- Product Image Gallery -->
-                    <div class="col-xl-5 col-lg-6 mb-4">
+                    <div class="col-xl-6 col-lg-6 mb-4 pr-4">
                         @include('frontend.product_details.image_gallery')
                     </div>
 
                     <!-- Product Details -->
-                    <div class="col-xl-7 col-lg-6">
+                    <div class="col-xl-6 col-lg-6">
                         @include('frontend.product_details.details')
                     </div>
                 </div>
@@ -74,7 +74,18 @@
         </div>
     </section>
 
-    <section class="mb-4">
+    <section class="pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                     <h4 class="fs40 dt_text mb-md-3 mb-1">The Heart</h4>
+                     <p class="pl-md-5 pr-md-5">s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It</p>
+                      <img class="w-100" src="{{ static_asset('assets/img/product_dt_img.webp') }}">
+                    </div> 
+            </div>
+        </div>
+    </section>
+    <section class="mb-4 d-none">
         <div class="container">
             @if ($detailedProduct->auction_product)
                 <!-- Reviews & Ratings -->
@@ -123,6 +134,9 @@
             @endif
         </div>
     </section>
+
+
+    
 
     @php
         $file = base_path("/public/assets/myText.txt");

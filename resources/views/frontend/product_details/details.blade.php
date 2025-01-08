@@ -1,10 +1,12 @@
 <div class="text-left">
     <!-- Product Name -->
-    <h2 class="mb-4 fs-16 fw-700 text-dark">
+    <h2 class="fs40 text_clr_green  mb-3">
         {{ $detailedProduct->getTranslation('name') }}
     </h2>
 
-    <div class="row align-items-center mb-3">
+    @include('frontend.product_details.description')
+
+    <div class="row align-items-center mb-3 d-none">
         <!-- Review -->
         @if ($detailedProduct->auction_product != 1)
             <div class="col-12">
@@ -33,7 +35,7 @@
             </div>
         @endif
     </div>
-    <div class="row align-items-center">
+    <div class="row align-items-center d-none">
         @if(get_setting('product_query_activation') == 1)
             <!-- Ask about this product -->
             <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 mb-3">
@@ -80,11 +82,11 @@
 
     <!-- Brand Logo & Name -->
     @if ($detailedProduct->brand != null)
-        <div class="d-flex flex-wrap align-items-center mb-3">
+        <!-- <div class="d-flex flex-wrap align-items-center mb-3">
             <span class="text-secondary fs-14 fw-400 mr-4 w-80px">{{ translate('Brand') }}</span><br>
             <a href="{{ route('products.brand', $detailedProduct->brand->slug) }}"
                 class="text-reset hov-text-primary fs-14 fw-700">{{ $detailedProduct->brand->name }}</a>
-        </div>
+        </div> -->
     @endif
 
     {{-- Warranty --}}
@@ -106,7 +108,7 @@
     @endif
 
     <!-- Seller Info -->
-    <div class="d-flex flex-wrap align-items-center">
+    <div class="d-none flex-wrap align-items-center">
         <div class="d-flex align-items-center mr-4">
             <!-- Shop Name -->
             @if ($detailedProduct->added_by == 'seller' && get_setting('vendor_system_activation') == 1)
@@ -156,7 +158,6 @@
         @endif
     </div>
 
-    <hr>
 
     <!-- For auction product -->
     @if ($detailedProduct->auction_product)
@@ -242,9 +243,9 @@
         @else
             <!-- Without Wholesale -->
             @if (home_price($detailedProduct) != home_discounted_price($detailedProduct))
-                <div class="row no-gutters mb-3">
+                <div class="row no-gutters mb-3 d-none">
                     <div class="col-sm-2">
-                        <div class="text-secondary fs-14 fw-400">{{ translate('Price') }}</div>
+                        <div class="text-secondary fs-14 fw-400">{{ translate('Starting From') }}</div>
                     </div>
                     <div class="col-sm-10">
                         <div class="d-flex align-items-center">
@@ -297,9 +298,9 @@
                     </div>
                 </div>
             @else
-                <div class="row no-gutters mb-3">
+                <div class="row no-gutters mb-3 d-none">
                     <div class="col-sm-2">
-                        <div class="text-secondary fs-14 fw-400">{{ translate('Price') }}</div>
+                        <div class="text-secondary fs-14 fw-400">{{ translate('Starting From') }}</div>
                     </div>
                     <div class="col-sm-10">
                         <div class="d-flex align-items-center">
@@ -406,12 +407,28 @@
                     </div>
                 @endif
 
-                <!-- Quantity + Add to cart -->
-                <div class="row no-gutters mb-3">
-                    <div class="col-sm-2">
-                        <div class="text-secondary fs-14 fw-400 mt-2">{{ translate('Quantity') }}</div>
+      
+
+            <!-- Total Price -->
+            <div class="row no-gutters pb-3 align-items-center d-none" id="chosen_price_div">
+                <div class="col-sm-3">
+                    <div class="fs-16 dt_text fw-400 mt-1">{{ translate('Starting From') }}</div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="product-price">
+                        <strong id="chosen_price" class="fs-30 fw-400 dt_text ">
+
+                        </strong>
                     </div>
-                    <div class="col-sm-10">
+                </div>
+            </div>
+
+            <!-- Quantity + Add to cart -->
+                <div class="row no-gutters mb-3">
+                    <div class="col-sm-3">
+                        <div class=" fs-16 dt_text fw-400 mt-2">{{ translate('Quantity') }}</div>
+                    </div>
+                    <div class="col-sm-9">
                         <div class="product-quantity d-flex align-items-center">
                             <div class="row no-gutters align-items-center aiz-plus-minus mr-3" style="width: 130px;">
                                 <button class="btn col-auto btn-icon btn-sm btn-light rounded-0" type="button"
@@ -433,7 +450,7 @@
                                     $qty += $stock->qty;
                                 }
                             @endphp
-                            <div class="avialable-amount opacity-60">
+                            <div class="avialable-amount opacity-60 d-none">
                                 @if ($detailedProduct->stock_visibility_state == 'quantity')
                                     (<span id="available-quantity">{{ $qty }}</span>
                                     {{ translate('available') }})
@@ -444,24 +461,12 @@
                         </div>
                     </div>
                 </div>
+
+                          
             @else
                 <!-- Quantity -->
                 <input type="hidden" name="quantity" value="1">
             @endif
-
-            <!-- Total Price -->
-            <div class="row no-gutters pb-3 d-none" id="chosen_price_div">
-                <div class="col-sm-2">
-                    <div class="text-secondary fs-14 fw-400 mt-1">{{ translate('Total Price') }}</div>
-                </div>
-                <div class="col-sm-10">
-                    <div class="product-price">
-                        <strong id="chosen_price" class="fs-20 fw-700 text-primary">
-
-                        </strong>
-                    </div>
-                </div>
-            </div>
 
         </form>
     @endif
@@ -492,7 +497,7 @@
         @endif
     @else
         <!-- Add to cart & Buy now Buttons -->
-        <div class="mt-3">
+        <div class="mt-md-5 mt-4">
             @if ($detailedProduct->digital == 0)
                 @if (((get_setting('product_external_link_for_seller') == 1) && ($detailedProduct->added_by == "seller") && ($detailedProduct->external_link != null)) ||
                     (($detailedProduct->added_by != "seller") && ($detailedProduct->external_link != null)))
@@ -502,25 +507,25 @@
                     </a>
                 @else
                     <button type="button"
-                        class="btn btn-secondary-base mr-2 add-to-cart fw-600 min-w-150px rounded-0 text-white"
+                        class="btn black_color_buttons mr-2 add-to-cart fs-20 fw-400 min-w-180px rounded-0 text-white"
                         @if (Auth::check() || get_Setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif>
-                        <i class="las la-shopping-bag"></i> {{ translate('Add to cart') }}
+                        <i class="las la-shopping-bag"></i> {{ translate('Add to Bag') }}
                     </button>
-                    <button type="button" class="btn btn-primary buy-now fw-600 add-to-cart min-w-150px rounded-0"
+                    <button type="button" class="btn gray_color_buttons buy-now fs-20 fw-400 add-to-cart min-w-180px rounded-0"
                         @if (Auth::check() || get_Setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif>
                         <i class="la la-shopping-cart"></i> {{ translate('Buy Now') }}
                     </button>
                 @endif
-                <button type="button" class="btn btn-secondary out-of-stock fw-600 d-none" disabled>
+                <button type="button" class="btn btn-secondary out-of-stock fs-20 fw-400 d-none" disabled>
                     <i class="la la-cart-arrow-down"></i> {{ translate('Out of Stock') }}
                 </button>
             @elseif ($detailedProduct->digital == 1)
                 <button type="button"
-                    class="btn btn-secondary-base mr-2 add-to-cart fw-600 min-w-150px rounded-0 text-white"
+                    class="btn black_color_buttons mr-2 add-to-cart fs-20 fw-400 min-w-180px rounded-0 text-white"
                     @if (Auth::check() || get_Setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif>
-                    <i class="las la-shopping-bag"></i> {{ translate('Add to cart') }}
+                    <i class="las la-shopping-bag"></i> {{ translate('Add to Bag') }}
                 </button>
-                <button type="button" class="btn btn-primary buy-now fw-600 add-to-cart min-w-150px rounded-0"
+                <button type="button" class="btn gray_color_buttons buy-now fs-20 fw-400 add-to-cart min-w-180px rounded-0"
                     @if (Auth::check() || get_Setting('guest_checkout_activation') == 1) onclick="addToCart()" @else onclick="showLoginModal()" @endif>
                     <i class="la la-shopping-cart"></i> {{ translate('Buy Now') }}
                 </button>
@@ -601,7 +606,7 @@
     @endif
 
     <!-- Share -->
-    <div class="row no-gutters mt-4">
+    <div class="row no-gutters mt-4 d-none">
         <div class="col-sm-2">
             <div class="text-secondary fs-14 fw-400 mt-2">{{ translate('Share') }}</div>
         </div>

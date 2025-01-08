@@ -881,18 +881,17 @@
     $('#customers-testimonials').slick({
         infinite: true,
         slidesToShow: 3,
-        centerPadding: '150px',
+        centerPadding: '200px',
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 5000,
         centerMode: true, // Keeps the centered slide
-        centerPadding: '0', // Correct value for the center slide
         focusOnSelect: true,  // Ensures that the selected testimonial is active
         responsive: [
             {
                 breakpoint: 1170,
                 settings: {
-                    slidesToShow: 34,
+                    slidesToShow: 3,
                      // Add padding for larger screens
                 }
             },
@@ -900,14 +899,14 @@
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
-                    centerPadding: '50px', // Add padding for medium screens
+                    centerPadding: '0px', // Add padding for medium screens
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    centerPadding: '20px', // Add padding for smaller screens
+                    centerPadding: '0px', // Add padding for smaller screens
                 }
             }
         ]

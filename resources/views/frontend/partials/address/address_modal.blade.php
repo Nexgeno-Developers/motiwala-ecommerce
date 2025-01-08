@@ -11,7 +11,7 @@
             <form class="form-default" role="form" action="{{ route('addresses.store') }}" method="POST">
                 @csrf
                 <div class="modal-body c-scrollbar-light">
-                    <div class="p-3">
+                    <div class="p-3 fs-16">
                         <!-- Address -->
                         <div class="row">
                             <div class="col-md-2">

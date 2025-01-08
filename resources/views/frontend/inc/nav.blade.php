@@ -118,23 +118,23 @@
             <div class="container">
                 <div class="d-flex align-items-center">
                     <!-- top menu sidebar button -->
-                    <button type="button" class="btn d-lg-none mr-3 mr-sm-4 p-0 active" data-toggle="class-toggle"
+                    <button type="button" class="btn d-lg-none mr-sm-4 p-0 active" data-toggle="class-toggle"
                         data-target=".aiz-top-menu-sidebar">
                         <svg id="Component_43_1" data-name="Component 43 – 1" xmlns="http://www.w3.org/2000/svg"
-                            width="16" height="16" viewBox="0 0 16 16">
-                            <rect id="Rectangle_19062" data-name="Rectangle 19062" width="16" height="2"
-                                transform="translate(0 7)" fill="#919199" />
-                            <rect id="Rectangle_19063" data-name="Rectangle 19063" width="16" height="2"
-                                fill="#919199" />
-                            <rect id="Rectangle_19064" data-name="Rectangle 19064" width="16" height="2"
-                                transform="translate(0 14)" fill="#919199" />
+                            width="22" height="22" viewBox="0 0 22 22">
+                            <rect id="Rectangle_19062" data-name="Rectangle 19062" width="122" height="2"
+                                transform="translate(0 8)" fill="#fff" />
+                            <rect id="Rectangle_19063" data-name="Rectangle 19063" width="122" height="2"
+                                fill="#fff" />
+                            <rect id="Rectangle_19064" data-name="Rectangle 19064" width="122" height="2"
+                                transform="translate(0 16)" fill="#fff" />
                         </svg>
 
                     </button>
                     <!-- Header Logo -->
 
 
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-0">
                                <!-- Menu Bar -->
         <div class="d-none d-lg-block position-relative">
              @php
@@ -195,7 +195,7 @@
 
 
 
-                    <div class="col-md-2 pr-0">
+                    <div class="col-md-2 col-6 pr-md-0">
                         <a class="d-block py-20px  ml-0" href="{{ route('home') }}">
                             @php
                                 $header_logo = get_setting('header_logo');
@@ -211,14 +211,14 @@
                     </div>
 
 
-                    <div class="col-md-5">
+                    <div class="col-md-5 col-3 pdd-0">
 
                    
                     <div class="d-flex gap-2 justify-content-end">
-                        <div class="d-flex align-items-center justify-content-center justify-content-xl-start h-100">
+                        <div class="d-flex align-items-center justify-content-center justify-content-xl-start h-100 ">
                            
                             
-                            <ul class="list-inline mb-0 pl-0">
+                            <ul class="list-inline mb-0 pl-0 d-none d-lg-block">
                                 
                                           <li class="list-inline-item mr-0 animate-underline-white">
                                             <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
@@ -243,7 +243,7 @@
 
 
                          <!-- Search Icon for small device -->
-                    <div class="mr-2 ml-2 mt-19 ">
+                    <div class="mr-md-2 ml-2 mt-19 ">
                         <a class="d-block text-reset" href="javascript:void(0);" data-toggle="class-toggle"
                             data-target=".front-header-search">
                             <i class="las la-search la-flip-horizontal fs-24 text-white"></i>
@@ -251,7 +251,7 @@
                     </div>
     
                         <!-- Cart -->
-                    <div class="d-none d-xl-block align-self-stretch mr-2 ml-2 has-transition"
+                    <div class="d-none d-lg-block align-self-stretch mr-md-2 ml-2 has-transition"
                         data-hover="dropdown">
                         <div class="nav-cart-box dropdown h-100" id="cart_items" style="width: max-content;">
                             @include('frontend.partials.cart.cart')

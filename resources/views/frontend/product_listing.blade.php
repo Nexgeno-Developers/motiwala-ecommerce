@@ -36,13 +36,32 @@
 
 @section('content')
 
+
+     <div class="product_listing_section position-relative">
+        <div class="row align-items-center">
+            <div class="col-md-6 p-0"><img class="w-100" src="{{ static_asset('assets/img/earrning_image.webp') }}" /></div>
+            <div class="col-md-6 p-0">
+                <div class="product_listing_content gray_bg p-md-5">
+                    <h4 class="text_clr_green text-left mb-2"> @if(isset($category_id))
+                                            {{ $category->getTranslation('name') }}
+                                        @elseif(isset($query))
+                                            {{ translate('Search result for ') }}"{{ $query }}"
+                                        @else
+                                            {{ translate('All Products') }}
+                                        @endif</h4>
+                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when</p>
+                </div>
+            </div>
+        </div>
+</div>
+
     <section class="mb-4 pt-4">
         <div class="container sm-px-0 pt-2">
             <form class="" id="search-form" action="" method="GET">
                 <div class="row">
 
                     <!-- Sidebar Filters -->
-                    <div class="col-xl-3">
+                    <div class="col-xl-3 d-none">
                         <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-xl sidebar-right z-1035">
                             <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                             <div class="collapse-sidebar c-scrollbar-light text-left">
@@ -230,10 +249,10 @@
                     </div>
                     
                     <!-- Contents -->
-                    <div class="col-xl-9">
+                    <div class="col-xl-12">
                         
                         <!-- Breadcrumb -->
-                        <ul class="breadcrumb bg-transparent py-0 px-1">
+                        <ul class="breadcrumb bg-transparent py-0 px-1 d-none">
                             <li class="breadcrumb-item has-transition opacity-50 hov-opacity-100">
                                 <a class="text-reset" href="{{ route('home') }}">{{ translate('Home')}}</a>
                             </li>
@@ -254,7 +273,7 @@
                         </ul>
                         
                         <!-- Top Filters -->
-                        <div class="text-left">
+                        <div class="text-left d-none">
                             <div class="row gutters-5 flex-wrap align-items-center">
                                 <div class="col-lg col-10">
                                     <h1 class="fs-20 fs-md-24 fw-700 text-dark">
@@ -296,10 +315,10 @@
                         </div>
                         
                         <!-- Products -->
-                        <div class="px-3">
-                            <div class="row gutters-16 row-cols-xxl-4 row-cols-xl-3 row-cols-lg-4 row-cols-md-3 row-cols-2 border-top border-left">
+                        <div class="">
+                            <div class="row">
                                 @foreach ($products as $key => $product)
-                                    <div class="col border-right border-bottom has-transition hov-shadow-out z-1">
+                                    <div class="col-md-3 col-6 pddleft_m">
                                         @include('frontend.'.get_setting('homepage_select').'.partials.product_box_1',['product' => $product])
                                     </div>
                                 @endforeach
@@ -313,6 +332,22 @@
             </form>
         </div>
     </section>
+
+
+    
+
+
+     <div class="discovery_section position-relative">
+   <img class="w-100" src="{{ static_asset('assets/img/product_listing.webp') }}" />
+   <div class="discovery_content w-100">
+    <h4>Discover expertly crafted jewelry, inspired <span class="d-lg-block"></span>by Australia's natural beauty</h4>
+   </div>
+</div>
+
+
+
+
+
 
 @endsection
 
