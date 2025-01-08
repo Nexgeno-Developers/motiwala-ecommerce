@@ -147,7 +147,7 @@
                                     @foreach (json_decode(get_setting('header_menu_labels'), true) as $key => $value)
                                         <li class="list-inline-item mr-0 animate-underline-white">
                                             <a href="{{ json_decode(get_setting('header_menu_links'), true)[$key] }}"
-                                                class="fs-18 px-3 py-1 d-inline-block fw-400 {{ $nav_txt_color }} header_menu_links
+                                                class="fs-18 px-3 py-1 dt_text d-inline-block fw-400 {{ $nav_txt_color }} header_menu_links
                                             @if (url()->current() == json_decode(get_setting('header_menu_links'), true)[$key]) active @endif">
                                                 {{ translate($value) }}
                                             </a>
@@ -221,20 +221,20 @@
                             <ul class="list-inline mb-0 pl-0 d-none d-lg-block">
                                 
                                           <li class="list-inline-item mr-0 animate-underline-white">
-                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
+                                            <a href="/search" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links dt_text">
                                                Shop
                                             </a>
                                         </li>
 
                                           <li class="list-inline-item mr-0 animate-underline-white">
-                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
+                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links dt_text">
                                                About
                                             </a>
                                         </li>
                                
                                           <li class="list-inline-item mr-0 animate-underline-white">
-                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links text-white">
-                                               Location
+                                            <a href="/contact-us" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links dt_text">
+                                               Contact Us
                                             </a>
                                         </li>
 
@@ -246,7 +246,7 @@
                     <div class="mr-md-2 ml-2 mt-19 ">
                         <a class="d-block text-reset" href="javascript:void(0);" data-toggle="class-toggle"
                             data-target=".front-header-search">
-                            <i class="las la-search la-flip-horizontal fs-24 text-white"></i>
+                            <i class="las la-search la-flip-horizontal fs-24 dt_text"></i>
                         </a>
                     </div>
     
@@ -277,7 +277,7 @@
                                     @endif
                                 </span>
                                 <!-- Name -->
-                                <h4 class="h5 fs-14 fw-700 text-white ml-2 mb-0">{{ $user->name }}</h4>
+                                <h4 class="h5 fs-14 fw-700 dt_text ml-2 mb-0">{{ $user->name }}</h4>
                             </span>
                         @else
                             <!--Login & Registration -->
@@ -289,7 +289,7 @@
                                         viewBox="0 0 19.902 20.012">
                                         <path id="fe2df171891038b33e9624c27e96e367"
                                             d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1.006,1.006,0,1,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1,10,10,0,0,0-6.25-8.19ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z"
-                                            transform="translate(-2.064 -1.995)" fill="#fff" />
+                                            transform="translate(-2.064 -1.995)" fill="#1D1A15" />
                                     </svg>
                                 </span>
 </a>

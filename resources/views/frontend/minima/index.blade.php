@@ -50,6 +50,19 @@
     background-size: cover;
     padding: 0px !important;
 }
+.dt_text {
+    color: #fff !important;
+}
+.animate-underline-white:after {
+    background: #fff;
+}
+
+img.logo_width {
+    filter: invert(100%) brightness(100%);
+}
+header svg path {
+    fill: #fff !important;
+}
     </style>
 
     <!-- Sliders -->
@@ -149,7 +162,7 @@
     <div class="banner_content">
         <h4>Discover the Beauty of <span class="d-lg-block">Australian Craftsmanship</span></h4>
         <p class="text-white pt-md-3 pt-2">Handcrafted Jewelry, Inspired by Nature</p>
-        <div class="shop_now_button"><a href="" class="text-white">Shop Now</a></div>
+        <div class="shop_now_button"><a href="/search" class="text-white">Shop Now</a></div>
     </div>
 
 </div>
@@ -173,10 +186,11 @@
                                 <div class="">
                                     <div class="category_images h-100 w-100 w-xl-auto position-relative hov-scale-img overflow-hidden">
                                         <div class=" h-100 w-100 overflow-hidden">
-                                            <img src="{{ isset($category->coverImage->file_name) ? my_asset($category->coverImage->file_name) : static_asset('assets/img/placeholder.jpg') }}"
+                                           <a  href="{{ route('products.category', $category->slug) }}"><img src="{{ isset($category->coverImage->file_name) ? my_asset($category->coverImage->file_name) : static_asset('assets/img/placeholder.jpg') }}"
                                                 alt="{{ $category_name }}"
                                                 class="img-fit h-100 has-transition"
                                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                                                </a> 
                                         </div>
                                         <div class="has-transition h-80px w-100 d-flex flex-column align-items-center justify-content-center"
                                           >
@@ -243,11 +257,11 @@
     
 <section class="unique_section green_bg">
     <div class="row align-items-center">
-        <div class="col-md-4 p-0">
-            <div class="shop_imges position-relative">
-                <img class="w-100 margintp8" src="{{ static_asset('assets/img/unique_img1_new.webp') }}"/>
+        <div class="col-md-4 p-0 overflow-hidden margintp8">
+            <div class="shop_imges position-relative ">
+                <img class="w-100 has-transition " src="{{ static_asset('assets/img/unique_img1_new.webp') }}"/>
                  <div class="discover_absolute">
-                        <a class="title_bg_clr text-white " href="#">Shop Now</a>
+                        <a class="title_bg_clr text-white " href="/search">Shop Now</a>
                     </div>
             </div>
         </div>
@@ -264,18 +278,18 @@
            <div id="shop_slider" class="slick-slider bottom40">
              
              <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
              <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
-             </div>
-
-             <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
 
              <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
            </div>
     
@@ -564,22 +578,22 @@
             </div>
         </div>
          <div class="col-md-6 pr-0 pl-1 pb-1">
-            <div class="uinique_slider mt-3 mt-md-0">
+            <div class="uinique_slider mt-3 mt-md-0 overflow-hidden">
            <div id="category_slider" class="slick-slider">
              
              <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
              <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
-             </div>
-
-             <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
 
              <div class="item">
-                 <img class="w-100" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
            </div>
     
@@ -588,8 +602,8 @@
             </div>
         </div>
         <div class="col-md-6 pl-0 pr-1">
-            <div class="shop_imges position-relative mt-2 mt-md-0">
-                <img class="w-100" src="{{ static_asset('assets/img/category_images2.webp') }}"/>
+            <div class="shop_imges position-relative overflow-hidden mt-2 mt-md-0">
+                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images2.webp') }}"/>
                 <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
@@ -599,8 +613,8 @@
         </div>
 
         <div class="col-md-6 pr-0 pl-1">
-            <div class="shop_imges position-relative mt-3 mt-md-0">
-                <img class="w-100" src="{{ static_asset('assets/img/category_images3.webp') }}"/>
+            <div class="shop_imges position-relative overflow-hidden mt-3 mt-md-0">
+                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images3.webp') }}"/>
                  <div class="discover_absolute">
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
@@ -654,7 +668,7 @@
             <div class="col-md-6">
                 <div class="">
                     <p class="shop_content">is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
-                    <div class="shop_now_button2"><a href="">Shop Now</a></div>
+                    <div class="shop_now_button2"><a href="/search">Shop Now</a></div>
                 </div>
             </div>
         </div>

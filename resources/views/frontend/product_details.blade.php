@@ -56,6 +56,29 @@
 @endsection
 
 @section('content')
+
+<section class="breadcrums_sedction breacrums_bg">
+    <div class="container">
+    <h4 class="text-white text-center"> {{ $detailedProduct->getTranslation('name') }}</h4>
+
+<!-- Breadcrumb -->
+        <ul class="breadcrumb bg-transparent py-0 px-1 justify-content-center">
+            <li class="breadcrumb-item has-transition">
+                <a class="text-white fs-18" href="{{ route('home') }}">{{ translate('Home')}}</a>
+            </li>
+        
+                <li class="breadcrumb-item fs-18 fw-700  text-white">
+                    {{ $detailedProduct->getTranslation('name') }}
+                </li>
+           
+           
+        </ul>
+
+
+    </div>
+</section>
+
+
     <section class="mb-4 pt-3">
         <div class="container">
             <div class="bg-white py-3">

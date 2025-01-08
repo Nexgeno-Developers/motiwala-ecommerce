@@ -30,6 +30,26 @@
 @endsection
 
 @section('content')
+
+
+
+<section class="breadcrums_sedction breacrums_bg">
+    <div class="container">
+    <!-- Breadcrumb -->
+     <h4 class="text-white text-center">Contact Us</h4>
+        <ul class="breadcrumb bg-transparent py-0 px-1 justify-content-center">
+            <li class="breadcrumb-item fs-18">
+                <a class="text-white" href="{{ route('home') }}">{{ translate('Home')}}</a>
+            </li>
+            <li class="fs-18 text-white fw-400 breadcrumb-item">
+            <span>Contact Us</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+
 <section class="" style="background:#DAD0C4;">
     @php
         $lang = str_replace('_', '-', app()->getLocale());
@@ -43,9 +63,12 @@
 
                 <div class="col-lg-9">
                     <div class="p-3 p-md-4 p-xl-5">
-                         <h1 class="fs40 dt_text mb-5 text_clr_green ">{{ $page->getTranslation('title') }}</h1>
+                         <h1 class="fs40 mb-5 text_clr_green ">{{ $page->getTranslation('title') }}</h1>
                         <!-- <p class="fs-16 fw-400 mb-5">{{ $content->description }}</p> -->
                         <div class="contact_form_box">
+                            <div class="aboutbg_logo ">
+                        <img src="http://127.0.0.1:8000/assets/img/about_logo_bg.svg">
+                    </div>
                             <form class="form-default" role="form" action="{{ route('contact') }}" method="POST">
                                 @csrf
                                 
@@ -172,7 +195,7 @@
                      <div class="col-lg-4 text-center">
                         <div class="">
                             <span class="ml-3">
-                                <img class="w100 mb-4" src="{{ static_asset('assets/img/call_icons.svg') }}"/>
+                                <img class="w100 mb-4" src="{{ static_asset('assets/img/adress_icons.svg') }}"/>
                                 <!-- <span class="fs-19 fw-700">{{ translate('Phone') }}</span><br> -->
                                 <span class="fs-24 text_clr_green d-block">{!! str_replace("\n", "<br>", $content->address) !!}</span>
                             </span>

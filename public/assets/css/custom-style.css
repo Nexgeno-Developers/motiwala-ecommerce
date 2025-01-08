@@ -13,7 +13,12 @@ a {
 }
 
 .dt_text {
-    color: #1D1A15
+    color: #1D1A15 !important;
+}
+
+.animate-underline-white:after {
+    bottom: -5px;
+    background: #1D1A15;
 }
 
 .fs40 {
@@ -187,10 +192,14 @@ p.about_content_para1 {
 
 .header_position {
     position: relative;
+}
+
+.breacrums_bg {
+    position: relative;
     background-image: url(/assets/img/header_bg_img.webp);
     width: 100%;
     background-size: cover;
-    padding: 20px 0px 100px 0px;
+    padding: 20px 0px 45px 0px;
     background-position: center;
 }
 
@@ -499,12 +508,43 @@ p.about_content_para1 {
     object-position: center;
 }
 
+.contact_form_box .aboutbg_logo {
+    position: absolute;
+    left: 25%;
+    top: 19%;
+}
 
+.contact_form_box .aboutbg_logo img {
+    width: 156%;
+    opacity: 0.87;
+}
 
+.breadcrums_sedction h4 {
+    font-size: 40px;
+    padding-top: 40px;
+}
 
+.breadcrums_sedction li span {
+    position: relative;
+    top: 2px;
+}
 
+.breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #fff;
+    content: "/";
+    top: 2px;
+    position: relative;
+}
 
+.shop_imges img:hover {
+    transform: scale(1.1);
+}
 
+.uinique_slider img:hover {
+    transform: scale(1.1);
+}
 
 /*-- mobile device css---*/
 

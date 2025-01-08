@@ -36,8 +36,44 @@
 
 @section('content')
 
+<section class="breadcrums_sedction breacrums_bg">
+    <div class="container">
+    <h4 class="text-white text-center">
+        @if(isset($category_id) && $category_id)
+    {{ $category->getTranslation('name') }}
+@else
+    {{ translate('All Categories') }}
+@endif
+    </h4>
 
-     <div class="product_listing_section position-relative">
+<!-- Breadcrumb -->
+        <ul class="breadcrumb bg-transparent py-0 px-1 justify-content-center">
+            <li class="breadcrumb-item has-transition">
+                <a class="text-white fs-18" href="{{ route('home') }}">{{ translate('Home')}}</a>
+            </li>
+            @if(!isset($category_id))
+                <li class="breadcrumb-item fs-18 fw-700  text-white">
+                    {{ translate('All Categories')}}
+                </li>
+            @else
+                <li class="breadcrumb-item fs-18">
+                    <a class="text-white fs-18" href="{{ route('search') }}">{{ translate('All Categories')}}</a>
+                </li>
+            @endif
+            @if(isset($category_id))
+                <li class="text-white fs-18 fw-600 breadcrumb-item">
+                    <span>{{ $category->getTranslation('name') }}</span>
+                </li>
+            @endif
+        </ul>
+
+
+    </div>
+</section>
+
+
+
+     <div class="product_listing_section position-relative mt-5">
         <div class="row align-items-center">
             <div class="col-md-6 p-0"><img class="w-100" src="{{ static_asset('assets/img/earrning_image.webp') }}" /></div>
             <div class="col-md-6 p-0">

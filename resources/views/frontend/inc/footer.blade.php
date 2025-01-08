@@ -225,26 +225,27 @@
                     <h4 class="fs-20 text-white fw-400 mb-3">{{ translate('Categories') }}</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
-                                <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Rings
+                                <a href="/category/necklace" class="fs-16 text-soft-light animate-underline-white">
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Necklace
                                 </a>
                         </li>
 
                          <li class="mb-1">
-                                <a href="/" class="fs-16 text-soft-light animate-underline-white">
+                                <a href="/category/bracelet" class="fs-16 text-soft-light animate-underline-white">
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Bracelet
+                                </a>
+                        </li>
+
+                         <li class="mb-1">
+                                <a href="/category/earrings" class="fs-16 text-soft-light animate-underline-white">
                                   <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Earrings
                                 </a>
                         </li>
 
                          <li class="mb-1">
-                                <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Pendants
-                                </a>
-                        </li>
+                                <a href="/category/bangle" class="fs-16 text-soft-light animate-underline-white">
+                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Bangle
 
-                         <li class="mb-1">
-                                <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                  <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Gold
                                 </a>
                         </li>
 
@@ -263,8 +264,8 @@
                     <h4 class="fs-20 text-white fw-400 mb-md-3 mb-2">{{ translate('Usefull Links') }}</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
-                                <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Contact
+                                <a href="/contact-us" class="fs-16 text-soft-light animate-underline-white">
+                                    <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> Contact Us
                                 </a>
                         </li>
 
