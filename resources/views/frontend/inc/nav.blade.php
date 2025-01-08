@@ -123,11 +123,11 @@
                         <svg id="Component_43_1" data-name="Component 43 – 1" xmlns="http://www.w3.org/2000/svg"
                             width="22" height="22" viewBox="0 0 22 22">
                             <rect id="Rectangle_19062" data-name="Rectangle 19062" width="122" height="2"
-                                transform="translate(0 8)" fill="#fff" />
+                                transform="translate(0 8)" fill="#1D1A15" />
                             <rect id="Rectangle_19063" data-name="Rectangle 19063" width="122" height="2"
-                                fill="#fff" />
+                                fill="#1D1A15" />
                             <rect id="Rectangle_19064" data-name="Rectangle 19064" width="122" height="2"
-                                transform="translate(0 16)" fill="#fff" />
+                                transform="translate(0 16)" fill="#1D1A15" />
                         </svg>
 
                     </button>
