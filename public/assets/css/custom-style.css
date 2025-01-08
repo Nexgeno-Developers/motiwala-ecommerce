@@ -583,14 +583,14 @@ p.about_content_para1 {
 
     .banner_content h4 {
         color: #fff;
-        font-size: 30px;
+        font-size: 28px;
         line-height: 36px;
         font-weight: 500;
         letter-spacing: 0.5px;
     }
 
     .main_heading {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .discovery_section img {
@@ -601,7 +601,7 @@ p.about_content_para1 {
 
     .discovery_content h4 {
         color: #fff;
-        font-size: 30px;
+        font-size: 28px;
         font-weight: 500;
         line-height: 36px;
         letter-spacing: 0.5px;
@@ -631,7 +631,7 @@ p.about_content_para1 {
 
     .shop_content {
         font-weight: 400;
-        font-size: 30px;
+        font-size: 28px;
         line-height: 36px;
         padding-top: 20px;
     }
@@ -714,7 +714,7 @@ p.about_content_para1 {
     }
 
     .product_listing_content h4 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .pddleft_m {
@@ -733,7 +733,7 @@ p.about_content_para1 {
     }
 
     .fs40 {
-        font-size: 30px;
+        font-size: 28px;
         font-weight: 500;
     }
 
@@ -746,11 +746,15 @@ p.about_content_para1 {
     }
 
     .breadcrums_sedction h4 {
-        font-size: 26px;
+        font-size: 24px;
         padding-top: 15px;
     }
 
     .breacrums_bg {
         padding: 20px 0px 15px 0px;
+    }
+
+    .w100 {
+        width: 70px;
     }
 }

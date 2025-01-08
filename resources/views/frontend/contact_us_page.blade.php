@@ -63,7 +63,7 @@
 
                 <div class="col-lg-9">
                     <div class="p-3 p-md-4 p-xl-5">
-                         <h1 class="fs40 mb-5 text_clr_green ">{{ $page->getTranslation('title') }}</h1>
+                         <h1 class="fs40 mb-md-5 mb-4 text_clr_green ">{{ $page->getTranslation('title') }}</h1>
                         <!-- <p class="fs-16 fw-400 mb-5">{{ $content->description }}</p> -->
                         <div class="contact_form_box">
                             <div class="aboutbg_logo ">
@@ -75,14 +75,14 @@
 
                                 <div class="row">
                                     <div class="col-md-5">
-                                         <div class="form-group mb-5 pr-4">
+                                         <div class="form-group mb-md-5 mb-4 pr-md-4">
                                             <label for="name" class="fs-20 fw-400 text_clr_green">{{  translate('Name') }}</label>
                                             <input type="text" class="form-control rounded-0" value="{{ old('name') }}" placeholder="{{  translate('Enter Name') }}" name="name" required>
                                         </div>
                                     </div>
 
                                     <div class="col-md-5">
-                                         <div class="form-group mb-5 pl-4">
+                                         <div class="form-group mb-md-5 mb-4 pl-md-4">
                                             <label for="name" class="fs-20 fw-400 text_clr_green">{{  translate('Last Name') }}</label>
                                             <input type="text" class="form-control rounded-0" value="{{ old('name') }}" placeholder="{{  translate('Enter Name') }}" name="name" required>
                                         </div>
@@ -92,7 +92,7 @@
 
                                     <div class="col-md-5 ">
                                          <!-- Email -->
-                                        <div class="form-group mb-5 pr-4">
+                                        <div class="form-group mb-md-5 mb-4 pr-md-4">
                                             <label for="email" class="fs-20 fw-400 text_clr_green">{{  translate('Email') }}</label>
                                             <input type="email" class="form-control rounded-0" value="{{ old('email') }}" placeholder="{{  translate('Enter Email') }}" name="email" required>
                                         </div>
@@ -100,7 +100,7 @@
 
                                     <div class="col-md-5">
                                          <!-- Phone -->
-                                        <div class="form-group mb-5 pl-4">
+                                        <div class="form-group mb-md-5 mb-4 pl-md-4">
                                             <label for="phone" class="fs-20 fw-400 text_clr_green">{{  translate('Phone Number') }}</label>
                                             <input type="tel" class="form-control rounded-0" value="{{ old('phone') }}" placeholder="{{  translate('Enter Phone') }}" name="phone">
                                         </div>
@@ -125,7 +125,7 @@
 
                                     <div class="col-md-12">
                                         <!-- Submit Button -->
-                                <div class="mt-4 shop_now_button2">
+                                <div class="mt-md-4 mt-1 shop_now_button2">
                                     @if (env('MAIL_USERNAME') == null && env('MAIL_PASSWORD') == null)
                                         <a class=""
                                             href="javascript:void(1)" onclick="showWarning()">
@@ -183,9 +183,9 @@
     <div class="container">
         <div class="row">
                      <div class="col-lg-4 text-center">
-                        <div class="">
+                        <div class="mb-md-0 mb-4">
                             <span class="ml-3">
-                                <img class="w100 mb-4" src="{{ static_asset('assets/img/call_icons.svg') }}"/>
+                                <img class="w100 mb-md-4 mb-2" src="{{ static_asset('assets/img/call_icons.svg') }}"/>
                                 <!-- <span class="fs-19 fw-700">{{ translate('Phone') }}</span><br> -->
                                 <span class="fs-24 text_clr_green d-block">{{ $content->phone }}</span>
                             </span>
@@ -193,9 +193,9 @@
                      </div>
 
                      <div class="col-lg-4 text-center">
-                        <div class="">
+                        <div class="mb-md-0 mb-4">
                             <span class="ml-3">
-                                <img class="w100 mb-4" src="{{ static_asset('assets/img/adress_icons.svg') }}"/>
+                                <img class="w100 mb-md-4 mb-2" src="{{ static_asset('assets/img/adress_icons.svg') }}"/>
                                 <!-- <span class="fs-19 fw-700">{{ translate('Phone') }}</span><br> -->
                                 <span class="fs-24 text_clr_green d-block">{!! str_replace("\n", "<br>", $content->address) !!}</span>
                             </span>
@@ -205,7 +205,7 @@
                      <div class="col-lg-4 text-center">
                         <div class="">
                             <span class="ml-3">
-                                <img class="w100 mb-4" src="{{ static_asset('assets/img/envelope_icon.svg') }}"/>
+                                <img class="w100 mb-md-4 mb-2" src="{{ static_asset('assets/img/envelope_icon.svg') }}"/>
                                 <!-- <span class="fs-19 fw-700">{{ translate('Phone') }}</span><br> -->
                                 <span class="fs-24 text_clr_green d-block">{{ $content->email }}</span>
                             </span>

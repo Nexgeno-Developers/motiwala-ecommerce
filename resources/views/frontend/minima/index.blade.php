@@ -42,7 +42,9 @@
                 z-index: 1;
             }
         }
-
+.header_position svg#Component_43_1 rect {
+    fill: #fff !important;
+}
         .header_position {
     position: absolute !important;
     background-image: none;
