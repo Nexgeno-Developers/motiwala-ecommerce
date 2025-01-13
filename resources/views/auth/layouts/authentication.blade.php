@@ -63,7 +63,7 @@
             font-family: "Ysabeau SC", serif;
         }
 
-        .user_login_style {
+.user_login_style {
     background-image: url(/public/assets/img/login_bg_logo.webp) !important;
     background-size: 80% !important;
     background-repeat: no-repeat !important;

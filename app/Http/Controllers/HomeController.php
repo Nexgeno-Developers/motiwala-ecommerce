@@ -584,6 +584,12 @@ class HomeController extends Controller
         return view("frontend.policies.terms", compact('page'));
     }
 
+      public function aboutus()
+    {
+        $page =  Page::where('type', 'terms_conditions_page')->first();
+        return view("frontend.policies.terms", compact('page'));
+    }
+
     public function privacypolicy()
     {
         $page =  Page::where('type', 'privacy_policy_page')->first();

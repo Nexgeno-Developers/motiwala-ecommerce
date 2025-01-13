@@ -3,7 +3,7 @@
     <section class="bg-white overflow-hidden">
         <div class="row">
             <div class="col-xxl-6 col-xl-9 col-lg-10 col-md-7 mx-auto py-lg-4">
-                <div class="card shadow-none rounded-0 border-0">
+                <div class="card shadow-none rounded-0 border-0 bg_dark_org user_login_style">
                     <div class="row no-gutters">
                         <!-- Left Side Image-->
                         <div class="col-lg-6">
