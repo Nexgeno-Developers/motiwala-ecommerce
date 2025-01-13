@@ -414,6 +414,13 @@
     <script>
         @if (Route::currentRouteName() == 'home' || Route::currentRouteName() == '/')
 
+            $.post('{{ route('home.section.category_featured_products') }}', {
+                _token: '{{ csrf_token() }}'
+            }, function(data) {
+                $('#section_featured_category').html(data);
+                AIZ.plugins.slickCarousel();
+            });
+
             $.post('{{ route('home.section.featured') }}', {
                 _token: '{{ csrf_token() }}'
             }, function(data) {

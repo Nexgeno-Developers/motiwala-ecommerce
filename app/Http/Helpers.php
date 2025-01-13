@@ -1229,7 +1229,7 @@ if (!function_exists('getBaseURL')) {
         if(env('ENVIRONMENT') == "Production"){
             $root .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
         }
-        
+
         return $root;
     }
 }
@@ -1374,8 +1374,8 @@ if (!function_exists('checkout_done')) {
             $order->save();
 
             // Order paid notification to Customer, Seller, & Admin
-            EmailUtility::order_email($order, 'paid'); 
-            
+            EmailUtility::order_email($order, 'paid');
+
             try {
                 NotificationUtility::sendOrderPlacedNotification($order);
                 calculateCommissionAffilationClubPoint($order);
@@ -1765,6 +1765,22 @@ if (!function_exists('get_featured_products')) {
         });
     }
 }
+
+if (!function_exists('get_category_selected_products')) {
+    function get_category_selected_products(array $categoryIds)
+    {
+        // Generate a unique cache key based on selected categories
+        $cacheKey = 'category_selected_products_' . implode('_', $categoryIds);
+
+        return Cache::remember($cacheKey, 3600, function () use ($categoryIds) {
+            $product_query = Product::query();
+            return filter_products(
+                $product_query->whereIn('category_id', $categoryIds)
+            )->latest()->limit(12)->get();
+        });
+    }
+}
+
 
 if (!function_exists('get_best_selling_products')) {
     function get_best_selling_products($limit, $user_id = null)

@@ -66,6 +66,11 @@ class HomeController extends Controller
         return view('frontend.' . get_setting('homepage_select') . '.partials.newest_products_section', compact('newest_products'));
     }
 
+    public function load_featured_category_section()
+    {
+        return view('frontend.' . get_setting('homepage_select') . '.partials.featured_categories_section');
+    }
+
     public function load_featured_section()
     {
         return view('frontend.' . get_setting('homepage_select') . '.partials.featured_products_section');

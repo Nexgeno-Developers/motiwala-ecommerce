@@ -192,7 +192,7 @@ header svg path {
                                                 alt="{{ $category_name }}"
                                                 class="img-fit h-100 has-transition"
                                                 onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
-                                                </a> 
+                                                </a>
                                         </div>
                                         <div class="has-transition h-80px w-100 d-flex flex-column align-items-center justify-content-center"
                                           >
@@ -214,7 +214,7 @@ header svg path {
         </section>
     @endif
 
-   
+
 
     <!-- Banner section 1 -->
     @php $homeBanner1Images = get_setting('home_banner1_images', null, $lang);   @endphp
@@ -256,7 +256,7 @@ header svg path {
    </div>
 </div>
 
-    
+
 <section class="unique_section green_bg">
     <div class="row align-items-center">
         <div class="col-md-4 p-0 overflow-hidden margintp8">
@@ -278,7 +278,7 @@ header svg path {
          <div class="col-md-4 p-0">
             <div class="uinique_slider">
            <div id="shop_slider" class="slick-slider bottom40">
-             
+
              <div class="item">
                  <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
@@ -294,7 +294,7 @@ header svg path {
                  <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
              </div>
            </div>
-    
+
 
 
             </div>
@@ -302,31 +302,10 @@ header svg path {
     </div>
 </section>
 
+    <!-- Featured categories Products -->
+    <div id="section_featured_category" class="">
 
-<section class="pt-md-5 pt-4 pb-3 product_category_tabs">
-    <div class="container">
-        <div class="text-center">
-         <h3 class="main_heading text_clr_green pb-md-3 pb-0">Browse By Categories</h3>
-       </div>
-     <ul class="nav nav-pills mb-md-3 justify-content-center listing_tabs" id="pills-tab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Best Seller</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Bracelets</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Earrings</button>
-  </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"></div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"></div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"></div>
-</div>
     </div>
-</section>
-
 
     <!-- Featured Products -->
     <div id="section_featured" class="">
@@ -582,7 +561,7 @@ header svg path {
          <div class="col-md-6 pr-0 pl-1 pb-1">
             <div class="uinique_slider mt-3 mt-md-0 overflow-hidden">
            <div id="category_slider" class="slick-slider">
-             
+
              <div class="item">
                  <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
@@ -598,7 +577,7 @@ header svg path {
                  <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_slider1.webp') }}"/>
              </div>
            </div>
-    
+
 
 
             </div>
@@ -610,7 +589,7 @@ header svg path {
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
                     </div>
-                
+
             </div>
         </div>
 
@@ -621,7 +600,7 @@ header svg path {
                         <a class="title_bg_clr text-white " href="#">Antique Collections</a>
                         <a class="discover_text text-white " href="#">Discover More</a>
                     </div>
-                
+
             </div>
         </div>
     </div>
@@ -693,7 +672,7 @@ header svg path {
        <div class="text-center">
          <h3 class="main_heading text_clr_green pb-md-5 pb-2">Customer Experiences</h3>
        </div>
-      
+
            <div id="customers-testimonials" class="slick-slider" >
              <!-- TESTIMONIAL 1 -->
              <div class="item">
