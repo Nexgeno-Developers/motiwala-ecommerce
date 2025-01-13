@@ -64,7 +64,7 @@
         }
 
         .user_login_style {
-    background-image: url(../assets/img/login_bg_logo.webp) !important;
+    background-image: url(/public/assets/img/login_bg_logo.webp) !important;
     background-size: 80% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
