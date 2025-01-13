@@ -14,9 +14,10 @@
                     <div class="row align-items-center justify-content-center justify-content-lg-start h-100">
                         <div class="col-xxl-6 p-4 p-lg-5">
                             <!-- Site Icon -->
-                            <div class="size-48px mb-3 mx-auto mx-lg-0">
-                                <img src="{{ uploaded_asset(get_setting('site_icon')) }}" alt="{{ translate('Site Icon')}}" class="img-fit h-100">
-                            </div>
+                          <div class="login_logo_wdth">
+                                <a href="/"><img src="{{ static_asset('assets/img/logo.png') }}" alt="Logo"
+                                    class="login_width"></a>
+                               </div>
 
                             <!-- Titles -->
                             <div class="text-center text-lg-left">
@@ -45,7 +46,7 @@
                                             
                                             <div class="form-group email-form-group mb-1 d-none">
                                                 <label for="email" class="fs-12 fw-700 text-soft-dark">{{  translate('Email') }}</label>
-                                                <input type="email" class="form-control rounded-0 {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('johndoe@example.com') }}" name="email" id="email" autocomplete="off">
+                                                <input type="email" class="form-control rounded-0 {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('Enter your email') }}" name="email" id="email" autocomplete="off">
                                                 @if ($errors->has('email'))
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $errors->first('email') }}</strong>
@@ -59,7 +60,7 @@
                                         @else
                                             <div class="form-group">
                                                 <label for="email" class="fs-12 fw-700 text-soft-dark">{{  translate('Email') }}</label>
-                                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('johndoe@example.com') }}" name="email" id="email" autocomplete="off">
+                                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('Enter your email') }}" name="email" id="email" autocomplete="off">
                                                 @if ($errors->has('email'))
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $errors->first('email') }}</strong>

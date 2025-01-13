@@ -14,9 +14,10 @@
                 <div class="d-flex align-items-center right-content">
                     <div class="py-3 py-lg-4 px-3 px-xl-5 flex-grow-1">
                         <!-- Site Icon -->
-                        <div class="size-48px mb-3 mx-auto mx-lg-0">
-                            <img src="{{ uploaded_asset(get_setting('site_icon')) }}" alt="{{ translate('Site Icon')}}" class="img-fit h-100">
-                        </div>
+                     <div class="login_logo_wdth">
+                                <a href="/"><img src="{{ static_asset('assets/img/logo.png') }}" alt="Logo"
+                                    class="login_width"></a>
+                               </div>
                         <!-- Titles -->
                         <div class="text-center text-lg-left">
                             <h1 class="fs-20 fs-md-20 fw-700 text-primary" style="text-transform: uppercase;">{{ translate('Welcome to') }} {{ env('APP_NAME') }}</h1>
@@ -31,7 +32,7 @@
                                     <!-- Email -->
                                     <div class="form-group">
                                         <label for="email" class="fs-12 fw-700 text-soft-dark">{{  translate('Email') }}</label>
-                                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('johndoe@example.com') }}" name="email" id="email" autocomplete="off">
+                                        <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('Enter your email') }}" name="email" id="email" autocomplete="off">
                                         @if ($errors->has('email'))
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('email') }}</strong>

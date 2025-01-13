@@ -14,11 +14,12 @@
                                 </div>
                                     
                                 <!-- Right Side -->
-                                <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content" style="height: auto;">
+                                <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content bg_dark_org user_login_style" style="height: auto;">
                                     <!-- Site Icon -->
-                                    <div class="size-48px mb-3 mx-auto mx-lg-0">
-                                        <img src="{{ uploaded_asset(get_setting('site_icon')) }}" alt="{{ translate('Site Icon')}}" class="img-fit h-100">
-                                    </div>
+                               <div class="login_logo_wdth">
+                                <a href="/"><img src="{{ static_asset('assets/img/logo.png') }}" alt="Logo"
+                                    class="login_width"></a>
+                               </div>
 
                                     <!-- Titles -->
                                     <div class="text-center text-lg-left">
@@ -33,7 +34,7 @@
                                                 <div class="fs-15 fw-600 pb-2">{{ translate('Personal Info')}}</div>
                                                 <!-- Name -->
                                                 <div class="form-group">
-                                                    <label for="name" class="fs-12 fw-700 text-soft-dark">{{  translate('Your Name') }}</label>
+                                                    <label for="name" class="fs-18 fw-400 text-soft-dark">{{  translate('Your Name') }}</label>
                                                     <input type="text" class="form-control rounded-0{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}" placeholder="{{  translate('Full Name') }}" name="name" required>
                                                     @if ($errors->has('name'))
                                                         <span class="invalid-feedback" role="alert">
@@ -54,13 +55,13 @@
 
                                                 <!-- password -->
                                                 <div class="form-group mb-0">
-                                                    <label for="password" class="fs-12 fw-700 text-soft-dark">{{  translate('Password') }}</label>
+                                                    <label for="password" class="fs-18 fw-400 text-soft-dark">{{  translate('Password') }}</label>
                                                     <div class="position-relative">
                                                         <input type="password" class="form-control rounded-0{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{  translate('Password') }}" name="password" required>
                                                         <i class="password-toggle las la-2x la-eye"></i>
                                                     </div>
                                                     <div class="text-right mt-1">
-                                                        <span class="fs-12 fw-400 text-gray-dark">{{ translate('Password must contain at least 6 digits') }}</span>
+                                                        <span class="fs-16 fw-400 text-gray-dark">{{ translate('Password must contain at least 6 digits') }}</span>
                                                     </div>
                                                     @if ($errors->has('password'))
                                                         <span class="invalid-feedback" role="alert">
@@ -71,7 +72,7 @@
 
                                                 <!-- password Confirm -->
                                                 <div class="form-group">
-                                                    <label for="password_confirmation" class="fs-12 fw-700 text-soft-dark">{{  translate('Confirm Password') }}</label>
+                                                    <label for="password_confirmation" class="fs-18 fw-400 text-soft-dark">{{  translate('Confirm Password') }}</label>
                                                     <div class="position-relative">
                                                         <input type="password" class="form-control rounded-0" placeholder="{{  translate('Confirm Password') }}" name="password_confirmation" required>
                                                         <i class="password-toggle las la-2x la-eye"></i>
@@ -82,7 +83,7 @@
                                                 <div class="fs-15 fw-600 py-2">{{ translate('Basic Info')}}</div>
                                                 
                                                 <div class="form-group">
-                                                    <label for="shop_name" class="fs-12 fw-700 text-soft-dark">{{  translate('Shop Name') }}</label>
+                                                    <label for="shop_name" class="fs-18 fw-400 text-soft-dark">{{  translate('Shop Name') }}</label>
                                                     <input type="text" class="form-control rounded-0{{ $errors->has('shop_name') ? ' is-invalid' : '' }}" value="{{ old('shop_name') }}" placeholder="{{  translate('Shop Name') }}" name="shop_name" required>
                                                     @if ($errors->has('shop_name'))
                                                         <span class="invalid-feedback" role="alert">
@@ -92,7 +93,7 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="address" class="fs-12 fw-700 text-soft-dark">{{  translate('Address') }}</label>
+                                                    <label for="address" class="fs-18 fw-400 text-soft-dark">{{  translate('Address') }}</label>
                                                     <input type="text" class="form-control rounded-0{{ $errors->has('address') ? ' is-invalid' : '' }}" value="{{ old('address') }}" placeholder="{{  translate('Address') }}" name="address" required>
                                                     @if ($errors->has('address'))
                                                         <span class="invalid-feedback" role="alert">
