@@ -3,14 +3,14 @@
     <section class="bg-white overflow-hidden">
         <div class="row">
             <div class="col-xxl-6 col-xl-9 col-lg-10 col-md-7 mx-auto py-lg-4">
-                <div class="card shadow-none rounded-0 border-0 bg_dark_org user_login_style">
+                <div class="card shadow-none rounded-0 border-0">
                     <div class="row no-gutters">
                         <!-- Left Side Image-->
                         <div class="col-lg-6">
                             <img src="{{ uploaded_asset(get_setting('admin_login_page_image')) }}" alt="{{ translate('Admin Login Page Image') }}" class="img-fit h-100">
                         </div>
 
-                        <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content" style="height: auto;">
+                        <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content bg_dark_org user_login_style" style="height: auto;">
                             <!-- Site Icon -->
                            <div class="login_logo_wdth">
                                 <a href="/"><img src="{{ static_asset('assets/img/logo.png') }}" alt="Logo"
