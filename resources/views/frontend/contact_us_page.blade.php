@@ -67,7 +67,7 @@
                         <!-- <p class="fs-16 fw-400 mb-5">{{ $content->description }}</p> -->
                         <div class="contact_form_box">
                             <div class="aboutbg_logo ">
-                        <img src="http://127.0.0.1:8000/assets/img/about_logo_bg.svg">
+                        <img src="{{ static_asset('assets/img/about_logo_bg.svg') }}">
                     </div>
                             <form class="form-default" role="form" action="{{ route('contact') }}" method="POST">
                                 @csrf
