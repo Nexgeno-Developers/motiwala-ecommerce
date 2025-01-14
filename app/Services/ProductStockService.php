@@ -13,10 +13,10 @@ class ProductStockService
         $collection = collect($data);
 
         $options = ProductUtility::get_attribute_options($collection);
-        
+
         //Generates the combinations of customer choice options
         $combinations = (new CombinationService())->generate_combination($options);
-        
+
         $variant = '';
         if (count($combinations) > 0) {
             $product->variant_product = 1;
@@ -30,16 +30,25 @@ class ProductStockService
                 $product_stock->sku = request()['sku_' . str_replace('.', '_', $str)];
                 $product_stock->qty = request()['qty_' . str_replace('.', '_', $str)];
                 $product_stock->image = request()['img_' . str_replace('.', '_', $str)];
+
+                // Handle the new fields (gold_rate, gold_qty, diamond_price)
+                $product_stock->gold_rate = request()->get('gold_rate_' . str_replace('.', '_', $str), null);
+                $product_stock->gold_qty = request()->get('gold_qty_' . str_replace('.', '_', $str), null);
+                $product_stock->diamond_price = request()->get('diamond_price_' . str_replace('.', '_', $str), null);
+
                 $product_stock->save();
             }
         } else {
             unset($collection['colors_active'], $collection['colors'], $collection['choice_no']);
             $qty = $collection['current_stock'];
             $price = $collection['unit_price'];
+            $gold_rate = $collection['gold_rate'];
+            $gold_qty = $collection['gold_qty'];
+            $diamond_price = $collection['diamond_price'];
             unset($collection['current_stock']);
 
-            $data = $collection->merge(compact('variant', 'qty', 'price'))->toArray();
-            
+            $data = $collection->merge(compact('variant', 'gold_rate', 'gold_qty', 'diamond_price', 'qty', 'price'))->toArray();
+
             ProductStock::create($data);
         }
     }
