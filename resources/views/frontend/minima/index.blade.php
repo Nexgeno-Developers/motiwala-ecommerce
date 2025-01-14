@@ -643,7 +643,7 @@ header svg path {
             </div>
              <div class="col-md-6 order-md-2 order-1 pl-md-1">
                 <div class="mb-md-0 mb-3">
-                    <img class="w-100" src="{{ static_asset('assets/img/about_section_img.png') }}" />
+                    <img class="w-100" src="{{ static_asset('assets/img/about_section_img.webp') }}" />
                 </div>
             </div>
         </div>
@@ -664,7 +664,7 @@ header svg path {
         <div class="row align-items-center">
             <div class="col-md-6 pr-md-5">
                 <div class="">
-                    <img class="w-100" src="{{ static_asset('assets/img/about_img.png') }}" />
+                    <img class="w-100" src="{{ static_asset('assets/img/about_img.webp') }}" />
                 </div>
             </div>
             <div class="col-md-6">
