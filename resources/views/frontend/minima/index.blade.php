@@ -280,18 +280,18 @@ header svg path {
            <div id="shop_slider" class="slick-slider bottom40">
              
              <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
              </div>
              <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
-             </div>
-
-             <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
              </div>
 
              <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
              </div>
            </div>
     
