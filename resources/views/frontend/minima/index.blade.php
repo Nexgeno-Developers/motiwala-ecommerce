@@ -631,7 +631,7 @@ header svg path {
     <section class="about_section gray_bg">
         <div class="row align-items-center">
             <div class="col-md-6 order-md-1 order-2">
-                <div class="about_content_sec pl-md-5 pr-md-5">
+                <div class="about_content_sec pl-lg-5 pr-lg-5 pl-md-0 pr-md-0">
                     <h3 class="main_heading text_clr_green ">About BilkBox</h3>
                     <div class="aboutbg_logo ">
                         <img src="{{ static_asset('assets/img/about_logo_bg.svg') }}" />

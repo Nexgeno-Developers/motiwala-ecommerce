@@ -16,7 +16,7 @@
                 </div> -->
                 <!-- Products Section -->
                 <div class="px-sm-3">
-                    <div class="aiz-carousel sm-gutters-15 arrow-none" data-items="4" data-xl-items="4" data-lg-items="4"  data-md-items="4" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='false'>
+                    <div class="aiz-carousel sm-gutters-15 arrow-none" data-items="4" data-xl-items="4" data-lg-items="4"  data-md-items="3" data-sm-items="2" data-xs-items="2" data-arrows='true' data-infinite='false'>
                         @foreach (get_featured_products() as $key => $product)
                         <div class="carousel-box position-relative px-0 has-transition">
                             <div class="px-md-3 px-2">

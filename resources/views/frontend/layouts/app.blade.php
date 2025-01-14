@@ -898,7 +898,14 @@
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
+                    centerPadding: '0px', // Add padding for medium screens
+                }
+            },
+             {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
                     centerPadding: '0px', // Add padding for medium screens
                 }
             },
@@ -943,27 +950,6 @@ $(document).ready(function(){
         centerPadding: '0',
         dots: true,
         focusOnSelect: true,  // Ensures that the selected testimonial is active
-        responsive: [
-            {
-                breakpoint: 1170,
-                settings: {
-                    slidesToShow: 3,
-                    centerPadding: '150px',
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
     });
 });
 </script>
@@ -981,27 +967,7 @@ $(document).ready(function(){
         centerPadding: '0',
         dots: true,
         focusOnSelect: true,  // Ensures that the selected testimonial is active
-        responsive: [
-            {
-                breakpoint: 1170,
-                settings: {
-                    slidesToShow: 3,
-                    centerPadding: '150px',
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
+        
     });
 });
 </script>

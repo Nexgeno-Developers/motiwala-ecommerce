@@ -134,7 +134,7 @@
                     <!-- Header Logo -->
 
 
-                    <div class="col-md-5 col-0">
+                    <div class="col-lg-5 col-md-4 col-0">
                                <!-- Menu Bar -->
         <div class="d-none d-lg-block position-relative">
              @php
@@ -195,7 +195,7 @@
 
 
 
-                    <div class="col-md-2 col-6 pr-md-0">
+                    <div class="col-lg-2 col-md-3 col-6 pr-md-0 pl-md-0">
                         <a class="d-block py-md-20px py-10px ml-0" href="{{ route('home') }}">
                             @php
                                 $header_logo = get_setting('header_logo');
@@ -211,7 +211,7 @@
                     </div>
 
 
-                    <div class="col-md-5 col-3 pdd-0">
+                    <div class="col-lg-5 col-md-4 col-3 pdd-0">
 
                    
                     <div class="d-flex gap-2 justify-content-end">
@@ -227,7 +227,7 @@
                                         </li>
 
                                           <li class="list-inline-item mr-0 animate-underline-white">
-                                            <a href="/" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links dt_text">
+                                            <a href="/about-us" class="fs-18 px-3 py-1 d-inline-block fw-400 header_menu_links dt_text">
                                                About
                                             </a>
                                         </li>
@@ -243,7 +243,7 @@
 
 
                          <!-- Search Icon for small device -->
-                    <div class="mr-md-2 ml-2 mt-19 ">
+                    <div class="mr-md-2 ml-2 mt-19 header_searchs">
                         <a class="d-block text-reset" href="javascript:void(0);" data-toggle="class-toggle"
                             data-target=".front-header-search">
                             <i class="las la-search la-flip-horizontal fs-24 dt_text"></i>
