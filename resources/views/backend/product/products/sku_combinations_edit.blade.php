@@ -6,6 +6,15 @@
                 {{translate('Variant')}}
             </td>
             <td class="text-center">
+                {{translate('Gold Rate')}}
+            </td>
+            <td class="text-center">
+                {{translate('Gold Qty')}}
+            </td>
+            <td class="text-center">
+                {{translate('Diamond Price')}}
+            </td>
+            <td class="text-center">
                 {{translate('Variant Price')}}
             </td>
             <td class="text-center" data-breakpoints="lg">
@@ -58,6 +67,51 @@
                     <label for="" class="control-label">{{ $str }}</label>
                 </td>
                 <td>
+                    <input type="number" lang="en" name="gold_rate_{{ $str }}" value="@php
+                            if ($product->gold_rate == $gold_rate) {
+                                if($stock != null){
+                                    echo $stock->gold_rate;
+                                }
+                                else {
+                                    echo $gold_rate;
+                                }
+                            }
+                            else{
+                                echo $gold_rate;
+                            }
+                           @endphp" min="0" step="0.01" class="form-control gold-rate" required readonly>
+                </td>
+                <td>
+                    <input type="number" lang="en" name="gold_qty_{{ $str }}" value="@php
+                            if ($product->gold_qty == $gold_qty) {
+                                if($stock != null){
+                                    echo $stock->gold_qty;
+                                }
+                                else {
+                                    echo $gold_qty;
+                                }
+                            }
+                            else{
+                                echo $gold_qty;
+                            }
+                           @endphp" min="0" step="0.01" class="form-control gold-qty" required>
+                </td>
+                <td>
+                    <input type="number" lang="en" name="diamond_price_{{ $str }}" value="@php
+                            if ($product->diamond_price == $diamond_price) {
+                                if($stock != null){
+                                    echo $stock->diamond_price;
+                                }
+                                else {
+                                    echo $diamond_price;
+                                }
+                            }
+                            else{
+                                echo $diamond_price;
+                            }
+                           @endphp" min="0" step="0.01" class="form-control diamond-price" required>
+                </td>
+                <td>
                     <input type="number" lang="en" name="price_{{ $str }}" value="@php
                             if ($product->unit_price == $unit_price) {
                                 if($stock != null){
@@ -70,7 +124,7 @@
                             else{
                                 echo $unit_price;
                             }
-                           @endphp" min="0" step="0.01" class="form-control" required>
+                           @endphp" min="0" step="0.01" class="form-control variant-price" required readonly>
                 </td>
                 <td>
                     <input type="text" name="sku_{{ $str }}" value="@php
@@ -116,3 +170,4 @@
     </tbody>
 </table>
 @endif
+

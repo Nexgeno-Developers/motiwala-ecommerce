@@ -489,12 +489,56 @@
                                     </div>
                                     @endforeach
                                 </div>
+                                <!-- Current Gold Rate -->
+                                <div class="form-group row">
+                                    <label class="col-xxl-3 col-form-label fs-13">{{ translate('Current Gold Rate (18 Carat)') }}</label>
+                                    <div class="col-xxl-9 d-flex align-items-center">
+                                        <input type="number" class="form-control me-2"
+                                            id="gold_rate"
+                                            name="gold_rate"
+                                            value="{{ $product->gold_rate }}"
+                                            readonly>
+                                    </div>
+                                    <div class="mx-3 form-check">
+                                        <input type="checkbox" class="form-check-input"
+                                            id="toggle_gold_rate"
+                                            onchange="toggleGoldRate({{ $goldRate }}, {{ $product->gold_rate }})">
+                                        <label class="form-check-label fs-13" for="toggle_gold_rate">
+                                            {{ translate('Use New Gold Rate') }}
+                                        </label>
+                                    </div>
+                                </div>
 
+                                <!-- Quantity (Per Gram of Gold) -->
+                                <div class="form-group row">
+                                    <label class="col-xxl-3 col-form-label fs-13">{{ translate('Quantity (grams)') }}</label>
+                                    <div class="col-xxl-9">
+                                        <input type="number" class="form-control"
+                                            id="gold_qty"
+                                            name="gold_qty"
+                                            value="{{ $product->gold_qty }}"
+                                            placeholder="{{ translate('Enter quantity in grams') }}"
+                                            oninput="calculateUnitPrice()">
+                                    </div>
+                                </div>
+
+                                <!-- Diamond Price -->
+                                <div class="form-group row">
+                                    <label class="col-xxl-3 col-form-label fs-13">{{ translate('Diamond Price') }}</label>
+                                    <div class="col-xxl-9">
+                                        <input type="number" class="form-control"
+                                            id="diamond_price"
+                                            name="diamond_price"
+                                            value="{{ $product->diamond_price }}"
+                                            placeholder="{{ translate('Enter diamond price') }}"
+                                            oninput="calculateUnitPrice()">
+                                    </div>
+                                </div>
                                 <!-- Unit price -->
                                 <div class="form-group row">
                                     <label class="col-md-3 col-from-label">{{translate('Unit price')}} <span class="text-danger">*</span></label>
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="{{translate('Unit price')}}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror" value="{{$product->unit_price}}">
+                                        <input type="text" readonly id="unit_price" placeholder="{{translate('Unit price')}}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror" value="{{$product->unit_price}}">
                                     </div>
                                 </div>
 
@@ -778,7 +822,7 @@
                                 <label class="col-md-2 col-from-label">{{translate('Warranty')}}</label>
                                 <div class="col-md-10">
                                     <label class="aiz-switch aiz-switch-success mb-0">
-                                        <input type="checkbox" name="has_warranty" onchange="warrantySelection()" @if($product->has_warranty == 1) checked @endif> 
+                                        <input type="checkbox" name="has_warranty" onchange="warrantySelection()" @if($product->has_warranty == 1) checked @endif>
                                         <span></span>
                                     </label>
                                 </div>
@@ -787,10 +831,10 @@
                                 <div class="form-group row">
                                     <div class="col-md-2"></div>
                                     <div class="col-md-10">
-                                        <select class="form-control aiz-selectpicker" 
-                                            name="warranty_id" 
-                                            id="warranty_id" 
-                                            data-selected="{{ $product->warranty_id }}" 
+                                        <select class="form-control aiz-selectpicker"
+                                            name="warranty_id"
+                                            id="warranty_id"
+                                            data-selected="{{ $product->warranty_id }}"
                                             data-live-search="true"
                                             @if($product->has_warranty == 1) required @endif
                                         >
@@ -801,7 +845,7 @@
                                         </select>
 
                                         <input type="hidden" name="warranty_note_id" id="warranty_note_id">
-                                        
+
                                         <h5 class="fs-14 fw-600 mb-3 mt-4 pb-3" style="border-bottom: 1px dashed #e4e5eb;">{{translate('Warranty Note')}}</h5>
                                         <div id="warranty_note">
                                             @if($product->warrantyNote != null)
@@ -969,11 +1013,57 @@
 @endsection
 
 @section('script')
+<script>
+function toggleGoldRate(newRate, oldRate) {
+    var $goldRateInput = $('#gold_rate');
+    var isChecked = $('#toggle_gold_rate').prop('checked');
+
+    // Toggle the gold rate value
+    $goldRateInput.val(isChecked ? newRate : oldRate);
+    // Recalculate the unit price when toggling the gold rate
+    calculateUnitPrice();
+}
+
+function calculateUnitPrice() {
+    var goldRate = parseFloat($('#gold_rate').val()) || 0;
+    var qty = parseFloat($('#gold_qty').val()) || 1;
+    var diamondPrice = parseFloat($('#diamond_price').val()) || 0;
+
+    var unitPrice = (goldRate * qty) + diamondPrice;
+    $('#unit_price').val(unitPrice.toFixed(2));
+}
+
+</script>
+
 <!-- Treeview js -->
 <script src="{{ static_asset('assets/js/hummingbird-treeview.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function (){
+
+        // Update variant price when gold_qty or diamond_price is changed
+        $(document).on('change', '.gold-qty, .diamond-price', function () {
+            var row = $(this).closest('tr.variant'); // Get the closest row (tr) containing the variant
+
+            // Get the values for goldRate, goldQty, and diamondPrice
+            var goldRate = parseFloat(row.find('.gold-rate').val()) || 0;
+            var goldQty = parseFloat(row.find('.gold-qty').val()) || 1;
+            var diamondPrice = parseFloat(row.find('.diamond-price').val()) || 0;
+
+            // Prevent goldRate2 becoming 0 when goldQty2 is 0
+            var variantPrice;
+            if (goldQty2 === 0) {
+                // Set variant price as goldRate2 + diamondPrice2 if goldQty2 is 0
+                variantPrice = goldRate2 + diamondPrice2;
+            } else {
+                // Calculate the variant price as usual
+                variantPrice = (goldRate2 * goldQty2) + diamondPrice2;
+            }
+
+            // Update the variant price input field
+            row.find('.variant-price').val(variantPrice.toFixed(2));
+        });
+
         show_hide_shipping_div();
 
         $("#treeview").hummingbird();
@@ -1186,7 +1276,7 @@
             $('#warranty_id').removeAttr('required');
         }
     }
-    
+
     function noteModal(noteType){
         $.post('{{ route('get_notes') }}',{_token:'{{ @csrf_token() }}', note_type: noteType}, function(data){
             $('#note_modal #note_modal_content').html(data);
