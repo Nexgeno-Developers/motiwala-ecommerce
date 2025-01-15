@@ -510,7 +510,7 @@
                                             id="toggle_gold_rate"
                                             onchange="toggleGoldRate({{ $goldRate }}, {{ $product->gold_rate }})">
                                         <label class="form-check-label fs-13" for="toggle_gold_rate">
-                                            {{ translate('Use New Gold Rate') }}
+                                            {{ translate('Use System Gold Rate') }}
                                         </label>
                                     </div>
                                 </div>
