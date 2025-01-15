@@ -42,9 +42,10 @@ class ProductStockService
             unset($collection['colors_active'], $collection['colors'], $collection['choice_no']);
             $qty = $collection['current_stock'];
             $price = $collection['unit_price'];
-            $gold_rate = $collection['gold_rate'];
-            $gold_qty = $collection['gold_qty'];
-            $diamond_price = $collection['diamond_price'];
+            // Use default values for fields when not provided
+            $gold_rate = $collection->get('gold_rate', $product->gold_rate);
+            $gold_qty = $collection->get('gold_qty', $product->gold_qty);
+            $diamond_price = $collection->get('diamond_price', $product->diamond_price);
             unset($collection['current_stock']);
 
             $data = $collection->merge(compact('variant', 'gold_rate', 'gold_qty', 'diamond_price', 'qty', 'price'))->toArray();
