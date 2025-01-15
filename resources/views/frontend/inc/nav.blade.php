@@ -196,7 +196,7 @@
 
 
                     <div class="col-lg-2 col-md-3 col-6 pr-md-0 pl-md-0">
-                        <a class="d-block py-md-20px py-10px ml-0" href="{{ route('home') }}">
+                        <a class="d-block py-md-10px py-10px ml-0" href="{{ route('home') }}">
                             @php
                                 $header_logo = get_setting('header_logo');
                             @endphp
