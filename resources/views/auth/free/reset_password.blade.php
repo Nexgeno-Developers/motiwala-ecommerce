@@ -17,9 +17,10 @@
                         <div class="row align-items-center justify-content-center justify-content-lg-start h-100">
                             <div class="col-xxl-6 p-4 p-lg-5">
                                 <!-- Site Icon -->
-                                <div class="size-48px mb-3 mx-auto mx-lg-0">
-                                    <img src="{{ uploaded_asset(get_setting('site_icon')) }}" alt="{{ translate('Site Icon')}}" class="img-fit h-100">
-                                </div>
+                           <div class="login_logo_wdth">
+                                <a href="/"><img src="{{ static_asset('assets/img/logo.png') }}" alt="Logo"
+                                    class="login_width"></a>
+                               </div>
 
                                 <!-- Titles -->
                                 <div class="text-center text-lg-left">

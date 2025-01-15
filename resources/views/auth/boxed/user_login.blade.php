@@ -6,7 +6,7 @@
         <section class="bg-white overflow-hidden">
             <div class="row">
                 <div class="col-xxl-6 col-xl-9 col-lg-10 col-md-7 mx-auto py-lg-4">
-                    <div class="card shadow-none rounded-0 border-0">
+                    <div class="card shadow-none rounded-0 border-0 ">
                         <div class="row no-gutters">
                             <!-- Left Side Image-->
                             <div class="col-lg-6">
@@ -14,11 +14,12 @@
                             </div>
 
                             <!-- Right Side -->
-                            <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content" style="height: auto;">
+                            <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content bg_dark_org user_login_style" style="height: auto;">
                                 <!-- Site Icon -->
-                                <div class="size-48px mb-3 mx-auto mx-lg-0">
-                                    <img src="{{ uploaded_asset(get_setting('site_icon')) }}" alt="{{ translate('Site Icon')}}" class="img-fit h-100">
-                                </div>
+                                <div class="login_logo_wdth">
+                                <a href="/"><img src="{{ static_asset('assets/img/logo.png') }}" alt="Logo"
+                                    class="login_width"></a>
+                               </div>
 
                                 <!-- Titles -->
                                 <div class="text-center text-lg-left">
@@ -35,15 +36,15 @@
                                             <!-- Email or Phone -->
                                             @if (addon_is_activated('otp_system'))
                                                 <div class="form-group phone-form-group mb-1">
-                                                    <label for="phone" class="fs-12 fw-700 text-soft-dark">{{  translate('Phone') }}</label>
+                                                    <label for="phone" class="fs-18 fw-400 text-soft-dark">{{  translate('Phone') }}</label>
                                                     <input type="tel" id="phone-code" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }} rounded-0" value="{{ old('phone') }}" placeholder="" name="phone" autocomplete="off">
                                                 </div>
 
                                                 <input type="hidden" name="country_code" value="">
                                                 
                                                 <div class="form-group email-form-group mb-1 d-none">
-                                                    <label for="email" class="fs-12 fw-700 text-soft-dark">{{  translate('Email') }}</label>
-                                                    <input type="email" class="form-control rounded-0 {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('johndoe@example.com') }}" name="email" id="email" autocomplete="off">
+                                                    <label for="email" class="fs-18 fw-400 text-soft-dark">{{  translate('Email') }}</label>
+                                                    <input type="email" class="form-control rounded-0 {{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{  translate('Enter your email') }}" name="email" id="email" autocomplete="off">
                                                     @if ($errors->has('email'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('email') }}</strong>
@@ -52,12 +53,12 @@
                                                 </div>
                                                 
                                                 <div class="form-group text-right">
-                                                    <button class="btn btn-link p-0 text-primary fs-12 fw-400" type="button" onclick="toggleEmailPhone(this)"><i>*{{ translate('Use Email Instead') }}</i></button>
+                                                    <button class="btn btn-link p-0 text-primary fs-18 fw-400" type="button" onclick="toggleEmailPhone(this)"><i>*{{ translate('Use Email Instead') }}</i></button>
                                                 </div>
                                             @else
                                                 <div class="form-group">
-                                                    <label for="email" class="fs-12 fw-700 text-soft-dark">{{  translate('Email') }}</label>
-                                                    <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('johndoe@example.com') }}" name="email" id="email" autocomplete="off">
+                                                    <label for="email" class="fs-18 fw-400 text-soft-dark">{{  translate('Email') }}</label>
+                                                    <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('Enter your email') }}" name="email" id="email" autocomplete="off">
                                                     @if ($errors->has('email'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('email') }}</strong>
@@ -68,7 +69,7 @@
                                                 
                                             <!-- password -->
                                             <div class="form-group">
-                                                <label for="password" class="fs-12 fw-700 text-soft-dark">{{  translate('Password') }}</label>
+                                                <label for="password" class="fs-18 fw-400 text-soft-dark">{{  translate('Password') }}</label>
                                                 <div class="position-relative">
                                                     <input type="password" class="form-control rounded-0 {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ translate('Password')}}" name="password" id="password">
                                                     <i class="password-toggle las la-2x la-eye"></i>
@@ -78,21 +79,21 @@
                                             <div class="row mb-2">
                                                 <!-- Remember Me -->
                                                 <div class="col-6">
-                                                    <label class="aiz-checkbox">
+                                                    <label class="aiz-checkbox pt-0">
                                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                        <span class="has-transition fs-12 fw-400 text-gray-dark hov-text-primary">{{  translate('Remember Me') }}</span>
+                                                        <span class="has-transition fs-18 fw-400 text-gray-dark hov-text-primary">{{  translate('Remember Me') }}</span>
                                                         <span class="aiz-square-check"></span>
                                                     </label>
                                                 </div>
                                                 <!-- Forgot password -->
                                                 <div class="col-6 text-right">
-                                                    <a href="{{ route('password.request') }}" class="text-reset fs-12 fw-400 text-gray-dark hov-text-primary"><u>{{ translate('Forgot password?')}}</u></a>
+                                                    <a href="{{ route('password.request') }}" class="text-reset fs-18 fw-400 text-gray-dark hov-text-primary"><u>{{ translate('Forgot password?')}}</u></a>
                                                 </div>
                                             </div>
 
                                             <!-- Submit Button -->
                                             <div class="mb-4 mt-4">
-                                                <button type="submit" class="btn btn-primary btn-block fw-700 fs-14 rounded-0">{{  translate('Login') }}</button>
+                                                <button type="submit" class="btn btn-primary btn-block fw-400 fs-14 rounded-0">{{  translate('Login') }}</button>
                                             </div>
                                         </form>
 
@@ -115,7 +116,7 @@
                                         <!-- Social Login -->
                                         @if(get_setting('google_login') == 1 || get_setting('facebook_login') == 1 || get_setting('twitter_login') == 1 || get_setting('apple_login') == 1)
                                             <div class="text-center mb-3">
-                                                <span class="bg-white fs-12 text-gray">{{ translate('Or Login With')}}</span>
+                                                <span class="bg-white fs-18 text-gray">{{ translate('Or Login With')}}</span>
                                             </div>
                                             <ul class="list-inline social colored text-center mb-4">
                                                 @if (get_setting('facebook_login') == 1)
@@ -152,16 +153,16 @@
                                     </div>
 
                                     <!-- Register Now -->
-                                    <p class="fs-12 text-gray mb-0">
+                                    <p class="fs-18 text-gray mb-0">
                                         {{ translate('Dont have an account?')}}
-                                        <a href="{{ route('user.registration') }}" class="ml-2 fs-14 fw-700 animate-underline-primary">{{ translate('Register Now')}}</a>
+                                        <a href="{{ route('user.registration') }}" class="ml-2 fs-14 fw-400 animate-underline-primary">{{ translate('Register Now')}}</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <!-- Go Back -->
                         <div class="mt-3 mr-4 mr-md-0">
-                            <a href="{{ url()->previous() }}" class="ml-auto fs-14 fw-700 d-flex align-items-center text-primary" style="max-width: fit-content;">
+                            <a href="{{ url()->previous() }}" class="ml-auto fs-14 fw-400 d-flex align-items-center text-primary" style="max-width: fit-content;">
                                 <i class="las la-arrow-left fs-20 mr-1"></i>
                                 {{ translate('Back to Previous Page')}}
                             </a>

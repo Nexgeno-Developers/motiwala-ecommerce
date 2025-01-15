@@ -22,7 +22,7 @@
                             <!-- Email or Phone -->
                             <div class="form-group">
                                 <label for="email" class="fs-12 fw-500 text-secondary">{{  translate('Email') }}</label>
-                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('johndoe@example.com') }}" name="email" id="email" autocomplete="off">
+                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('Enter your email') }}" name="email" id="email" autocomplete="off">
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -39,7 +39,7 @@
                             <div class="row mb-2">
                                 <!-- Remember Me -->
                                 <div class="col-6">
-                                    <label class="aiz-checkbox">
+                                    <label class="aiz-checkbox pt-0">
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <span class="has-transition fs-12 fw-400 text-gray-dark hov-text-primary">{{  translate('Remember Me') }}</span>
                                         <span class="aiz-square-check"></span>

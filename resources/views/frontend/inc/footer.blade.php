@@ -180,7 +180,7 @@
         <div class="row">
             <!-- Quick links -->
 
-            <div class="col-md-5">
+            <div class="col-lg-5 col-md-12">
                 <a href="{{ route('home') }}" class="d-block footer_logo">
                 @if(get_setting('footer_logo') != null)
                     <img class="lazyload h-100px" src="{{ static_asset('assets/img/placeholder-rect.jpg') }}" data-src="{{ uploaded_asset(get_setting('footer_logo')) }}" alt="{{ env('APP_NAME') }}" height="100">
@@ -192,7 +192,7 @@
                     {!! get_setting('about_us_description',null,App::getLocale()) !!}
                 </div>
             </div>
-            <div class="col-md-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <div class="text-left">
                     <h4 class="fs-20 text-white fw-400 mb-3">
                         {{ get_setting('widget_one',null,App::getLocale()) }}
@@ -221,7 +221,7 @@
             </div>
 
             <!-- Contacts -->
-            <div class="col-md-3 col-6">
+            <div class="col-lg-3 col-md-3 col-6">
                 <div class="text-left">
                     <h4 class="fs-20 text-white fw-400 mb-3">{{ translate('Categories') }}</h4>
                     <ul class="list-unstyled">
@@ -253,18 +253,13 @@
                                 </a>
                         </li>
 
-                        <li class="mb-1">
-                             <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> 
-                                <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                 Bracelets & Bangels
-                                </a>
-                        </li>
+                      
                     </ul>
                 </div>
             </div>
 
 
-            <div class="col-md-2 col-12">
+            <div class="col-lg-2 col-md-3 col-12">
                 <div class="text-left">
                     <h4 class="fs-20 text-white fw-400 mb-md-3 mb-2">{{ translate('Usefull Links') }}</h4>
                     <ul class="list-unstyled">
@@ -435,19 +430,19 @@
             @endif
 
 
-            <div class="col-md-5"></div>
-            <div class="col-md-3">
+            <div class="col-md-5 d-lg-block d-md-none d-none"></div>
+            <div class="col-lg-3 col-md-3">
                   <ul class="list-unstyled mb-0 pt-3 pt-md-0">
                         <!-- <li class="mb-2">
                             <p  class="fs-13 text-secondary mb-1">{{ translate('Address') }}</p>
                             <p  class="fs-13 text-soft-light">{{ get_setting('contact_address',null,App::getLocale()) }}</p>
                         </li> -->
                         <li class="mb-0">
-                            <p  class="mb-0"><span class="fs-18 text-white">{{ translate('Contact Us') }}</span><span class="fs-16 text-soft-light"> {{ get_setting('contact_phone') }}</span></p>
+                            <p  class="mb-0"><span class="fs-18 text-white d-md-block d-lg-inline">{{ translate('Contact Us') }}</span><span class="fs-16 text-soft-light"> {{ get_setting('contact_phone') }}</span></p>
                         </li>
                         <li class="mb-0">
                             <p  class="mb-0">
-                                <span class="fs-18 text-white">{{ translate('Email') }}: </span><a href="mailto:{{ get_setting('contact_email') }}" class="fs-16 text-soft-light hov-text-primary">{{ get_setting('contact_email')  }}</a>
+                                <span class="fs-18 text-white d-md-block d-lg-inline">{{ translate('Email') }}: </span><a href="mailto:{{ get_setting('contact_email') }}" class="fs-16 text-soft-light">{{ get_setting('contact_email')  }}</a>
                             </p>
                         </li>
                     </ul>

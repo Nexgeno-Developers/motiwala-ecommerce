@@ -280,18 +280,18 @@ header svg path {
            <div id="shop_slider" class="slick-slider bottom40">
 
              <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
              </div>
              <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
-             </div>
-
-             <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
              </div>
 
              <div class="item">
-                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new.webp') }}"/>
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
+             </div>
+
+             <div class="item">
+                 <img class="w-100 has-transition" src="{{ static_asset('assets/img/unique_slider1_new1.webp') }}"/>
              </div>
            </div>
 
@@ -551,10 +551,10 @@ header svg path {
     <div class="row align-items-center">
         <div class="col-md-6 pl-0 pr-1 pb-1">
             <div class="shop_imges position-relative overflow-hidden mt-3 mt-md-0">
-                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images1.webp') }}"/>
+                <a href="/category/necklace"><img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images1.webp') }}"/></a>
                     <div class="discover_absolute">
-                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
-                        <a class="discover_text text-white " href="#">Discover More</a>
+                        <a class="title_bg_clr text-white " href="/category/necklace">Necklace</a>
+                        <a class="discover_text text-white " href="/category/necklace">Discover More</a>
                     </div>
             </div>
         </div>
@@ -584,10 +584,10 @@ header svg path {
         </div>
         <div class="col-md-6 pl-0 pr-1">
             <div class="shop_imges position-relative overflow-hidden mt-2 mt-md-0">
-                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images2.webp') }}"/>
+                <a href="/category/bracelet"><img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images2.webp') }}"/></a>
                 <div class="discover_absolute">
-                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
-                        <a class="discover_text text-white " href="#">Discover More</a>
+                        <a class="title_bg_clr text-white " href="/category/bracelet">Bracelet</a>
+                        <a class="discover_text text-white " href="/category/bracelet">Discover More</a>
                     </div>
 
             </div>
@@ -595,10 +595,10 @@ header svg path {
 
         <div class="col-md-6 pr-0 pl-1">
             <div class="shop_imges position-relative overflow-hidden mt-3 mt-md-0">
-                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images3.webp') }}"/>
+                <a href="/category/earrings"><img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images3.webp') }}"/></a>
                  <div class="discover_absolute">
-                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
-                        <a class="discover_text text-white " href="#">Discover More</a>
+                        <a class="title_bg_clr text-white " href="/category/earrings">Earrings</a>
+                        <a class="discover_text text-white " href="/category/earrings">Discover More</a>
                     </div>
 
             </div>
@@ -610,19 +610,19 @@ header svg path {
     <section class="about_section gray_bg">
         <div class="row align-items-center">
             <div class="col-md-6 order-md-1 order-2">
-                <div class="about_content_sec pl-md-5 pr-md-5">
-                    <h3 class="main_heading text_clr_green ">About BilkBox</h3>
+                <div class="about_content_sec pl-lg-5 pr-lg-5 pl-md-0 pr-md-0">
+                    <h3 class="main_heading text_clr_green ">About BlkBox</h3>
                     <div class="aboutbg_logo ">
                         <img src="{{ static_asset('assets/img/about_logo_bg.svg') }}" />
                     </div>
-                    <p class="about_content_para1">Experience luxury at About BilkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
+                    <p class="about_content_para1">Experience luxury at About BlkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
                     <p class="about_content_para2">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
-                    <div class="shop_now_button2"><a href="">Read More</a></div>
+                    <div class="shop_now_button2"><a href="/about-us">Read More</a></div>
                 </div>
             </div>
              <div class="col-md-6 order-md-2 order-1 pl-md-1">
                 <div class="mb-md-0 mb-3">
-                    <img class="w-100" src="{{ static_asset('assets/img/about_section_img.png') }}" />
+                    <img class="w-100" src="{{ static_asset('assets/img/about_section_img.webp') }}" />
                 </div>
             </div>
         </div>
@@ -643,7 +643,7 @@ header svg path {
         <div class="row align-items-center">
             <div class="col-md-6 pr-md-5">
                 <div class="">
-                    <img class="w-100" src="{{ static_asset('assets/img/about_img.png') }}" />
+                    <img class="w-100" src="{{ static_asset('assets/img/about_img.webp') }}" />
                 </div>
             </div>
             <div class="col-md-6">

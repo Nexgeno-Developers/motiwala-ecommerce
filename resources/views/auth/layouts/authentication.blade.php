@@ -24,11 +24,8 @@
     @endphp
     <link rel="icon" href="{{ $site_icon }}">
     <link rel="apple-touch-icon" href="{{ $site_icon }}">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
@@ -62,13 +59,55 @@
             --hov-primary: {{ get_setting('base_hov_color', '#9d1b1a') }};
             --soft-primary: {{ hex2rgba(get_setting('base_color', '#d43533'), 0.15) }};
         }
-        body{
-            font-family: 'Public Sans', sans-serif;
-            font-weight: 400;
+       body{
+            font-family: "Ysabeau SC", serif;
         }
 
+.user_login_style {
+    background-image: url(/public/assets/img/login_bg_logo.webp) !important;
+    background-size: 80% !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+.user_login_style label, .user_login_style h1, .user_login_style h5 {
+    color: #1D1A15 !important;
+}
+.user_login_style .form-control:focus {
+    border-width: 0px !important;
+    border-bottom: 1px solid #000 !important;
+}
+.login_logo_wdth img {
+    width: 130px;
+    margin-bottom: 50px;
+}
+.user_login_style label {
+    padding-bottom: 0 !important;
+    margin-bottom: 0;
+    padding-top: 10px;
+}
+.user_login_style .form-control {
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    height: calc(1.3125rem + 1.2rem + 2px);
+    border: 0px solid #dfdfe6;
+    color: #898b92;
+    border-bottom: 1px solid;
+    padding: 0;
+    background: transparent;
+    font-size: 16px;
+    padding-top: 0 !important;
+}
         .form-control:focus {
             border-width: 2px !important;
+        }
+        .bg_dark_org
+        {
+            background:#DAD0C41A;
+        }
+        .user_login_style
+        {
+
         }
         @media (max-width: 991px) {
             .right-content{

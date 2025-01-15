@@ -12,6 +12,17 @@ a {
     background-color: #F4F5F5;
 }
 
+.video_section {
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+.org_bg_light {
+    background-color: #DAD0C4;
+}
+
 .dt_text {
     color: #1D1A15 !important;
 }
@@ -28,7 +39,7 @@ a {
 
 .main_heading {
     font-weight: 400;
-    font-size: 47px;
+    font-size: 44px;
     line-height: 44px;
     letter-spacing: 0.5px;
 }
@@ -104,7 +115,7 @@ a {
     padding: 50px 30px 20px 30px;
     border-radius: 0;
     text-align: center;
-    height: 290px;
+    min-height: 290px;
 }
 
 #customers-testimonials .shadow-effect p {
@@ -199,7 +210,7 @@ p.about_content_para1 {
     background-image: url(/public/assets/img/header_bg_img.webp);
     width: 100%;
     background-size: cover;
-    padding: 20px 0px 45px 0px;
+    padding: 0px 0px 15px 0px;
     background-position: center;
 }
 
@@ -520,8 +531,9 @@ p.about_content_para1 {
 }
 
 .breadcrums_sedction h4 {
-    font-size: 40px;
-    padding-top: 40px;
+    font-size: 34px;
+    padding-top: 25px;
+    margin-bottom: 5px;
 }
 
 .breadcrums_sedction li span {
@@ -594,6 +606,11 @@ p.about_content_para1 {
     background-color: #243c40;
 }
 
+.right_side_menu li a {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
 .size_buttons {
     background: #F4F5F5;
     color: #1D1A15 !important;
@@ -649,6 +666,7 @@ p.about_content_para1 {
 
     .main_heading {
         font-size: 28px;
+        line-height: 32px;
     }
 
     .discovery_section img {
@@ -839,5 +857,296 @@ p.about_content_para1 {
 
     .min-w-180px {
         width: 175px;
+    }
+
+    .video_section {
+        height: auto;
+    }
+}
+
+
+@media(min-width:768px) and (max-width:991px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    .logo_width {
+        width: 115px !important;
+    }
+
+    .header_searchs {
+        margin-right: -20px !important;
+        padding-right: 0;
+        margin-top: 0;
+    }
+
+    .banner_video video#myVideo2 {
+        height: 450px;
+        width: 220% !important;
+        object-fit: cover;
+        left: -50%;
+    }
+
+    .banner_content {
+        position: absolute;
+        width: 92%;
+        bottom: 0;
+        z-index: 999;
+        left: 4%;
+    }
+
+    .shop_now_button a {
+        border: 1px solid;
+        padding: 5px 16px;
+        margin-top: 9px;
+        display: inline-block;
+        margin-bottom: 40px;
+        font-size: 16px;
+    }
+
+    .banner_content h4 {
+        color: #fff;
+        font-size: 28px;
+        line-height: 36px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .main_heading {
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .discovery_section img {
+        height: 50vh;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .discovery_content h4 {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 36px;
+        letter-spacing: 0.5px;
+    }
+
+    .title_bg_clr {
+        font-size: 20px;
+    }
+
+    .shadow-effect {
+        background: #fff;
+        padding: 45px 20px 20px 20px;
+        border-radius: 0;
+        text-align: center;
+        height: auto;
+    }
+
+    p,
+    a {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    div#customers-testimonials {
+        margin: 0px 15px;
+    }
+
+    .shop_content {
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 36px;
+        padding-top: 20px;
+    }
+
+    .shop_now_button2 a {
+        border: 1px solid;
+        padding: 5px 16px;
+        margin-top: 9px;
+        font-size: 16px;
+        color: #243C40;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .about_section {
+        padding: 30px 15px;
+    }
+
+    p.about_content_para1 {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+    }
+
+    .aboutbg_logo img {
+        width: 87%;
+    }
+
+    .aboutbg_logo {
+        position: absolute;
+        left: 11%;
+        top: 74px;
+    }
+
+    .discovery_content {
+        padding: 15px;
+    }
+
+    .uinique_box p.shop_content {
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .unique_section .uinique_box img {
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    .listing_tabs button {
+        font-size: 18px;
+        margin: 0px 10px !important;
+    }
+
+    .add_cart_btns {
+        border: 1px solid #243C40;
+        color: #243C40 !important;
+        opacity: 0.8;
+        margin-top: 14px;
+        font-weight: 300 !important;
+        height: auto;
+        padding-bottom: 3px;
+        font-size: 16px !important;
+    }
+
+    .pddright-100 {
+        padding-right: 0;
+    }
+
+    .footer_logo img {
+        width: 130px;
+        height: auto;
+    }
+
+    .pdd-0 {
+        padding: 0px;
+    }
+
+    .product_listing_content {
+        padding: 30px 30px;
+    }
+
+    .product_listing_content h4 {
+        font-size: 28px;
+    }
+
+    .pddleft_m {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pddleft_m:nth-child(odd) {
+        padding-left: 15px;
+        padding-right: 8px;
+    }
+
+    .pddleft_m:nth-child(even) {
+        padding-right: 15px !important;
+        padding-left: 8px;
+    }
+
+    .fs40 {
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    .min-w-180px {
+        font-size: 18px !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 10px;
+    }
+
+    .breadcrums_sedction h4 {
+        font-size: 24px;
+        padding-top: 15px;
+    }
+
+    .breacrums_bg {
+        padding: 20px 0px 15px 0px;
+    }
+
+    .w100 {
+        width: 70px;
+    }
+
+    .height_250 img {
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .offer_coupon {
+        background: #fff;
+        position: absolute;
+        z-index: 0;
+        right: -49px;
+        bottom: 195px;
+        transform: rotate(-48deg);
+        padding: 10px 37px;
+    }
+
+    .offer_coupon p {
+        color: #243c40;
+        margin-bottom: 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .min-w-180px {
+        width: 175px;
+    }
+
+    .video_section {
+        height: auto;
+    }
+}
+
+
+@media(min-width:992px) and (max-width:1199px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    .banner_content {
+        position: absolute;
+        width: 100%;
+        bottom: 60px;
+        z-index: 999;
+        left: 6%;
+    }
+
+    .banner_content h4 {
+        color: #fff;
+        font-size: 48px;
+        line-height: 55px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .header_position .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .header_position li a {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .shop_content {
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 55px;
     }
 }

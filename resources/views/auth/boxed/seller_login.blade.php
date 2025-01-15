@@ -6,7 +6,7 @@
         <section class="bg-white overflow-hidden">
             <div class="row">
                 <div class="col-xxl-6 col-xl-9 col-lg-10 col-md-7 mx-auto py-lg-4">
-                    <div class="card shadow-none rounded-0 border-0">
+                    <div class="card shadow-none rounded-0 border-0 ">
                         <div class="row no-gutters">
                             <!-- Left Side Image-->
                             <div class="col-lg-6">
@@ -14,11 +14,12 @@
                             </div>
                 
                             <!-- Right Side -->
-                            <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content" style="height: auto;">
+                            <div class="col-lg-6 p-4 p-lg-5 d-flex flex-column justify-content-center border right-content bg_dark_org user_login_style" style="height: auto;">
                                 <!-- Site Icon -->
-                                <div class="size-48px mb-3 mx-auto mx-lg-0">
-                                    <img src="{{ uploaded_asset(get_setting('site_icon')) }}" alt="{{ translate('Site Icon')}}" class="img-fit h-100">
-                                </div>
+                               <div class="login_logo_wdth">
+                                <a href="/"><img src="{{ static_asset('assets/img/logo.png') }}" alt="Logo"
+                                    class="login_width"></a>
+                               </div>
 
                                 <!-- Titles -->
                                 <div class="text-center text-lg-left">
@@ -32,8 +33,8 @@
                                             @csrf
                                             
                                             <div class="form-group">
-                                                <label for="email" class="fs-12 fw-700 text-soft-dark">{{  translate('Email') }}</label>
-                                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('johndoe@example.com') }}" name="email" id="email" autocomplete="off">
+                                                <label for="email" class="fs-18 fw-400 text-soft-dark">{{  translate('Email') }}</label>
+                                                <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} rounded-0" value="{{ old('email') }}" placeholder="{{  translate('Enter your email') }}" name="email" id="email" autocomplete="off">
                                                 @if ($errors->has('email'))
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $errors->first('email') }}</strong>
@@ -43,7 +44,7 @@
                                                 
                                             <!-- password -->
                                             <div class="form-group">
-                                                <label for="password" class="fs-12 fw-700 text-soft-dark">{{  translate('Password') }}</label>
+                                                <label for="password" class="fs-18 fw-400 text-soft-dark">{{  translate('Password') }}</label>
                                                 <div class="position-relative">
                                                     <input type="password" class="form-control rounded-0 {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ translate('Password')}}" name="password" id="password">
                                                     <i class="password-toggle las la-2x la-eye"></i>
@@ -53,9 +54,9 @@
                                             <div class="row mb-2">
                                                 <!-- Remember Me -->
                                                 <div class="col-6">
-                                                    <label class="aiz-checkbox">
+                                                    <label class="aiz-checkbox pt-0">
                                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                                        <span class="has-transition fs-12 fw-400 text-gray-dark hov-text-primary">{{  translate('Remember Me') }}</span>
+                                                        <span class="has-transition fs-16 fw-400 text-gray-dark hov-text-primary">{{  translate('Remember Me') }}</span>
                                                         <span class="aiz-square-check"></span>
                                                     </label>
                                                 </div>
@@ -89,7 +90,7 @@
                                     </div>
 
                                     <!-- Register Now -->
-                                    <p class="fs-12 text-gray mb-0">
+                                    <p class="fs-16 text-gray mb-0">
                                         {{ translate('Dont have an account?')}}
                                         <a href="{{ route('shops.create') }}" class="ml-2 fs-14 fw-700 animate-underline-primary">{{ translate('Register Now')}}</a>
                                     </p>
