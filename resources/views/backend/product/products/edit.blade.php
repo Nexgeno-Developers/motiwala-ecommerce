@@ -1026,13 +1026,33 @@ function toggleGoldRate(newRate, oldRate) {
 
 function calculateUnitPrice() {
     var goldRate = parseFloat($('#gold_rate').val()) || 0;
-    var qty = parseFloat($('#gold_qty').val()) || 0;
+    var qty = parseFloat($('#gold_qty').val()) || 1;
     var diamondPrice = parseFloat($('#diamond_price').val()) || 0;
 
     var unitPrice = (goldRate * qty) + diamondPrice;
     $('#unit_price').val(unitPrice.toFixed(2));
 }
 
+// Function to clear specific properties (e.g., unit_price, diamond_price, gold_qty) from localStorage
+function clearSpecificLocalStorageValues() {
+    // Get the existing object stored in localStorage (if exists)
+    let productData = JSON.parse(localStorage.getItem('tempdataproduct_physical'));
+
+    // Check if the object exists before trying to clear specific values
+    if (productData) {
+        // Remove specific properties
+        delete productData.unit_price;   // Remove the 'unit_price' property
+        delete productData.diamond_price; // Remove the 'diamond_price' property
+        delete productData.gold_qty;    // Remove the 'gold_qty' property
+
+        // Save the updated object back to localStorage
+        localStorage.setItem('tempdataproduct_physical', JSON.stringify(productData));
+
+        console.log('Specific properties cleared from localStorage.');
+    } else {
+        console.log('No product data found in localStorage.');
+    }
+}
 </script>
 
 <!-- Treeview js -->

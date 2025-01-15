@@ -148,6 +148,32 @@
     				</div>
     			</div>
 
+				<!-- Business setting gold price  -->
+    			<div class="col-lg-6">
+                    <div class="card shadow-none bg-light">
+    					<div class="card-header">
+    						<h6 class="mb-0">{{ translate('Gold Price Widget') }}</h6>
+    					</div>
+    					<div class="card-body">
+                            <form action="{{ route('business_settings.update') }}" method="POST" enctype="multipart/form-data">
+    							@csrf
+
+								<!-- Gold Rate -->
+                                <div class="form-group">
+    								<label>{{ translate('Gold Rate') }}</label>
+    								<input type="hidden" name="types[]" value="gold_rate_18_carat">
+    								<input type="text" class="form-control" placeholder="{{ translate('Phone') }}" name="gold_rate_18_carat" value="{{ get_setting('gold_rate_18_carat') }}">
+    							</div>
+
+								<!-- Update Button -->
+								<div class="mt-4 text-right">
+									<button type="submit" class="btn btn-success w-230px btn-md rounded-2 fs-14 fw-700 shadow-success">{{ translate('Update') }}</button>
+								</div>
+    						</form>
+    					</div>
+    				</div>
+    			</div>
+
 				<!-- Link Widget One -->
                 <div class="col-lg-12">
                     <div class="card shadow-none bg-light">

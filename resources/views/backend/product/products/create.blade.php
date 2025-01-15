@@ -462,9 +462,7 @@
                                         <input type="number"
                                             id="gold_qty"
                                             name="gold_qty"
-                                            value="{{ old('gold_qty', 1) }}"
                                             placeholder="{{ translate('Enter quantity in grams') }}"
-                                            oninput="calculateUnitPrice()"
                                             class="form-control @error('gold_qty') is-invalid @enderror">
 
                                     </div>
@@ -477,9 +475,7 @@
                                         <input type="number"
                                             id="diamond_price"
                                             name="diamond_price"
-                                            value="{{ old('diamond_price', 0) }}"
                                             placeholder="{{ translate('Enter diamond price') }}"
-                                            oninput="calculateUnitPrice()"
                                             class="form-control @error('diamond_price') is-invalid @enderror">
                                     </div>
                                 </div>
@@ -488,7 +484,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 col-from-label">{{translate('Unit price')}} <span class="text-danger">*</span></label>
                                     <div class="col-md-6">
-                                        <input value="{{ old('unit_price') }}" type="number" readonly id="unit_price" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror">
+                                        <input type="number" id="unit_price" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror">
                                     </div>
                                 </div>
                                 <!-- Discount Date Range -->
@@ -878,43 +874,6 @@
 @endsection
 
 @section('script')
-<script>
-function calculateUnitPrice() {
-    // alert('run');
-
-    // Get input values
-    let goldRate = $('#gold_rate').val() || 0;
-    let qty = $('#gold_qty').val() || 0;
-    let diamondPrice = parseFloat($('#diamond_price').val()) || 0;
-
-    // After parsing diamondPrice, reset the #unit_price input to 0
-    $('#unit_price').val(0);               // Set visible value to 0
-    $('#unit_price').attr('value', 0);     // Set value attribute to 0
-
-    // Log the values to see what's being used
-    // alert('Gold Rate: ' + goldRate);
-    // alert('Quantity: ' + qty);
-    // alert('Diamond Price: ' + diamondPrice);
-
-    // Calculate the unit price
-    const unitPricetoset = (goldRate * qty) + diamondPrice;
-
-    // alert('Calculated Unit Price: ' + unitPricetoset);
-
-    // Set the calculated unit price in the input field (visible value)
-    $('#unit_price').val(unitPricetoset.toFixed(2));      // Update the current visible value
-
-    // Only set the value attribute if it's empty
-    if ($('#unit_price').attr('value') === undefined || $('#unit_price').attr('value') === '') {
-        $('#unit_price').attr('value', unitPricetoset.toFixed(2));  // Update the value attribute in the HTML if it's empty
-    }
-
-}
-
-// Call the function initially to calculate unit price with default values
-calculateUnitPrice();
-
-</script>
 
 <!-- Treeview js -->
 <script src="{{ static_asset('assets/js/hummingbird-treeview.js') }}"></script>
@@ -922,6 +881,106 @@ calculateUnitPrice();
 <script type="text/javascript">
 
     $(document).ready(function() {
+        // Flag to track if the reset has already been done
+        let isPageLoaded = false;
+
+        function calculateUnitPrice() {
+            // Check if it's the first time the function is being called (on page load)
+            if (!isPageLoaded) {
+                clearSpecificLocalStorageValues();
+                // Reset values only once on page load
+                $('#gold_qty').val(1).attr('value', 1);              // Set gold_qty to 1
+                $('#diamond_price').val(0).attr('value', 0);         // Set diamond price to 0
+                $('#unit_price').val(0).attr('value', 0);            // Set unit price to 0
+
+                // Set the flag to true, indicating the reset has already been done
+                isPageLoaded = true;
+            }
+
+            // Get the input values
+            let goldRate = parseFloat($('#gold_rate').val()) || 0;      // Get gold rate
+            let goldQty = parseFloat($('#gold_qty').val()) || 1;        // Get quantity
+            let diamondPrice = parseFloat($('#diamond_price').val()) || 0; // Get diamond price
+
+            // Prevent goldRate becoming 0 when goldQty is 0
+            var unitPricetoset;
+            if (goldQty === 0) {
+                // Set variant price as goldRate + diamondPrice if qty is 0
+                unitPricetoset = goldRate + diamondPrice;
+            } else {
+                // Calculate the variant price as usual
+                unitPricetoset = (goldRate * goldQty) + diamondPrice;
+            }
+
+            // Set the calculated unit price in the input field (visible value)
+            $('#unit_price').val(unitPricetoset.toFixed(2));      // Update the current visible value
+
+            // Set the value attribute to match the visible value
+            $('#unit_price').attr('value', unitPricetoset.toFixed(2));  // Update the value attribute in the HTML
+
+            // Log after setting the value attribute
+            // alert('Updated Value Attribute: ' + $('#unit_price').attr('value'));
+        }
+
+        // Call the function initially to calculate unit price with default values
+        calculateUnitPrice();
+
+        $(document).on('input', '#gold_qty, #diamond_price', function() {
+            calculateUnitPrice();  // Call the calculateUnitPrice function when input changes
+        });
+
+        function updateVariantPrice(input) {
+            // Get the closest row (tr) containing the variant
+            var row = $(input).closest('tr.variant');
+
+            // Get the values for goldRate, goldQty2, and diamondPrice2
+            var goldRate2 = parseFloat(row.find('.gold-rate').val()) || 0;
+            var goldQty2 = parseFloat(row.find('.gold-qty').val()) || 1;  // Default goldQty2 to 1 if 0 or empty
+            var diamondPrice2 = parseFloat(row.find('.diamond-price').val()) || 0;
+
+            // Prevent goldRate2 becoming 0 when goldQty2 is 0
+            var variantPrice;
+            if (goldQty2 === 0) {
+                // Set variant price as goldRate2 + diamondPrice2 if goldQty2 is 0
+                variantPrice = goldRate2 + diamondPrice2;
+            } else {
+                // Calculate the variant price as usual
+                variantPrice = (goldRate2 * goldQty2) + diamondPrice2;
+            }
+
+            // Update the variant price input field
+            row.find('.variant-price').val(variantPrice.toFixed(2));
+        }
+
+        // Function to clear localStorage and reset form inputs
+        // function clearLocalStorageAndResetForm() {
+        //     // Clear the localStorage data (you can clear specific keys or all)
+        //     localStorage.removeItem('tempdataproduct_physical'); // Remove specific key
+        // }
+
+        // Function to clear specific properties (e.g., unit_price, diamond_price, gold_qty) from localStorage
+        function clearSpecificLocalStorageValues() {
+            // Get the existing object stored in localStorage (if exists)
+            let productData = JSON.parse(localStorage.getItem('tempdataproduct_physical'));
+
+            // Check if the object exists before trying to clear specific values
+            if (productData) {
+                // Remove specific properties
+                delete productData.unit_price;   // Remove the 'unit_price' property
+                delete productData.diamond_price; // Remove the 'diamond_price' property
+                delete productData.gold_qty;    // Remove the 'gold_qty' property
+
+                // Save the updated object back to localStorage
+                localStorage.setItem('tempdataproduct_physical', JSON.stringify(productData));
+
+                console.log('Specific properties cleared from localStorage.');
+            } else {
+                console.log('No product data found in localStorage.');
+            }
+        }
+
+
+
         $("#treeview").hummingbird();
 
         var main_id = '{{ old("category_id") }}';
