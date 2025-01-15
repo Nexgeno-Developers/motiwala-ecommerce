@@ -1033,26 +1033,6 @@ function calculateUnitPrice() {
     $('#unit_price').val(unitPrice.toFixed(2));
 }
 
-// Function to clear specific properties (e.g., unit_price, diamond_price, gold_qty) from localStorage
-function clearSpecificLocalStorageValues() {
-    // Get the existing object stored in localStorage (if exists)
-    let productData = JSON.parse(localStorage.getItem('tempdataproduct_physical'));
-
-    // Check if the object exists before trying to clear specific values
-    if (productData) {
-        // Remove specific properties
-        delete productData.unit_price;   // Remove the 'unit_price' property
-        delete productData.diamond_price; // Remove the 'diamond_price' property
-        delete productData.gold_qty;    // Remove the 'gold_qty' property
-
-        // Save the updated object back to localStorage
-        localStorage.setItem('tempdataproduct_physical', JSON.stringify(productData));
-
-        console.log('Specific properties cleared from localStorage.');
-    } else {
-        console.log('No product data found in localStorage.');
-    }
-}
 </script>
 
 <!-- Treeview js -->
@@ -1067,11 +1047,18 @@ function clearSpecificLocalStorageValues() {
 
             // Get the values for goldRate, goldQty, and diamondPrice
             var goldRate = parseFloat(row.find('.gold-rate').val()) || 0;
-            var goldQty = parseFloat(row.find('.gold-qty').val()) || 0;
+            var goldQty = parseFloat(row.find('.gold-qty').val()) || 1;
             var diamondPrice = parseFloat(row.find('.diamond-price').val()) || 0;
 
-            // Calculate the new variant price using the formula
-            var variantPrice = (goldRate * goldQty) + diamondPrice;
+            // Prevent goldRate2 becoming 0 when goldQty2 is 0
+            var variantPrice;
+            if (goldQty2 === 0) {
+                // Set variant price as goldRate2 + diamondPrice2 if goldQty2 is 0
+                variantPrice = goldRate2 + diamondPrice2;
+            } else {
+                // Calculate the variant price as usual
+                variantPrice = (goldRate2 * goldQty2) + diamondPrice2;
+            }
 
             // Update the variant price input field
             row.find('.variant-price').val(variantPrice.toFixed(2));
