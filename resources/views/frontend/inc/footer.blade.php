@@ -253,12 +253,7 @@
                                 </a>
                         </li>
 
-                        <li class="mb-1">
-                             <img class="footer_arrow" src="{{ static_asset('assets/img/left_arrow_1.svg') }}"/> 
-                                <a href="/" class="fs-16 text-soft-light animate-underline-white">
-                                 Bracelets & Bangels
-                                </a>
-                        </li>
+                      
                     </ul>
                 </div>
             </div>

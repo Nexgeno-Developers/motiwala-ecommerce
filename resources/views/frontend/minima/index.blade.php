@@ -632,11 +632,11 @@ header svg path {
         <div class="row align-items-center">
             <div class="col-md-6 order-md-1 order-2">
                 <div class="about_content_sec pl-lg-5 pr-lg-5 pl-md-0 pr-md-0">
-                    <h3 class="main_heading text_clr_green ">About BilkBox</h3>
+                    <h3 class="main_heading text_clr_green ">About BlkBox</h3>
                     <div class="aboutbg_logo ">
                         <img src="{{ static_asset('assets/img/about_logo_bg.svg') }}" />
                     </div>
-                    <p class="about_content_para1">Experience luxury at About BilkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
+                    <p class="about_content_para1">Experience luxury at About BlkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
                     <p class="about_content_para2">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
                     <div class="shop_now_button2"><a href="">Read More</a></div>
                 </div>

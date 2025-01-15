@@ -214,7 +214,7 @@
                     <div class="col-lg-5 col-md-4 col-3 pdd-0">
 
                    
-                    <div class="d-flex gap-2 justify-content-end">
+                    <div class="d-flex gap-2 justify-content-end right_side_menu">
                         <div class="d-flex align-items-center justify-content-center justify-content-xl-start h-100 ">
                            
                             

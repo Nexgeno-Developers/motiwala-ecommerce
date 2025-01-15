@@ -605,6 +605,11 @@ p.about_content_para1 {
     background-color: #243c40;
 }
 
+.right_side_menu li a {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
 .size_buttons {
     background: #F4F5F5;
     color: #1D1A15 !important;
