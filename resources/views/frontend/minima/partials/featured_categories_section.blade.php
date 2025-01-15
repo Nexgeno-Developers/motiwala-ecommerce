@@ -43,7 +43,7 @@ $categories = [
                                 <div class="carousel-box position-relative px-0 has-transition">
                                     <div class="px-md-3 px-2">
                                         @include(
-                                            'frontend.' . get_setting('homepage_select') . '.partials.product_box_3',
+                                            'frontend.' . get_setting('homepage_select') . '.partials.product_box_1',
                                             ['product' => $product]
                                         )
                                     </div>
@@ -59,7 +59,7 @@ $categories = [
 @endif
 <script>
     $('button[data-toggle="pill"]').on('shown.bs.tab', function () {
-    $('.aiz-carousel').slick('unslick'); // Destroy existing instance
-    AIZ.plugins.slickCarousel(); // Reinitialize the slider
-});
+        $('.aiz-carousel').slick('unslick'); // Destroy existing instance
+        AIZ.plugins.slickCarousel(); // Reinitialize the slider
+    });
 </script>

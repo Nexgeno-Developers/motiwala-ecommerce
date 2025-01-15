@@ -1,5 +1,6 @@
 @php
     $cart_added = [];
+    $photo_ids = explode(',', $product->photos); // Split the string into an array
 @endphp
 <div class="aiz-card-box h-auto pt-4 hov-scale-img product_boxex" style="background:#F4F5F5;">
     <div class="position-relative height_250 img-fit overflow-hidden">
@@ -10,48 +11,35 @@
             }
         @endphp
         <!-- Image -->
-        
+
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
              <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <a href="{{ $product_url }}" class="d-block height_250">
-            <img class="lazyload mx-auto img-fit has-transition custom-object-contain"
-                src="{{ get_image($product->thumbnail) }}"
-                alt="{{ $product->getTranslation('name') }}" title="{{ $product->getTranslation('name') }}"
-                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
-        </a>
-    </div>
-    <div class="carousel-item">
-      <a href="{{ $product_url }}" class="d-block height_250">
-            <img class="lazyload mx-auto img-fit has-transition custom-object-contain"
-                src="{{ get_image($product->thumbnail) }}"
-                alt="{{ $product->getTranslation('name') }}" title="{{ $product->getTranslation('name') }}"
-                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
-        </a>
-    </div>
-    <div class="carousel-item">
-      <a href="{{ $product_url }}" class="d-block height_250">
-            <img class="lazyload mx-auto img-fit has-transition custom-object-contain"
-                src="{{ get_image($product->thumbnail) }}"
-                alt="{{ $product->getTranslation('name') }}" title="{{ $product->getTranslation('name') }}"
-                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
-        </a>
-    </div>
-  </div>
-  <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a> -->
-</div>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <a href="{{ $product_url }}" class="d-block height_250">
+                        <img class="lazyload mx-auto img-fit has-transition custom-object-contain"
+                            src="{{ get_image($product->thumbnail) }}"
+                            alt="{{ $product->getTranslation('name') }}" title="{{ $product->getTranslation('name') }}"
+                            onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                    </a>
+                </div>
+                @foreach ($photo_ids as $key => $photo_id)
+                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                        <a href="{{ $product_url }}" class="d-block height_250">
+                            <img class="lazyload mx-auto img-fit has-transition custom-object-contain"
+                                src="{{ uploaded_asset($photo_id) }}"
+                                alt="{{ $product->getTranslation('name') }}"
+                                title="{{ $product->getTranslation('name') }}"
+                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
         <!-- Discount percentage tag -->
         @if (discount_in_percentage($product) > 0)
@@ -91,7 +79,7 @@
                     </svg>
                 </a>
             </div>
-            
+
         @endif
         @if (
             $product->auction_product == 1 &&
