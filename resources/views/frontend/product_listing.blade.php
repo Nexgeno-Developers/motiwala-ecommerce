@@ -73,7 +73,7 @@
 
 
 
-     <div class="product_listing_section position-relative mt-5 mb-3">
+     <div class="product_listing_section position-relative mb-3">
         <div class="row align-items-center">
             <div class="col-md-6 p-0"><img class="w-100" src="{{ static_asset('assets/img/earrning_image.webp') }}" /></div>
             <div class="col-md-6 p-0">
