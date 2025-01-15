@@ -72,10 +72,17 @@
 </section>
 
 
-
-     <div class="product_listing_section position-relative mb-3">
+@if( isset($category->banner))
+     <div class="product_listing_section position-relative mt-5 mb-3">
         <div class="row align-items-center">
-            <div class="col-md-6 p-0"><img class="w-100" src="{{ static_asset('assets/img/earrning_image.webp') }}" /></div>
+            <div class="col-md-6 p-0">
+                <img class="img-fluid h-auto lazyload mx-auto"
+                                                src="{{ static_asset('assets/img/placeholder.jpg') }}"
+                                                data-src="{{ $category->banner ? uploaded_asset($category->banner) : null}}"
+                                                onerror="this.onerror=null;this.src='{{ static_asset('assets/img/placeholder.jpg') }}';">
+                {{-- <img class="w-100" src="{{ static_asset($category->banner) }}" alt="{{ $category->getTranslation('name') }}" /> --}}
+            
+            </div>
             <div class="col-md-6 p-0">
                 <div class="product_listing_content gray_bg p-md-5">
                     <h4 class="text_clr_green text-left mb-2"> @if(isset($category_id))
@@ -85,11 +92,12 @@
                                         @else
                                             {{ translate('All Products') }}
                                         @endif</h4>
-                    <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when</p>
+                                        <p>{{ $category->getTranslation('description') }}</p>
                 </div>
             </div>
         </div>
 </div>
+@endif
 
     <section class="mb-4 pt-4">
         <div class="container sm-px-0 pt-2">

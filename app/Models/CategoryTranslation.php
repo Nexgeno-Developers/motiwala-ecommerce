@@ -9,7 +9,7 @@ class CategoryTranslation extends Model
 {
     use PreventDemoModeChanges;
 
-    protected $fillable = ['name', 'lang', 'category_id'];
+    protected $fillable = ['name', 'lang', 'category_id', 'description'];
 
     public function category(){
     	return $this->belongsTo(Category::class);

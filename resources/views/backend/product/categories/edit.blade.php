@@ -36,6 +36,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-3 col-form-label">{{ translate('Category Description') }}</label>
+                        <div class="col-md-9">
+                            <textarea name="description" rows="5" class="form-control">{{ old('description', $category->description ?? '') }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Type')}}</label>
                         <div class="col-md-9">
                             <select name="digital" onchange="categoriesByType(this.value)" required class="form-control aiz-selectpicker mb-2 mb-md-0">
