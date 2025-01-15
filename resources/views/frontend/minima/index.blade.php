@@ -638,7 +638,7 @@ header svg path {
                     </div>
                     <p class="about_content_para1">Experience luxury at About BlkBox, <span class="">where every piece is expertly crafted, </span> inspired by nature,</p>
                     <p class="about_content_para2">Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when </p>
-                    <div class="shop_now_button2"><a href="">Read More</a></div>
+                    <div class="shop_now_button2"><a href="/about-us">Read More</a></div>
                 </div>
             </div>
              <div class="col-md-6 order-md-2 order-1 pl-md-1">
