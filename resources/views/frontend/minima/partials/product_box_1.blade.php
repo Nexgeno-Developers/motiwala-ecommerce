@@ -19,7 +19,7 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item">
+                <div class="carousel-item active">
                     <a href="{{ $product_url }}" class="d-block height_250">
                         <img class="lazyload mx-auto img-fit has-transition custom-object-contain"
                             src="{{ get_image($product->thumbnail) }}"
@@ -28,7 +28,8 @@
                     </a>
                 </div>
                 @foreach ($photo_ids as $key => $photo_id)
-                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    {{-- <div class="carousel-item {{ $key == 0 ? 'active' : '' }}"> --}}
+                    <div class="carousel-item">
                         <a href="{{ $product_url }}" class="d-block height_250">
                             <img class="lazyload mx-auto img-fit has-transition custom-object-contain"
                                 src="{{ uploaded_asset($photo_id) }}"
