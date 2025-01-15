@@ -63,6 +63,7 @@ class CategoryController extends Controller
     {
         $category = new Category;
         $category->name = $request->name;
+        $category->description = $request->input('description');
         $category->order_level = 0;
         if($request->order_level != null) {
             $category->order_level = $request->order_level;
@@ -97,6 +98,7 @@ class CategoryController extends Controller
 
         $category_translation = CategoryTranslation::firstOrNew(['lang' => env('DEFAULT_LANGUAGE'), 'category_id' => $category->id]);
         $category_translation->name = $request->name;
+        $category_translation->description = $request->input('description');
         $category_translation->save();
 
         flash(translate('Category has been inserted successfully'))->success();
@@ -150,6 +152,7 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         if($request->lang == env("DEFAULT_LANGUAGE")){
             $category->name = $request->name;
+            $category->description = $request->input('description');
         }
         if($request->order_level != null) {
             $category->order_level = $request->order_level;
@@ -202,6 +205,7 @@ class CategoryController extends Controller
 
         $category_translation = CategoryTranslation::firstOrNew(['lang' => $request->lang, 'category_id' => $category->id]);
         $category_translation->name = $request->name;
+        $category_translation->description = $request->input('description');
         $category_translation->save();
 
         Cache::forget('featured_categories');

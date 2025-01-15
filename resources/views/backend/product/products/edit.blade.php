@@ -230,6 +230,12 @@
                                         <textarea class="aiz-text-editor" name="description">{{ $product->getTranslation('description', $lang) }}</textarea>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="fs-13">{{translate('specification')}}</label>
+                                    <div class="">
+                                        <textarea class="aiz-text-editor" name="specification">{{ $product->specification }}</textarea>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Status -->
