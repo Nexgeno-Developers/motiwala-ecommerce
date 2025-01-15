@@ -5,6 +5,15 @@
 			<td class="text-center">
 				{{translate('Variant')}}
 			</td>
+            <td class="text-center">
+                {{translate('Gold Rate')}}
+            </td>
+            <td class="text-center">
+                {{translate('Gold Qty')}}
+            </td>
+            <td class="text-center">
+                {{translate('Diamond Price')}}
+            </td>
 			<td class="text-center">
 				{{translate('Variant Price')}}
 			</td>
@@ -50,6 +59,15 @@
 			<tr class="variant">
 				<td>
 					<label for="" class="control-label">{{ $str }}</label>
+				</td>
+				<td>
+					<input type="number" lang="en" name="gold_rate_{{ $str }}" value="{{ $gold_rate }}" min="0" step="0.01" class="form-control" required>
+				</td>
+				<td>
+					<input type="number" lang="en" name="gold_qty_{{ $str }}" value="{{ $gold_qty }}" min="1" step="1" class="form-control" required>
+				</td>
+				<td>
+					<input type="number" lang="en" name="diamond_price_{{ $str }}" value="{{ $diamond_price }}" min="0" step="0.01" class="form-control" required>
 				</td>
 				<td>
 					<input type="number" lang="en" name="price_{{ $str }}" value="{{ $unit_price }}" min="0" step="0.01" class="form-control" required>

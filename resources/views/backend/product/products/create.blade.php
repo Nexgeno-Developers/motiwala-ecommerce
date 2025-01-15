@@ -443,11 +443,49 @@
 
                                 </div>
 
+                                <!-- Current Gold Rate -->
+                                <div class="form-group row">
+                                    <label class="col-xxl-3 col-form-label fs-13">{{ translate('Current Gold Rate (18 Carat)') }}</label>
+                                    <div class="col-xxl-9 d-flex align-items-center">
+                                        <input type="number" class="form-control me-2"
+                                            id="gold_rate"
+                                            name="gold_rate"
+                                            value="{{ $goldRate }}"
+                                            readonly>
+                                    </div>
+                                </div>
+
+                                <!-- Quantity (Per Gram of Gold) -->
+                                <div class="form-group row">
+                                    <label class="col-xxl-3 col-form-label fs-13">{{ translate('Quantity (grams)') }}</label>
+                                    <div class="col-xxl-9">
+                                        <input type="number" class="form-control"
+                                            id="gold_qty"
+                                            name="gold_qty"
+                                            value="1"
+                                            placeholder="{{ translate('Enter quantity in grams') }}"
+                                            oninput="calculateUnitPrice()">
+                                    </div>
+                                </div>
+
+                                <!-- Diamond Price -->
+                                <div class="form-group row">
+                                    <label class="col-xxl-3 col-form-label fs-13">{{ translate('Diamond Price') }}</label>
+                                    <div class="col-xxl-9">
+                                        <input type="number" class="form-control"
+                                            id="diamond_price"
+                                            name="diamond_price"
+                                            value="0"
+                                            placeholder="{{ translate('Enter diamond price') }}"
+                                            oninput="calculateUnitPrice()">
+                                    </div>
+                                </div>
+
                                 <!-- Unit price -->
                                 <div class="form-group row">
                                     <label class="col-md-3 col-from-label">{{translate('Unit price')}} <span class="text-danger">*</span></label>
                                     <div class="col-md-6">
-                                        <input type="number" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror">
+                                        <input type="number" readonly id="unit_price" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror">
                                     </div>
                                 </div>
                                 <!-- Discount Date Range -->
@@ -728,9 +766,9 @@
                                 <div class="form-group row">
                                     <div class="col-md-2"></div>
                                     <div class="col-md-10">
-                                        <select class="form-control aiz-selectpicker" 
-                                            name="warranty_id" 
-                                            id="warranty_id" 
+                                        <select class="form-control aiz-selectpicker"
+                                            name="warranty_id"
+                                            id="warranty_id"
                                             data-live-search="true">
                                             <option value="">{{ translate('Select Warranty') }}</option>
                                             @foreach (\App\Models\Warranty::all() as $warranty)
@@ -739,7 +777,7 @@
                                         </select>
 
                                         <input type="hidden" name="warranty_note_id" id="warranty_note_id">
-                                        
+
                                         <h5 class="fs-14 fw-600 mb-3 mt-4 pb-3" style="border-bottom: 1px dashed #e4e5eb;">{{translate('Warranty Note')}}</h5>
                                         <div id="warranty_note" class="">
 
@@ -837,6 +875,19 @@
 @endsection
 
 @section('script')
+<script>
+    function calculateUnitPrice() {
+        const goldRate = parseFloat(document.getElementById('gold_rate').value) || 0;
+        const qty = parseFloat(document.getElementById('gold_qty').value) || 0;
+        const diamondPrice = parseFloat(document.getElementById('diamond_price').value) || 0;
+
+        const unitPrice = (goldRate * qty) + diamondPrice;
+        document.getElementById('unit_price').value = unitPrice.toFixed(2);
+    }
+
+    // Call the function initially to calculate unit price with default values
+    calculateUnitPrice();
+</script>
 
 <!-- Treeview js -->
 <script src="{{ static_asset('assets/js/hummingbird-treeview.js') }}"></script>
@@ -1041,7 +1092,7 @@
             $('#warranty_id').removeAttr('required');
         }
     }
-    
+
     function noteModal(noteType){
         $.post('{{ route('get_notes') }}',{_token:'{{ @csrf_token() }}', note_type: noteType}, function(data){
             $('#note_modal #note_modal_content').html(data);

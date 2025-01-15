@@ -14,6 +14,7 @@ use App\Models\ProductCategory;
 use App\Models\Review;
 use App\Models\Wishlist;
 use App\Models\User;
+use App\Models\BusinessSetting;
 use App\Notifications\ShopProductNotification;
 use Carbon\Carbon;
 use CoreComponentRepository;
@@ -185,7 +186,10 @@ class ProductController extends Controller
             ->with('childrenCategories')
             ->get();
 
-        return view('backend.product.products.create', compact('categories'));
+        // Fetch the current gold rate from the business_settings table
+        $goldRate = BusinessSetting::where('type', 'gold_rate_18_carat')->value('value');
+
+        return view('backend.product.products.create', compact('categories', 'goldRate'));
     }
 
     public function add_more_choice_option(Request $request)
@@ -238,13 +242,13 @@ class ProductController extends Controller
         $this->frequentlyBoughtProductService->store($request->only([
             'product_id', 'frequently_bought_selection_type', 'fq_bought_product_ids', 'fq_bought_product_category_id'
         ]));
-       
+
         // Product Translations
         $request->merge(['lang' => env('DEFAULT_LANGUAGE')]);
         ProductTranslation::create($request->only([
             'lang', 'name', 'unit', 'description', 'product_id'
         ]));
-        
+
         flash(translate('Product has been inserted successfully'))->success();
 
         Artisan::call('view:clear');
@@ -285,7 +289,12 @@ class ProductController extends Controller
             ->where('digital', 0)
             ->with('childrenCategories')
             ->get();
-        return view('backend.product.products.edit', compact('product', 'categories', 'tags', 'lang'));
+
+        // Fetch the current gold rate from the business_settings table
+        $goldRate = BusinessSetting::where('type', 'gold_rate_18_carat')->value('value');
+
+
+        return view('backend.product.products.edit', compact('product', 'categories', 'tags', 'lang', 'goldRate'));
     }
 
     /**
@@ -308,7 +317,11 @@ class ProductController extends Controller
             ->with('childrenCategories')
             ->get();
 
-        return view('backend.product.products.edit', compact('product', 'categories', 'tags', 'lang'));
+        // Fetch the current gold rate from the business_settings table
+        $goldRate = BusinessSetting::where('type', 'gold_rate_18_carat')->value('value');
+
+
+        return view('backend.product.products.edit', compact('product', 'categories', 'tags', 'lang', 'goldRate'));
     }
 
     /**
@@ -440,7 +453,7 @@ class ProductController extends Controller
 
         //VAT & Tax
         $this->productTaxService->product_duplicate_store($product->taxes, $product_new);
-        
+
         // Product Categories
         foreach($product->product_categories as $product_category){
             ProductCategory::insert([
@@ -555,6 +568,11 @@ class ProductController extends Controller
         $unit_price = $request->unit_price;
         $product_name = $request->name;
 
+        //gold rate
+        $gold_rate = $request->gold_rate;
+        $gold_qty = $request->gold_qty;
+        $diamond_price = $request->diamond_price;
+
         if ($request->has('choice_no')) {
             foreach ($request->choice_no as $key => $no) {
                 $name = 'choice_options_' . $no;
@@ -571,7 +589,7 @@ class ProductController extends Controller
         }
 
         $combinations = (new CombinationService())->generate_combination($options);
-        return view('backend.product.products.sku_combinations', compact('combinations', 'unit_price', 'colors_active', 'product_name'));
+        return view('backend.product.products.sku_combinations', compact('gold_rate','gold_qty', 'diamond_price', 'combinations', 'unit_price', 'colors_active', 'product_name'));
     }
 
     public function sku_combination_edit(Request $request)
@@ -589,6 +607,11 @@ class ProductController extends Controller
         $product_name = $request->name;
         $unit_price = $request->unit_price;
 
+        //gold rate
+        $gold_rate = $request->gold_rate;
+        $gold_qty = $request->gold_qty;
+        $diamond_price = $request->diamond_price;
+
         if ($request->has('choice_no')) {
             foreach ($request->choice_no as $key => $no) {
                 $name = 'choice_options_' . $no;
@@ -605,7 +628,7 @@ class ProductController extends Controller
         }
 
         $combinations = (new CombinationService())->generate_combination($options);
-        return view('backend.product.products.sku_combinations_edit', compact('combinations', 'unit_price', 'colors_active', 'product_name', 'product'));
+        return view('backend.product.products.sku_combinations_edit', compact('gold_rate','gold_qty', 'diamond_price', 'combinations', 'unit_price', 'colors_active', 'product_name', 'product'));
     }
 
     public function product_search(Request $request)
