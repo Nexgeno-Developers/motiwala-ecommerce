@@ -459,12 +459,14 @@
                                 <div class="form-group row">
                                     <label class="col-xxl-3 col-form-label fs-13">{{ translate('Quantity (grams)') }}</label>
                                     <div class="col-xxl-9">
-                                        <input type="number" class="form-control"
+                                        <input type="number"
                                             id="gold_qty"
                                             name="gold_qty"
-                                            value="1"
+                                            value="{{ old('gold_qty', 1) }}"
                                             placeholder="{{ translate('Enter quantity in grams') }}"
-                                            oninput="calculateUnitPrice()">
+                                            oninput="calculateUnitPrice()"
+                                            class="form-control @error('gold_qty') is-invalid @enderror">
+
                                     </div>
                                 </div>
 
@@ -472,12 +474,13 @@
                                 <div class="form-group row">
                                     <label class="col-xxl-3 col-form-label fs-13">{{ translate('Diamond Price') }}</label>
                                     <div class="col-xxl-9">
-                                        <input type="number" class="form-control"
+                                        <input type="number"
                                             id="diamond_price"
                                             name="diamond_price"
-                                            value="0"
+                                            value="{{ old('diamond_price', 0) }}"
                                             placeholder="{{ translate('Enter diamond price') }}"
-                                            oninput="calculateUnitPrice()">
+                                            oninput="calculateUnitPrice()"
+                                            class="form-control @error('diamond_price') is-invalid @enderror">
                                     </div>
                                 </div>
 
@@ -485,7 +488,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 col-from-label">{{translate('Unit price')}} <span class="text-danger">*</span></label>
                                     <div class="col-md-6">
-                                        <input type="number" readonly id="unit_price" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror">
+                                        <input value="{{ old('unit_price') }}" type="number" readonly id="unit_price" lang="en" min="0" value="0" step="0.01" placeholder="{{ translate('Unit price') }}" name="unit_price" class="form-control @error('unit_price') is-invalid @enderror">
                                     </div>
                                 </div>
                                 <!-- Discount Date Range -->
@@ -526,7 +529,7 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-from-label">{{translate('Quantity')}} <span class="text-danger">*</span></label>
                                         <div class="col-md-6">
-                                            <input type="number" lang="en" min="0" value="0" step="1" placeholder="{{ translate('Quantity') }}" name="current_stock" class="form-control">
+                                            <input required type="number" lang="en" min="1" value="1" step="1" placeholder="{{ translate('Quantity') }}" name="current_stock" class="form-control">
                                         </div>
                                     </div>
                                     <!-- SKU -->
@@ -876,17 +879,41 @@
 
 @section('script')
 <script>
-    function calculateUnitPrice() {
-        const goldRate = parseFloat(document.getElementById('gold_rate').value) || 0;
-        const qty = parseFloat(document.getElementById('gold_qty').value) || 0;
-        const diamondPrice = parseFloat(document.getElementById('diamond_price').value) || 0;
+function calculateUnitPrice() {
+    // alert('run');
 
-        const unitPrice = (goldRate * qty) + diamondPrice;
-        document.getElementById('unit_price').value = unitPrice.toFixed(2);
+    // Get input values
+    let goldRate = $('#gold_rate').val() || 0;
+    let qty = $('#gold_qty').val() || 0;
+    let diamondPrice = parseFloat($('#diamond_price').val()) || 0;
+
+    // After parsing diamondPrice, reset the #unit_price input to 0
+    $('#unit_price').val(0);               // Set visible value to 0
+    $('#unit_price').attr('value', 0);     // Set value attribute to 0
+
+    // Log the values to see what's being used
+    // alert('Gold Rate: ' + goldRate);
+    // alert('Quantity: ' + qty);
+    // alert('Diamond Price: ' + diamondPrice);
+
+    // Calculate the unit price
+    const unitPricetoset = (goldRate * qty) + diamondPrice;
+
+    // alert('Calculated Unit Price: ' + unitPricetoset);
+
+    // Set the calculated unit price in the input field (visible value)
+    $('#unit_price').val(unitPricetoset.toFixed(2));      // Update the current visible value
+
+    // Only set the value attribute if it's empty
+    if ($('#unit_price').attr('value') === undefined || $('#unit_price').attr('value') === '') {
+        $('#unit_price').attr('value', unitPricetoset.toFixed(2));  // Update the value attribute in the HTML if it's empty
     }
 
-    // Call the function initially to calculate unit price with default values
-    calculateUnitPrice();
+}
+
+// Call the function initially to calculate unit price with default values
+calculateUnitPrice();
+
 </script>
 
 <!-- Treeview js -->
