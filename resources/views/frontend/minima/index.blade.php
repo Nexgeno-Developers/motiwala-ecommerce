@@ -572,10 +572,10 @@ header svg path {
     <div class="row align-items-center">
         <div class="col-md-6 pl-0 pr-1 pb-1">
             <div class="shop_imges position-relative overflow-hidden mt-3 mt-md-0">
-                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images1.webp') }}"/>
+                <a href="/category/necklace"><img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images1.webp') }}"/></a>
                     <div class="discover_absolute">
-                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
-                        <a class="discover_text text-white " href="#">Discover More</a>
+                        <a class="title_bg_clr text-white " href="/category/necklace">Necklace</a>
+                        <a class="discover_text text-white " href="/category/necklace">Discover More</a>
                     </div>
             </div>
         </div>
@@ -605,10 +605,10 @@ header svg path {
         </div>
         <div class="col-md-6 pl-0 pr-1">
             <div class="shop_imges position-relative overflow-hidden mt-2 mt-md-0">
-                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images2.webp') }}"/>
+                <a href="/category/bracelet"><img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images2.webp') }}"/></a>
                 <div class="discover_absolute">
-                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
-                        <a class="discover_text text-white " href="#">Discover More</a>
+                        <a class="title_bg_clr text-white " href="/category/bracelet">Bracelet</a>
+                        <a class="discover_text text-white " href="/category/bracelet">Discover More</a>
                     </div>
                 
             </div>
@@ -616,10 +616,10 @@ header svg path {
 
         <div class="col-md-6 pr-0 pl-1">
             <div class="shop_imges position-relative overflow-hidden mt-3 mt-md-0">
-                <img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images3.webp') }}"/>
+                <a href="/category/earrings"><img class="w-100 has-transition" src="{{ static_asset('assets/img/category_images3.webp') }}"/></a>
                  <div class="discover_absolute">
-                        <a class="title_bg_clr text-white " href="#">Antique Collections</a>
-                        <a class="discover_text text-white " href="#">Discover More</a>
+                        <a class="title_bg_clr text-white " href="/category/earrings">Earrings</a>
+                        <a class="discover_text text-white " href="/category/earrings">Discover More</a>
                     </div>
                 
             </div>
