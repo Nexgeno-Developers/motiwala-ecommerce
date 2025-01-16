@@ -1053,8 +1053,8 @@ function calculateUnitPrice() {
 
             // Get the values for goldRate, goldQty, and diamondPrice
             var goldRate2 = parseFloat(row.find('.gold-rate').val()) || 0;
-            var goldQty = parseFloat(row.find('.gold-qty').val()) || 1;
-            var diamondPrice = parseFloat(row.find('.diamond-price').val()) || 0;
+            var goldQty2 = parseFloat(row.find('.gold-qty').val()) || 1;
+            var diamondPrice2 = parseFloat(row.find('.diamond-price').val()) || 0;
 
             // Prevent goldRate2 becoming 0 when goldQty2 is 0
             var variantPrice;
