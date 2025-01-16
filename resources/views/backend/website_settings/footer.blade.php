@@ -162,7 +162,7 @@
                                 <div class="form-group">
     								<label>{{ translate('Gold Rate') }}</label>
     								<input type="hidden" name="types[]" value="gold_rate_18_carat">
-    								<input type="text" class="form-control" placeholder="{{ translate('Phone') }}" name="gold_rate_18_carat" value="{{ get_setting('gold_rate_18_carat') }}">
+    								<input type="text" class="form-control" placeholder="{{ translate('Gold Price') }}" name="gold_rate_18_carat" value="{{ get_setting('gold_rate_18_carat') }}">
     							</div>
 
 								<!-- Update Button -->

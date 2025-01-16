@@ -1052,7 +1052,7 @@ function calculateUnitPrice() {
             var row = $(this).closest('tr.variant'); // Get the closest row (tr) containing the variant
 
             // Get the values for goldRate, goldQty, and diamondPrice
-            var goldRate = parseFloat(row.find('.gold-rate').val()) || 0;
+            var goldRate2 = parseFloat(row.find('.gold-rate').val()) || 0;
             var goldQty = parseFloat(row.find('.gold-qty').val()) || 1;
             var diamondPrice = parseFloat(row.find('.diamond-price').val()) || 0;
 
