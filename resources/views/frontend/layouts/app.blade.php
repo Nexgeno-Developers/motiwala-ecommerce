@@ -410,7 +410,28 @@
             AIZ.plugins.notify('{{ $message['level'] }}', '{{ $message['message'] }}');
         @endforeach
     </script>
+    {{-- <script>
+        $('button[data-toggle="pill"]').on('shown.bs.tab', function () {
+            console.log('tab');
+            $('.aiz-carousel').slick('unslick'); // Destroy existing instance
+            AIZ.plugins.slickCarousel(); // Reinitialize the slider
+        });
+    </script> --}}
+    <script>
+        // Handle tab switching, but no need to reinitialize the carousel
+        $(document).on('shown.bs.tab', 'button[data-toggle="pill"]', function (e) {
+            // Wait for the tab content to be fully loaded
+            setTimeout(function() {
+                // Get the carousel inside the active tab and trigger a refresh
+                var $activeTabCarousel = $('.tab-pane.show.active').find('.aiz-carousel');
 
+                // $activeTabCarousel.slick('refresh');
+                // Refresh the active carousel (works better than `slick('refresh')` sometimes)
+                $activeTabCarousel.slick('slickGoTo', 0);  // Go to the first slide
+                $activeTabCarousel.slick('setPosition');  // Ensure slick positions itself correctly
+            }, 100); // Delay to ensure tab content is loaded first
+        });
+    </script>
     <script>
         @if (Route::currentRouteName() == 'home' || Route::currentRouteName() == '/')
 
@@ -974,7 +995,7 @@ $(document).ready(function(){
         centerPadding: '0',
         dots: true,
         focusOnSelect: true,  // Ensures that the selected testimonial is active
-        
+
     });
 });
 </script>

@@ -521,7 +521,7 @@
                                     <div class="col-xxl-9">
                                         <input type="number" class="form-control"
                                             id="gold_qty"
-                                            name="gold_qty"
+                                            name="gold_qty" step="0.01"
                                             value="{{ $product->gold_qty }}"
                                             placeholder="{{ translate('Enter quantity in grams') }}"
                                             oninput="calculateUnitPrice()">

@@ -559,7 +559,7 @@
                                     <label
                                         class="col-xxl-3 col-form-label fs-13">{{ translate('Quantity (grams)') }}</label>
                                     <div class="col-xxl-9">
-                                        <input type="number" id="gold_qty" name="gold_qty"
+                                        <input type="number" id="gold_qty" name="gold_qty" step="0.01"
                                             placeholder="{{ translate('Enter quantity in grams') }}"
                                             class="form-control @error('gold_qty') is-invalid @enderror">
 

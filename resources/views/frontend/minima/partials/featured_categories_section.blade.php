@@ -57,9 +57,3 @@ $categories = [
     </div>
 </section>
 @endif
-<script>
-    $('button[data-toggle="pill"]').on('shown.bs.tab', function () {
-        $('.aiz-carousel').slick('unslick'); // Destroy existing instance
-        AIZ.plugins.slickCarousel(); // Reinitialize the slider
-    });
-</script>
