@@ -57,3 +57,13 @@ $categories = [
     </div>
 </section>
 @endif
+@foreach (get_category_selected_products([2]) as $key => $product)
+<div class="carousel-box position-relative px-0 has-transition">
+    <div class="px-md-3 px-2">
+        @include(
+            'frontend.' . get_setting('homepage_select') . '.partials.product_box_1',
+            ['product' => $product]
+        )
+    </div>
+</div>
+@endforeach
